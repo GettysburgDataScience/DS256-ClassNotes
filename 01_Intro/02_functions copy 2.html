@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Generative AI: In the classroom and beyond &#8212; DS325 Applied Data Science</title>
+    <title>Functions &#8212; DS325 Applied Data Science</title>
   
   
   
@@ -60,7 +60,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '00_Resources/genai_B';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Intro/02_functions copy 2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -170,13 +170,13 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Setting Up and Resources</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="setup.html">1. Setting Up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="genai_policy.html">2. Our course GenAI Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Resources/setup.html">1. Setting Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Resources/genai_policy.html">2. Our course GenAI Policy</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01_Intro/01_jupyter_variables.html">3. Intro to Notebooks and Python First Steps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01_Intro/02_functions.html">4. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_jupyter_variables.html">3. Intro to Notebooks and Python First Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_functions.html">4. Functions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -258,7 +258,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F00_Resources/genai_B.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Intro/02_functions copy 2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +288,7 @@
       
       
       
-      <li><a href="../_sources/00_Resources/genai_B.md" target="_blank"
+      <li><a href="../_sources/01_Intro/02_functions copy 2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -298,7 +298,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -364,7 +364,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Generative AI: In the classroom and beyond</h1>
+    <h1>Functions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -374,12 +374,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productivity-and-creativity">Productivity and Creativity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-and-employment">Learning and Employment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethics">Ethics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessibility-and-equity">Accessibility and Equity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#follow-up-questions-in-the-classroom">Follow-up questions: In the classroom</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-course-genai-policy">Our course GenAI policy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-function">Anatomy of a function</a></li>
 </ul>
             </nav>
         </div>
@@ -391,163 +386,96 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="generative-ai-in-the-classroom-and-beyond">
-<h1>Generative AI: In the classroom and beyond<a class="headerlink" href="#generative-ai-in-the-classroom-and-beyond" title="Link to this heading">#</a></h1>
-<section id="productivity-and-creativity">
-<h2>Productivity and Creativity<a class="headerlink" href="#productivity-and-creativity" title="Link to this heading">#</a></h2>
-<div style="display: flex; gap: 10em;">
-  <div>
-    <strong>Pros</strong>
-    <ul>
-      <li>Efficiency and speed.</li>
-      <li>24/7 availability.</li>
-      <li>Cost reduction.</li>
-      <li>Idea generation.</li>
-      <li>Collaboration Enhancement.</li>
-      <li>Access to diverse styles.</li>
-    </ul>
-  </div>
-  <div>
-    <strong>Cons</strong>
-    <ul>
-      <li>Over-reliance. Skill atrophy.</li>
-      <li>Some limit on quality.</li>
-      <li>Not original.</li>
-      <li>Plagiarism, infringement, intellectual software.</li>
-      <li>Cost to learning.</li>
-      <li>'Needs' human review.</li>
-    </ul>
-  </div>
-</div>
-</section>
-<section id="learning-and-employment">
-<h2>Learning and Employment<a class="headerlink" href="#learning-and-employment" title="Link to this heading">#</a></h2>
-<div style="display: flex; gap: 10em;">
-  <div>
-    <strong>Pros</strong>
-    <ul>
-      <li>Perspective expansion.</li>
-      <li>Brainstorming.</li>
-      <li>Study customization. Personalized tutor.</li>
-      <li>Judgement free learning.</li>
-      <li>New market, becoming industry standard.</li>
-      <li>A technology that improves availability of information and can enhance critical thinking.</li>
-    </ul>
-  </div>
-  <div>
-    <strong>Cons</strong>
-    <ul>
-      <li>Skill erosion. Reduces critical thinking.</li>
-      <li>Cheating risk.</li>
-      <li>Making jobs obsolete.</li>
-      <li>Can't replace critical thinking.</li>
-      <li>ATS discrimination.</li>
-      <li>Motivation crisis...what's worth knowing?</li>
-      <li>Few guardrails and/or assurances. does not replace human judgment.</li>
-    </ul>
-  </div>
-</div>
-</section>
-<section id="ethics">
-<h2>Ethics<a class="headerlink" href="#ethics" title="Link to this heading">#</a></h2>
-<div style="display: flex; gap: 10em;">
-  <div>
-    <strong>Pros</strong>
-    <ul>
-      <li>Help in social issues, research problems. Maybe solve climate change.</li>
-      <li>Enhance products for equity/accessibility.</li>
-      <li>Improves research.</li>
-      <li></li>
-      <li></li>
-    </ul>
-  </div>
-  <div>
-    <strong>Cons</strong>
-    <ul>
-      <li>Energy and water intensive...and carbon emmissions. E-waste. Other environmental harm.</li>
-      <li>Misinformation, disinformation. </li>
-      <li>Biases, discrimination. Reflects the biases of society.</li>
-      <li>Levels the playing field.</li>
-      <li></li>
-    </ul>
-  </div>
-</div>
-</section>
-<section id="accessibility-and-equity">
-<h2>Accessibility and Equity<a class="headerlink" href="#accessibility-and-equity" title="Link to this heading">#</a></h2>
-<div style="display: flex; gap: 10em;">
-  <div>
-    <strong>Pros</strong>
-    <ul>
-      <li>Many different types. Integrated into different apps.</li>
-      <li>Tailored to different learning styles.</li>
-      <li>Accessibility for differently abled.</li>
-      <li>Lowers barriers to non-native speakers. Lowers to non-experts.</li>
-      <li></li>
-    </ul>
-  </div>
-  <div>
-    <strong>Cons</strong>
-    <ul>
-      <li>Displacement of low-skill jobs.</li>
-      <li>Pay tiered structure.</li>
-      <li>Doesn't support every language. There are target audiences.</li>
-      <li>Not 100% reliable info.</li>
-      <li></li>
-    </ul>
-  </div>
-</div>
-</section>
-<section id="follow-up-questions-in-the-classroom">
-<h2>Follow-up questions: In the classroom<a class="headerlink" href="#follow-up-questions-in-the-classroom" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h1>
+<p>Functions are our verbs in coding…kinda. You should think of a function as a machine that does things.</p>
+<p><strong>Note about thinking programmatically</strong>
+Consider what a washing machine does when you run it.</p>
 <ul class="simple">
-<li><p>What is the value of knowing things? Knowing how to do things?</p>
-<ul>
-<li><p>Knowledge is power.</p></li>
-<li><p>Good for baseline how to do things. Not good for higher level interpretation.</p></li>
+<li><p>Locks the door.</p></li>
+<li><p>Spins to judge the amount and balance of the clothing inside.</p></li>
+<li><p>Adds water, a mix of cold and hot based on selected settings.</p></li>
+<li><p>Empties the detergent tray into the water.</p></li>
+<li><p>Agitates the clothes back and forth for some fixed time.</p></li>
+<li><p>Drains the dirty water.</p></li>
+<li><p>Adds fresh water to rinse.</p></li>
+<li><p>Agitates the clothes again.</p></li>
+<li><p>Drains the dirty water again.</p></li>
+<li><p>Spins the clothes to remove excess water.</p></li>
+<li><p>Unlocks the door.</p></li>
+<li><p>Plays a tune to alert the user the load is done.</p></li>
 </ul>
-</li>
-<li><p>What are productive uses of GenAI?</p>
-<ul>
-<li><p>Research tool. Layout, brainstorming.</p></li>
-<li><p>Help study.</p></li>
-<li><p>Simplify content.</p></li>
-<li><p>Help in maintaining syntax in coding (for example)</p></li>
-</ul>
-</li>
-<li><p>What are counter-productive uses of GenAI?</p>
-<ul>
-<li><p>Hinders work ethic.</p></li>
-<li><p>Limits human connection, ‘soft’ skills.</p></li>
-</ul>
-</li>
-<li><p>How does student usage of GenAI affect other students?</p></li>
-<li><p>How does student usage of GenAI affect instructors?</p>
-<ul>
-<li><p>Easing the work of professors.</p></li>
-<li><p>Instructors feel less motivated to give feedback (anger is the feeling)</p></li>
-</ul>
-</li>
-<li><p>How does instructor usage of GenAI affect students?</p></li>
-<li><p>What are your responsibilities with using AI? What is proper usage? What should be the penalty for improper usage?</p>
-<ul>
-<li><p>The goal is to learn. Respect that goal.</p></li>
-</ul>
-</li>
-<li><p>Have you discussed GenAI policy in other classes? What are the policies you’ve seen?</p>
-<ul>
-<li><p>Econ 243: use as a tool to solve math problems.</p></li>
-<li><p>Econometrics: generate ideas and brainstorm. Look for research.</p></li>
-<li><p>CS 111, 112, 216: forbidden!</p></li>
-<li><p>CS upper-level: allowed.</p></li>
-<li><p>WGS writing: forbidden.</p></li>
-<li><p>ES 223,: organize thinking.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="our-course-genai-policy">
-<h2>Our course GenAI policy<a class="headerlink" href="#our-course-genai-policy" title="Link to this heading">#</a></h2>
+<p>That’s a lot of steps when you break it down. If we were writing this in code and we had to do multiple loads of laundry, that would be a lot of copy-and-pasting.</p>
+<p>Instead, we can bundle all the instructions into a function, say ‘run_load’. That way, with one line of code, we can re-use all of the instructions above. Also, if we decide to change the instructions in any way, we just change the function and those changes propogate to every use of ‘run_load’.</p>
+<section id="anatomy-of-a-function">
+<h2>Anatomy of a function<a class="headerlink" href="#anatomy-of-a-function" title="Link to this heading">#</a></h2>
+<p>Python uses keywords and indentations to signify different tools and structures. This is called the <em>syntax</em>.</p>
+<p>The syntax for a function is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">input1</span> <span class="o">=</span> <span class="n">default1</span><span class="p">,</span> <span class="n">input2</span><span class="o">=</span><span class="n">default2</span><span class="p">):</span>
+    <span class="n">commands</span>
+    <span class="n">more</span> <span class="n">commands</span>
+    <span class="k">return</span> <span class="n">output1</span><span class="p">,</span> <span class="n">output2</span>
+</pre></div>
+</div>
+<p><em>Every</em> function definition starts with the keyword <code class="docutils literal notranslate"><span class="pre">def</span></code> followed by the function name, parantheses, and a colon.</p>
+<p>Everything else is optional. Functions need not have inputs or outputs. Functions need not have commands. But most useful functions have some of these.</p>
+<p>Notice that everything under that first line of the function definition is indented. That is called the <em>scope</em> of the function, all the code that belongs to that function.</p>
+<p><strong>Let’s write some functions!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">area_rect</span><span class="p">(</span><span class="n">length</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">length</span> <span class="o">*</span> <span class="n">width</span>
+    <span class="k">return</span> <span class="n">area</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">perim_rect</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+    <span class="n">perim</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">length</span> <span class="o">+</span> <span class="n">width</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">perim</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">perim_area_rect</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">perim_rect</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">),</span> <span class="n">area_rect</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">area1</span> <span class="o">=</span> <span class="n">area_rect</span><span class="p">(</span><span class="mf">7.3</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">)</span>
+<span class="n">perim1</span> <span class="o">=</span> <span class="n">perim_rect</span><span class="p">(</span><span class="mf">7.3</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">)</span>
+
+<span class="n">P</span><span class="p">,</span> <span class="n">A</span> <span class="o">=</span> <span class="n">perim_area_rect</span><span class="p">(</span><span class="n">width</span> <span class="o">=</span> <span class="mf">7.3</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mf">2.7</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.0
+19.71
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">repeater</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="o">*</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">repeater</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -564,7 +492,7 @@
         },
         kernelOptions: {
             name: "python3",
-            path: "./00_Resources"
+            path: "./01_Intro"
         },
         predefinedOutput: true
     }
@@ -598,12 +526,7 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productivity-and-creativity">Productivity and Creativity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-and-employment">Learning and Employment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethics">Ethics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessibility-and-equity">Accessibility and Equity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#follow-up-questions-in-the-classroom">Follow-up questions: In the classroom</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-course-genai-policy">Our course GenAI policy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-function">Anatomy of a function</a></li>
 </ul>
   </nav></div>
 

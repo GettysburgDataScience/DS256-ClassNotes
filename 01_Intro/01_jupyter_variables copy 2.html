@@ -60,7 +60,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '01_Intro/01_jupyter_variables copy';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Intro/01_jupyter_variables copy 2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -258,7 +258,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Intro/01_jupyter_variables copy.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Intro/01_jupyter_variables copy 2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +288,7 @@
       
       
       
-      <li><a href="../_sources/01_Intro/01_jupyter_variables copy.ipynb" target="_blank"
+      <li><a href="../_sources/01_Intro/01_jupyter_variables copy 2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -461,8 +461,7 @@ Gettysburg College</p>
 <span class="c1"># Exponentiation</span>
 <span class="n">e</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">**</span><span class="mi">2</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c = </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;d = </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="se">\n</span><span class="s1">e = </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;c = </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="se">\n</span><span class="s1">d = </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="se">\n</span><span class="s1">e = </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="c1"># Run the cell with SHIFT+ENTER</span>
 </pre></div>
@@ -482,7 +481,7 @@ e = 0.25
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Increment and Decrement</span>
 
-<span class="n">a</span> <span class="o">+=</span><span class="mi">10</span>   <span class="c1"># a = a+10</span>
+<span class="n">a</span> <span class="o">+=</span><span class="mi">10</span> <span class="c1"># same as a = a + 10</span>
 <span class="n">b</span> <span class="o">-=</span> <span class="mi">5</span>
 
 <span class="c1"># Geometric (?) Increment and Decrement</span>
@@ -570,13 +569,7 @@ z is a &lt;class &#39;float&#39;&gt;
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1and2</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="s1">&#39; and &#39;</span> <span class="o">+</span> <span class="n">s2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s1and2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello and goodbye123
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s3</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="s1">&#39; and &#39;</span> <span class="o">+</span> <span class="n">s2</span>
 </pre></div>
 </div>
 </div>
@@ -622,13 +615,11 @@ z is a &lt;class &#39;float&#39;&gt;
 
 <span class="n">C</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">&gt;=</span> <span class="mi">10</span>
 <span class="n">D</span> <span class="o">=</span> <span class="p">(</span><span class="n">s1</span><span class="o">==</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="n">D</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 </pre></div>
 </div>
 </div>
