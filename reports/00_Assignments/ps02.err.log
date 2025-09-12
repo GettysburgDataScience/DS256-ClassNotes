@@ -29,15 +29,15 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 def only_lowercase(text):
-...
+'''your code here'''
 
 # Is it doing what you expect it to do.
 print(only_lowercase("Prof Roth can't wait for Thanksgiving!"))
 ------------------
 
 
-[0;36m  Cell [0;32mIn[3], line 5[0;36m[0m
-[0;31m    print(only_lowercase("Prof Roth can't wait for Thanksgiving!"))[0m
+[0;36m  Cell [0;32mIn[3], line 2[0;36m[0m
+[0;31m    '''your code here'''[0m
 [0m    ^[0m
 [0;31mIndentationError[0m[0;31m:[0m expected an indented block after function definition on line 1
 
