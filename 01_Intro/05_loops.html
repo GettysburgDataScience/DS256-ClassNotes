@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Control Flow (continued) &#8212; DS325 Applied Data Science</title>
+    <title>6. Control Flow: Loops &#8212; DS325 Applied Data Science</title>
   
   
   
@@ -65,6 +65,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '01_Intro/05_loops';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PS00" href="../00_Assignments/ps00.html" />
+    <link rel="prev" title="5. Control Flow: Conditional statements" href="04_conditionals.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -115,8 +117,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -176,12 +176,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../00_Resources/genai_policy.html">2. Our course GenAI Policy</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_jupyter_variables.html">1. Intro to Notebooks and Python First Steps</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="02_functions.html">3. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_lists.html">4. Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_conditionals.html">5. Control Flow: Conditional statements</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Control Flow: Loops</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -370,7 +371,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Control Flow (continued)</h1>
+    <h1>Control Flow: Loops</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -380,26 +381,26 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">Loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">While loops</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For loops</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">While loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-for-while-loops">Syntax for While loops:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-1">Example Problem 1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-2">Example Problem 2</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-3">Example Problem 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">6.1. Loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">6.1.1. While loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">6.1.2. For loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.1.3. While loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-for-while-loops">6.1.3.1. Syntax for While loops:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-1">6.1.3.2. Example Problem 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-2">6.1.3.3. Example Problem 2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-3">6.1.3.4. Example Problem 3</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">For loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-for-for-loops">Syntax for For Loops</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-4">Example Problem 4</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-5">Example Problem 5</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-6">Example Problem 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.1.4. For loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-for-for-loops">6.1.4.1. Syntax for For Loops</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-4">6.1.4.2. Example Problem 4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-5">6.1.4.3. Example Problem 5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-6">6.1.4.4. Example Problem 6</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-loop-keywords">Other loop keywords</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-7">Example Problem 7</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-8">Example Problem 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-loop-keywords">6.1.5. Other loop keywords</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-7">6.1.5.1. Example Problem 7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-8">6.1.5.2. Example Problem 8</a></li>
 </ul>
 </li>
 </ul>
@@ -415,15 +416,15 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="control-flow-continued">
-<h1>Control Flow (continued)<a class="headerlink" href="#control-flow-continued" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="control-flow-loops">
+<h1><span class="section-number">6. </span>Control Flow: Loops<a class="headerlink" href="#control-flow-loops" title="Link to this heading">#</a></h1>
 <p>Last class we covered <em>conditional statements</em>, today we’ll introduce loops.</p>
 <ul class="simple">
 <li><p>~~Conditional Statements - statements that allow you to run different code under certain conditions~~</p></li>
 <li><p>Loops - statements that allow you to run blocks of code multiple times</p></li>
 </ul>
 <section id="loops">
-<h2>Loops<a class="headerlink" href="#loops" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>Loops<a class="headerlink" href="#loops" title="Link to this heading">#</a></h2>
 <p>Loops allow you to execute a block of code repeatedly. This is useful if you need to perform the same set of actions on several (tens or maybe hundreds) of different items in some container (e.g. loading files from a list of filenames, parsing text into sentences or clauses, extracting specific data that meet some criteria from a larger set). Once you understand loops, you’ll find they’re incredibly useful for automating tedious analyses. BUT for large data and complex operations, loops can get very slow; so for many data science use cases, we try to find ways to avoid using loops.</p>
 <p>The two main kinds of loops, common to most programming languages are:</p>
 <ul class="simple">
@@ -432,7 +433,7 @@
 </ul>
 <p>Later, we’ll learn list and dictionary <em>comprehensions</em> (one of the most fun and useful features of Python).</p>
 <section id="while-loops">
-<h3>While loops<a class="headerlink" href="#while-loops" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.1.1. </span>While loops<a class="headerlink" href="#while-loops" title="Link to this heading">#</a></h3>
 <p>Run some code repeatedly as long as a condition is met:</p>
 <ul class="simple">
 <li><p>I’m going to work on homework problems until 10p.</p></li>
@@ -441,7 +442,7 @@
 </ul>
 </section>
 <section id="for-loops">
-<h3>For loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.1.2. </span>For loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h3>
 <p>Run some code repeatedly some set amount of times:</p>
 <ul class="simple">
 <li><p>I’m going to work through the first four homework problems.</p></li>
@@ -451,29 +452,27 @@
 <p>We’ll start with while loops:</p>
 </section>
 <section id="id1">
-<h3>While loops<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.1.3. </span>While loops<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <section id="syntax-for-while-loops">
-<h4>Syntax for While loops:<a class="headerlink" href="#syntax-for-while-loops" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.1.3.1. </span>Syntax for While loops:<a class="headerlink" href="#syntax-for-while-loops" title="Link to this heading">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span><span class="p">:</span>
     <span class="o">&lt;</span><span class="n">code</span> <span class="n">block</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </section>
 <section id="example-problem-1">
-<h4>Example Problem 1<a class="headerlink" href="#example-problem-1" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.1.3.2. </span>Example Problem 1<a class="headerlink" href="#example-problem-1" title="Link to this heading">#</a></h4>
 <p>Suppose we are developing a mobile game. Our game permits in-app purchases, as such, users must “verify” they are 18+ years old. We’ll keep asking until we get the answer we want.</p>
+<p>Use if statements to check if the value entered is a number and if that number is greater than or equal to 18.</p>
+<p><em>Tips</em>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input(prompt)</span></code> asks the user to enter a value in a text field.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.isnumeric()</span></code> checks if the content of a string is numeric.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">verifyAge</span><span class="p">():</span>
-    <span class="n">age</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
-        <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Verify your age:&#39;</span><span class="p">))</span> <span class="c1"># input is a function that requests input from the user</span>
-        <span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please enter a POSITIVE number.&#39;</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Are you sure you typed that correctly? You seem older to me. Try again.&#39;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are verified!&#39;</span><span class="p">)</span>
+    <span class="k">return</span>
 </pre></div>
 </div>
 </div>
@@ -484,38 +483,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">verifyAge</span><span class="p">()</span>
-
-<span class="nn">Cell In[1], line 4,</span> in <span class="ni">verifyAge</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">while</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Verify your age:&#39;</span><span class="p">))</span> <span class="c1"># input is a function that requests input from the user</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please enter a POSITIVE number.&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/.pyenv/versions/3.13.1/envs/datascience/lib/python3.13/site-packages/ipykernel/kernelbase.py:1281,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1279</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1280</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1281</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1282</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1283</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1284</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1285</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1286</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1287</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="example-problem-2">
-<h4>Example Problem 2<a class="headerlink" href="#example-problem-2" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.1.3.3. </span>Example Problem 2<a class="headerlink" href="#example-problem-2" title="Link to this heading">#</a></h4>
 <p>We’ll write a (crude) countdown timer. The user enters a number and the timer will count down that number of seconds.</p>
 <p>For this problem, we’ll import a package called <code class="docutils literal notranslate"><span class="pre">time</span></code> (our first imported package…more on that soon). From the time package, we’ll use a function called <code class="docutils literal notranslate"><span class="pre">sleep</span></code> which pauses the program for a set number of seconds.</p>
 <div class="cell docutils container">
@@ -523,20 +494,37 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">countdown</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
-
+    
     <span class="k">return</span>    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">countdown</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="example-problem-3">
-<h4>Example Problem 3<a class="headerlink" href="#example-problem-3" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.1.3.4. </span>Example Problem 3<a class="headerlink" href="#example-problem-3" title="Link to this heading">#</a></h4>
 <p>Let’s write a function that takes a paragraph of text and prints each sentence on it’s own line. We might want to use nested while loops (a while loop inside a while loop) for this one.</p>
+<p><em>Hint:</em> If used in a an if or while statement, a non-empty string evaluates to True. An empty string evaluates to False.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">parse_sentences</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    
+    <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Romeo</span> <span class="o">=</span> <span class="s1">&#39;But, soft! what light through yonder window breaks? It is the east, and Juliet is the sun. Arise, fair sun, and kill the envious moon, Who is already sick and pale with grief, That thou her maid art far more fair than she. It is my lady, O, it is my love! O, that she knew she were! She speaks, yet she says nothing: what of that?&#39;</span>
-<span class="n">TheCat</span> <span class="o">=</span> <span class="s1">&#39;We looked and we saw him! The Cat in the Hat! and he said to us, &quot;Why do you sit there like that?&quot; &quot;I know it is wet and the sun is not sunny. But we can have lots of good fun that is funny!&quot;</span>
+<span class="n">TheCat</span> <span class="o">=</span> <span class="s1">&#39;We looked and we saw him! The Cat in the Hat! and he said to us, &quot;Why do you sit there like that?&quot; &quot;I know it is wet and the sun is not sunny. But we can have lots of good fun that is funny!&quot;&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -544,16 +532,16 @@
 </section>
 </section>
 <section id="id2">
-<h3>For loops<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.1.4. </span>For loops<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <section id="syntax-for-for-loops">
-<h4>Syntax for For Loops<a class="headerlink" href="#syntax-for-for-loops" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.1.4.1. </span>Syntax for For Loops<a class="headerlink" href="#syntax-for-for-loops" title="Link to this heading">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">&lt;</span><span class="nb">iter</span> <span class="n">variable</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">iterable</span> <span class="nb">set</span><span class="o">&gt;</span><span class="p">:</span>
     <span class="o">&lt;</span><span class="n">code</span> <span class="n">block</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </section>
 <section id="example-problem-4">
-<h4>Example Problem 4<a class="headerlink" href="#example-problem-4" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.1.4.2. </span>Example Problem 4<a class="headerlink" href="#example-problem-4" title="Link to this heading">#</a></h4>
 <p>Let’s use a for loop to evaluate a function <span class="math notranslate nohighlight">\(f(x)\)</span> for some list of values of <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -581,6 +569,24 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span><span class="w"> </span><span class="nf">f3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">evalFunc</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">evalFunc</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">x3</span><span class="p">,</span> <span class="n">y3</span> <span class="o">=</span> <span class="n">evalFunc</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span>
+
+<span class="nn">Cell In[7], line 3,</span> in <span class="ni">evalFunc</span><span class="nt">(f, xvals)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">evalFunc</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">xvals</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))):</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">return</span> <span class="n">xvals</span><span class="p">,</span> <span class="n">y</span>
+
+<span class="ne">NameError</span>: name &#39;y&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -600,11 +606,12 @@
 </div>
 </section>
 <section id="example-problem-5">
-<h4>Example Problem 5<a class="headerlink" href="#example-problem-5" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.1.4.3. </span>Example Problem 5<a class="headerlink" href="#example-problem-5" title="Link to this heading">#</a></h4>
 <p>Lists can hold all different types of data. Suppose we get a list of mixed string and numeric data. Write a for loop to sift through the list and create two new lists, one containing all of the strings and another containing all of the numbers.</p>
+<p><em>Hint</em>: Remember <code class="docutils literal notranslate"><span class="pre">type()</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DS&#39;</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="s1">&#39;Sec C&#39;</span><span class="p">,</span> <span class="s1">&#39;meets&#39;</span><span class="p">,</span> <span class="s1">&#39;Mondays and Wednesdays&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">45</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DS&#39;</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="s1">&#39;Sec A&#39;</span><span class="p">,</span> <span class="s1">&#39;meets&#39;</span><span class="p">,</span> <span class="s1">&#39;Tuesdays and Thursdays&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">45</span><span class="p">]</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">siftList</span><span class="p">(</span><span class="n">jumbleList</span><span class="p">):</span>
 
@@ -616,7 +623,7 @@
 </div>
 </section>
 <section id="example-problem-6">
-<h4>Example Problem 6<a class="headerlink" href="#example-problem-6" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.1.4.4. </span>Example Problem 6<a class="headerlink" href="#example-problem-6" title="Link to this heading">#</a></h4>
 <p>You run an artisan jewelry store on Etsy and you collect data from your customers purchases. A shopping cart is stored as a dictionary with the product name as the key and the value being another dictionary storing quantity and price with keys ‘qty’ and ‘price’ respectively. Write a loop that takes a shopping cart dictionary as input and returns the number of items in the cart and the total cost.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -637,18 +644,18 @@
 </section>
 </section>
 <section id="other-loop-keywords">
-<h3>Other loop keywords<a class="headerlink" href="#other-loop-keywords" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.1.5. </span>Other loop keywords<a class="headerlink" href="#other-loop-keywords" title="Link to this heading">#</a></h3>
 <p>You may exit a loop or skip an iteration of a loop using the <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> keywords, respectively.</p>
 <ul class="simple">
 <li><p>break - exit the loop and proceed with code outside of the loop</p></li>
 <li><p>continue - skip the remaining code in the current iteration and advance to the next iteration</p></li>
 </ul>
 <section id="example-problem-7">
-<h4>Example Problem 7<a class="headerlink" href="#example-problem-7" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.1.5.1. </span>Example Problem 7<a class="headerlink" href="#example-problem-7" title="Link to this heading">#</a></h4>
 <p>We’ve used the .index() function to find the location of an item in a list. The problem with .index() is that it raises an error if the item isn’t in the list. Let’s write our own version. The function should iterate through a list, checking each entry for a match. If a match is found, the function returns the location of the first match. Otherwise, the function prints ‘no match found’.</p>
 </section>
 <section id="example-problem-8">
-<h4>Example Problem 8<a class="headerlink" href="#example-problem-8" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.1.5.2. </span>Example Problem 8<a class="headerlink" href="#example-problem-8" title="Link to this heading">#</a></h4>
 <p>Let’s revisit Example Problem 3 above. This time, after a sentence is complete, we should skip any subsequent spaces before beginning a new sentence. Can we achieve this with a <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement?</p>
 </section>
 </section>
@@ -685,6 +692,24 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="04_conditionals.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Control Flow: Conditional statements</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../00_Assignments/ps00.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PS00</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -702,26 +727,26 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">Loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">While loops</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For loops</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">While loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-for-while-loops">Syntax for While loops:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-1">Example Problem 1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-2">Example Problem 2</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-3">Example Problem 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">6.1. Loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">6.1.1. While loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">6.1.2. For loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.1.3. While loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-for-while-loops">6.1.3.1. Syntax for While loops:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-1">6.1.3.2. Example Problem 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-2">6.1.3.3. Example Problem 2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-3">6.1.3.4. Example Problem 3</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">For loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-for-for-loops">Syntax for For Loops</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-4">Example Problem 4</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-5">Example Problem 5</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-6">Example Problem 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.1.4. For loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-for-for-loops">6.1.4.1. Syntax for For Loops</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-4">6.1.4.2. Example Problem 4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-5">6.1.4.3. Example Problem 5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-6">6.1.4.4. Example Problem 6</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-loop-keywords">Other loop keywords</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-7">Example Problem 7</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-8">Example Problem 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-loop-keywords">6.1.5. Other loop keywords</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-7">6.1.5.1. Example Problem 7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem-8">6.1.5.2. Example Problem 8</a></li>
 </ul>
 </li>
 </ul>
