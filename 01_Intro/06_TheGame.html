@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>PS01 &#8212; DS325 Applied Data Science</title>
+    <title>7. The GAME &#8212; DS325 Applied Data Science</title>
   
   
   
@@ -60,11 +60,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '00_Assignments/ps01';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Intro/06_TheGame';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PS02" href="ps02.html" />
-    <link rel="prev" title="PS00" href="ps00.html" />
+    <link rel="next" title="PS00" href="../00_Assignments/ps00.html" />
+    <link rel="prev" title="6. Control Flow: Loops" href="05_loops.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -174,19 +176,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../00_Resources/genai_policy.html">2. Our course GenAI Policy</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01_Intro/01_jupyter_variables.html">1. Intro to Notebooks and Python First Steps</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_jupyter_variables.html">1. Intro to Notebooks and Python First Steps</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../01_Intro/02_functions.html">3. Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01_Intro/03_lists.html">4. Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01_Intro/04_conditionals.html">5. Control Flow: Conditional statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01_Intro/05_loops.html">6. Control Flow: Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_functions.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_lists.html">4. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_conditionals.html">5. Control Flow: Conditional statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_loops.html">6. Control Flow: Loops</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. The GAME</a></li>
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ps00.html">PS00</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">PS01</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ps02.html">PS02</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps00.html">PS00</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps01.html">PS01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps02.html">PS02</a></li>
 </ul>
 
     </div>
@@ -263,7 +269,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F00_Assignments/ps01.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Intro/06_TheGame.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +299,7 @@
       
       
       
-      <li><a href="../_sources/00_Assignments/ps01.ipynb" target="_blank"
+      <li><a href="../_sources/01_Intro/06_TheGame.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,7 +375,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>PS01</h1>
+    <h1>The GAME</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -379,8 +385,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions">Instructions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7. The GAME</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#level-i">8. Level I</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#level-ii">9. Level II</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#level-iii">10. Level III</a></li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -391,211 +401,89 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ps01">
-<h1>PS01<a class="headerlink" href="#ps01" title="Link to this heading">#</a></h1>
-<p>DS256, Gettysburg College</p>
-<p>Prof Eatai Roth</p>
-<p>Due: Sep 12, 2025 5p</p>
-<section id="instructions">
-<h2>Instructions<a class="headerlink" href="#instructions" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-game">
+<h1><span class="section-number">7. </span>The GAME<a class="headerlink" href="#the-game" title="Link to this heading">#</a></h1>
+<p>Solve the problems below, each problem solved gets a guess at a letter.</p>
+<p>To get credit, you must write a few test cases (a convincing amount) to show your function works as intended. You should only use tools introduced in class (no built-in functions that accomplish the goal).</p>
+<p>Problems are categorized by difficulty: I, II, III. Those with coding experience should not do level-I problems.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="level-i">
+<h1><span class="section-number">8. </span>Level I<a class="headerlink" href="#level-i" title="Link to this heading">#</a></h1>
+<p><em>1.1</em></p>
+<p>Write the functions <code class="docutils literal notranslate"><span class="pre">F_to_C()</span></code> and <code class="docutils literal notranslate"><span class="pre">C_to_F()</span></code> to convert Fahrenheit to Celsius and vice versa.</p>
+<p>The equation for conversion from F to C is:   <span class="math notranslate nohighlight">\( C = 5*(F-32)/9\)</span></p>
+<p><em>1.2</em></p>
+<p>Write the function <code class="docutils literal notranslate"><span class="pre">factorize()</span></code> that takes as input a positive integer and returns all the integer factors of that number. If the number is prime, also print “That’s a prime number!”</p>
+<p><em>1.3</em></p>
+<p>Write the function <code class="docutils literal notranslate"><span class="pre">check_cyclic_equality()</span></code> that takes two lists and checks if there is a rotation that makes them same.</p>
+<p>A rotation/cycling of 1 is defined as taking the zero-th element of the list and moving it to the end. For example, [‘dog’, 7, ‘chicken’, ‘rabbit’, 9] cycled by 2 would be [‘chicken’, ‘rabbit’, 9, ‘dog’, 7].</p>
+<p>If the lists are cyclically equal, return the number the second list has to be cycled to equal the first list. If not, return False.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="level-ii">
+<h1><span class="section-number">9. </span>Level II<a class="headerlink" href="#level-ii" title="Link to this heading">#</a></h1>
+<p><em>2.1</em></p>
+<p>Write the function <code class="docutils literal notranslate"><span class="pre">odd_even_counter()</span></code> that takes a list of integers. If there are more odds than evens, print ‘odds win’. If there are more evens than odds, print ‘evens win’. If there are the same number, print “it’s a tie!”.</p>
+<p><em>2.2</em></p>
+<p>Write the function <code class="docutils literal notranslate"><span class="pre">group_by_first</span></code> that takes a list of numbers and splits them into groups (lists) based on their first digit. For example:</p>
+<p><code class="docutils literal notranslate"><span class="pre">group_by_first([80,</span> <span class="pre">9,</span> <span class="pre">8,</span> <span class="pre">107,</span> <span class="pre">65,</span> <span class="pre">601,</span> <span class="pre">1009,</span> <span class="pre">600019])</span></code></p>
+<p>would return:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[80,</span> <span class="pre">8],</span> <span class="pre">[9],</span> <span class="pre">[107,</span> <span class="pre">1009],</span> <span class="pre">[65,</span> <span class="pre">601,</span> <span class="pre">600019]</span></code></p>
+<p><em>2.3</em></p>
+<p>Write the game <code class="docutils literal notranslate"><span class="pre">hot_cold()</span></code>. The game generates a random number between 0-100 (using <code class="docutils literal notranslate"><span class="pre">randint</span></code> demonstrated below). The user gets 10 guesses at the number. They should get the following clues:</p>
 <ul class="simple">
-<li><p>Write your code in the cells labeled ‘’’your code here’’’.</p></li>
-<li><p>The questions are in no particular order in terms of difficulty, so if you feel stuck, skip the question and come back to it.</p></li>
-<li><p>You’ll need to run the cell below to install the otter-grader package. You’ll only need to do this once, but there’s no harm in running the cell multiple times.</p></li>
+<li><p>‘burning hot’ if within 3</p></li>
+<li><p>‘hot’ if within 10</p></li>
+<li><p>‘warm’ if within 20</p></li>
+<li><p>‘cold’ if more than 20 away</p></li>
 </ul>
+<p>If the user guesses correctly, congratulate them and tell them how many guesses it took for them to win! If they run out of guesses, tell them they lost, reveal the secret number, and encourage them to play again.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">otter</span><span class="o">-</span><span class="n">grader</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize Otter</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">otter</span>
-<span class="n">grader</span> <span class="o">=</span> <span class="n">otter</span><span class="o">.</span><span class="n">Notebook</span><span class="p">(</span><span class="s2">&quot;ps01.ipynb&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>1.</strong> Write a function named <code class="docutils literal notranslate"><span class="pre">hi_there</span></code> that prints the phrase “Hi there!”. This function takes no inputs and has no outputs.</p>
-<div class="cell tag_otter_answer_cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;your code here&#39;&#39;&#39;</span>
-<span class="n">alkjdl</span><span class="p">;</span><span class="n">akjf</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">secret_number</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">secret_number</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span><span class="w"> </span><span class="sd">&#39;&#39;&#39;your code here&#39;&#39;&#39;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">alkjdl</span><span class="p">;</span><span class="n">akjf</span>
-
-<span class="ne">NameError</span>: name &#39;alkjdl&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you see the friendly message below this cell, you&#39;ve done it correctly.</span>
-<span class="n">hi_there</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>2.</strong> Write a function called <code class="docutils literal notranslate"><span class="pre">last_name_first</span></code>. The function should take two inputs named ‘first_name’, and ‘last_name’ and return a string that is ‘last_name, first_name’. If either first or last name is missing, substitute a question mark (?) for the missing name.</p>
-<div class="cell tag_otter_answer_cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;your code here&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;q2&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>3.</strong> Write the function <code class="docutils literal notranslate"><span class="pre">echo</span></code> that takes as inputs ‘shout’ (a string) and ‘repeats’ (an integer). The function should return a string that repeats ‘shout’ the specified number of times. Between each repeat, there should be as many spaces as there are repeats; that is the more repeats, the more spaced out the words will be. There should be no trailing spaces; the output should end with the last instance of the shout word. If repeats is 0 or negative, the function should still return the original shout word.</p>
-<p>The function will not print the output, just return the string value.</p>
-<div class="cell tag_otter_answer_cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;your code here&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_otter_answer_cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span><span class="p">(</span><span class="s1">&#39;bye&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;q3&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>4.</strong> Write the function <code class="docutils literal notranslate"><span class="pre">banana</span></code> that takes as an argument ‘nanum’ and returns the word <code class="docutils literal notranslate"><span class="pre">banana</span></code> with the number of na’s specified. If the function is called with no input, return the word ‘banana’ spelled as normal.</p>
-<p>For example, <code class="docutils literal notranslate"><span class="pre">banana(1)</span></code> returns ‘bana’.</p>
-<div class="cell tag_otter_answer_cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;your code here&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;q4&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>5.</strong> Write the function <code class="docutils literal notranslate"><span class="pre">four_letter_word</span></code> that takes as an input ‘word’. If the word is four letters long, return True, otherwise False. The function len() returns the length of a string (e.g. len(‘hello’) –&gt; 5).</p>
-<div class="cell tag_otter_answer_cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;your code here&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;q5&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>6.</strong> Write the function <code class="docutils literal notranslate"><span class="pre">pos_neg</span></code> that takes as an argument a number and returns the string ‘positive’ if the number is positive, ‘negative’ if the number is negative, and ‘zero’ if the number is exactly zero.</p>
-<p><em>Hint:</em> When used in an equation along with numbers or strings, booleans are interpreted as the integers 1 (True) and 0 (False).</p>
-<p>For those who have programmed before, DO NOT USE CONDITIONAL (‘if’ or ‘match-case’) STATEMENTS.</p>
-<div class="cell tag_otter_answer_cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;your code here&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;q6&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>7.</strong> Write the function <code class="docutils literal notranslate"><span class="pre">greater</span></code> that takes as input two numbers and returns the greater of the two. If the two numbers are equal, just return that number.</p>
-<div class="cell tag_otter_answer_cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;your code here&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;q7&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>8.</strong> Write the function <code class="docutils literal notranslate"><span class="pre">check_square</span></code> that takes two numbers as inputs. If the second number is the first number squared, return True, otherwise False.</p>
-<div class="cell tag_otter_answer_cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;your code here&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;q8&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>9.</strong> Write the function <code class="docutils literal notranslate"><span class="pre">ten_tenths</span></code> that takes a number as an input and returns two outputs, 1/10 of the number and 10 times the number.</p>
-<div class="cell tag_otter_answer_cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;your code here&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;q9&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>10.</strong> Write the function <code class="docutils literal notranslate"><span class="pre">make_negative</span></code> that takes a number as an input and returns the number as negative. If the number is already negative, just leave it as is.</p>
-<p>Again, for those who have learned about conditional statements, try this question without.</p>
-<div class="cell tag_otter_answer_cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;your code here&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;q10&quot;</span><span class="p">)</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="level-iii">
+<h1><span class="section-number">10. </span>Level III<a class="headerlink" href="#level-iii" title="Link to this heading">#</a></h1>
+<p><em>3.1</em></p>
+<p>Write the function <code class="docutils literal notranslate"><span class="pre">make_sublists()</span></code> that takes as input a list and returns as output a list of lists containing every unique sublist made with items from the original list (order matters).</p>
+<p>Even if the original list includes duplicate entries, the list-of-lists should not have duplicates. For example:</p>
+<p><code class="docutils literal notranslate"><span class="pre">make_groupings([1,2,1])</span></code> should return:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[[1],</span> <span class="pre">[2],</span> <span class="pre">[1,1],</span> <span class="pre">[1,2],</span> <span class="pre">[2,1],</span> <span class="pre">[1,1,2],</span> <span class="pre">[1,2,1],</span> <span class="pre">[2,1,1]]</span></code></p>
+<p><em>3.2</em></p>
+<p>Write <code class="docutils literal notranslate"><span class="pre">wordle_tm()</span></code>. You know the game. Code it. It won’t look pretty, but should play with all the same rules.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">wordle_wordlist</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/tabatkins/wordle-list/refs/heads/main/words&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>3.3</em></p>
+<p>Write the function <code class="docutils literal notranslate"><span class="pre">word_counter()</span></code> that takes as input a passage of text and returns as output a list of lists. Each sublist should contain a unique word and the number of times it occurs in the passage.</p>
+<p>Use lists, not dictionaries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># test text</span>
+<span class="n">Romeo</span> <span class="o">=</span> <span class="s1">&#39;But, soft! what light through yonder window breaks? It is the east, and Juliet is the sun. Arise, fair sun, and kill the envious moon, Who is already sick and pale with grief, That thou her maid art far more fair than she. It is my lady, O, it is my love! O, that she knew she were! She speaks, yet she says nothing: what of that?&#39;</span>
+<span class="n">TheCat</span> <span class="o">=</span> <span class="s1">&#39;We looked and we saw him! The Cat in the Hat! and he said to us, &quot;Why do you sit there like that?&quot; &quot;I know it is wet and the sun is not sunny. But we can have lots of good fun that is funny!&quot;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -611,7 +499,7 @@
         },
         kernelOptions: {
             name: "python3",
-            path: "./00_Assignments"
+            path: "./01_Intro"
         },
         predefinedOutput: true
     }
@@ -629,20 +517,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ps00.html"
+       href="05_loops.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">PS00</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Control Flow: Loops</p>
       </div>
     </a>
     <a class="right-next"
-       href="ps02.html"
+       href="../00_Assignments/ps00.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PS02</p>
+        <p class="prev-next-title">PS00</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -663,8 +551,12 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions">Instructions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7. The GAME</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#level-i">8. Level I</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#level-ii">9. Level II</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#level-iii">10. Level III</a></li>
 </ul>
+
   </nav></div>
 
 </div></div>
