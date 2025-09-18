@@ -184,9 +184,6 @@
 <li class="toctree-l1"><a class="reference internal" href="04_conditionals.html">5. Control Flow: Conditional statements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_loops.html">6. Control Flow: Loops</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">7. The GAME</a></li>
-
-
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -385,12 +382,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7. The GAME</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#level-i">8. Level I</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#level-ii">9. Level II</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#level-iii">10. Level III</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-i">7.1. Level I</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-ii">7.2. Level II</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-iii">7.3. Level III</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -406,9 +401,8 @@
 <p>Solve the problems below, each problem solved gets a guess at a letter.</p>
 <p>To get credit, you must write a few test cases (a convincing amount) to show your function works as intended. You should only use tools introduced in class (no built-in functions that accomplish the goal).</p>
 <p>Problems are categorized by difficulty: I, II, III. Those with coding experience should not do level-I problems.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="level-i">
-<h1><span class="section-number">8. </span>Level I<a class="headerlink" href="#level-i" title="Link to this heading">#</a></h1>
+<section id="level-i">
+<h2><span class="section-number">7.1. </span>Level I<a class="headerlink" href="#level-i" title="Link to this heading">#</a></h2>
 <p><em>1.1</em></p>
 <p>Write the functions <code class="docutils literal notranslate"><span class="pre">F_to_C()</span></code> and <code class="docutils literal notranslate"><span class="pre">C_to_F()</span></code> to convert Fahrenheit to Celsius and vice versa.</p>
 <p>The equation for conversion from F to C is:   <span class="math notranslate nohighlight">\( C = 5*(F-32)/9\)</span></p>
@@ -419,8 +413,8 @@
 <p>A rotation/cycling of 1 is defined as taking the zero-th element of the list and moving it to the end. For example, [‘dog’, 7, ‘chicken’, ‘rabbit’, 9] cycled by 2 would be [‘chicken’, ‘rabbit’, 9, ‘dog’, 7].</p>
 <p>If the lists are cyclically equal, return the number the second list has to be cycled to equal the first list. If not, return False.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="level-ii">
-<h1><span class="section-number">9. </span>Level II<a class="headerlink" href="#level-ii" title="Link to this heading">#</a></h1>
+<section id="level-ii">
+<h2><span class="section-number">7.2. </span>Level II<a class="headerlink" href="#level-ii" title="Link to this heading">#</a></h2>
 <p><em>2.1</em></p>
 <p>Write the function <code class="docutils literal notranslate"><span class="pre">odd_even_counter()</span></code> that takes a list of integers. If there are more odds than evens, print ‘odds win’. If there are more evens than odds, print ‘evens win’. If there are the same number, print “it’s a tie!”.</p>
 <p><em>2.2</em></p>
@@ -447,14 +441,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>86
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="level-iii">
-<h1><span class="section-number">10. </span>Level III<a class="headerlink" href="#level-iii" title="Link to this heading">#</a></h1>
+<section id="level-iii">
+<h2><span class="section-number">7.3. </span>Level III<a class="headerlink" href="#level-iii" title="Link to this heading">#</a></h2>
 <p><em>3.1</em></p>
 <p>Write the function <code class="docutils literal notranslate"><span class="pre">make_sublists()</span></code> that takes as input a list and returns as output a list of lists containing every unique sublist made with items from the original list (order matters).</p>
 <p>Even if the original list includes duplicate entries, the list-of-lists should not have duplicates. For example:</p>
@@ -462,6 +456,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">[[1],</span> <span class="pre">[2],</span> <span class="pre">[1,1],</span> <span class="pre">[1,2],</span> <span class="pre">[2,1],</span> <span class="pre">[1,1,2],</span> <span class="pre">[1,2,1],</span> <span class="pre">[2,1,1]]</span></code></p>
 <p><em>3.2</em></p>
 <p>Write <code class="docutils literal notranslate"><span class="pre">wordle_tm()</span></code>. You know the game. Code it. It won’t look pretty, but should play with all the same rules.</p>
+<p>I’ve provided the complete wordle wordlist below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -484,6 +479,7 @@
 </div>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -551,12 +547,10 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7. The GAME</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#level-i">8. Level I</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#level-ii">9. Level II</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#level-iii">10. Level III</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-i">7.1. Level I</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-ii">7.2. Level II</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-iii">7.3. Level III</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
