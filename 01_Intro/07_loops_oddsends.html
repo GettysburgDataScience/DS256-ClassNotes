@@ -191,6 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps01.html">PS01</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps02.html">PS02</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps03.html">PS03 (v0.1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps04.html">PS04</a></li>
 </ul>
 
     </div>
@@ -431,13 +432,68 @@
              <span class="s1">&#39;What is the capital city of New Mexico?&#39;</span><span class="p">,</span>
              <span class="s1">&#39;Which weighs more, a pound of feathers or a pound of bricks?&#39;</span><span class="p">]</span>
 
-<span class="n">answers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;8...RIP Pluto.&#39;</span><span class="p">,</span> <span class="s1">&#39;Sante Fe.&#39;</span><span class="p">,</span> <span class="s1">&#39;A pound is a pound. They weigh the same.&#39;</span><span class="p">]</span>
+<span class="n">answers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;8...RIP Pluto.&#39;</span><span class="p">,</span> 
+           <span class="s1">&#39;Sante Fe.&#39;</span><span class="p">,</span> 
+           <span class="s1">&#39;A pound is a pound. They weigh the same.&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Let’s use enumeration to number the list of questions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">questions</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;. &#39;</span> <span class="o">+</span> <span class="n">q</span><span class="p">)</span>
+    <span class="n">k</span><span class="o">+=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. How many planets are there?
+2. What is the capital city of New Mexico?
+3. Which weighs more, a pound of feathers or a pound of bricks?
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">questions</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;. &#39;</span> <span class="o">+</span> <span class="n">q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. How many planets are there?
+2. What is the capital city of New Mexico?
+3. Which weighs more, a pound of feathers or a pound of bricks?
+</pre></div>
+</div>
+</div>
+</div>
 <p>And now, let’s make the answer key.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">counter</span><span class="p">,</span> <span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">questions</span><span class="p">,</span> <span class="n">answers</span><span class="p">),</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># print(str(counter) + &#39;. &#39; + q)</span>
+    <span class="c1"># print(&#39;\t&#39; + a)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">. </span><span class="si">{</span><span class="n">q</span><span class="si">}</span><span class="se">\n\t</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3. How many planets are there?
+	8...RIP Pluto.
+3. What is the capital city of New Mexico?
+	Sante Fe.
+3. Which weighs more, a pound of feathers or a pound of bricks?
+	A pound is a pound. They weigh the same.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="list-comprehension">
 <h3><span class="section-number">8.1.2. </span>List comprehension<a class="headerlink" href="#list-comprehension" title="Link to this heading">#</a></h3>
@@ -501,6 +557,37 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">course_dept</span> <span class="o">=</span> <span class="s1">&#39;DS&#39;</span>
+<span class="n">course_num</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">enrollment</span> <span class="o">=</span> <span class="mi">52</span>
+
+<span class="n">ds256_string</span> <span class="o">=</span> <span class="n">course_dept</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">course_num</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; has &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">enrollment</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; students enrolled.&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds256_string</span><span class="p">)</span>
+
+<span class="n">ds256_fstring</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">course_dept</span><span class="si">}{</span><span class="n">course_num</span><span class="si">}</span><span class="s1"> has </span><span class="si">{</span><span class="n">enrollment</span><span class="si">}</span><span class="s1"> students enrolled.&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DS256 has 52 students enrolled.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Prof Roth&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;PROF ROTH&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">twister1</span> <span class="o">=</span> <span class="s1">&#39;How much wood would a woodchunk chunk if a woodchunk could chunk wood?&#39;</span>
 <span class="n">twister2</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m a mother pheasant plucker. I pluck mother pheasants. I&#39;m the most pleasant mother pheasant plucker ever to pluck a pheasant.&quot;</span>
 
@@ -551,15 +638,56 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_roommate</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">type_roommate</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;parrot(s)&#39;</span><span class="p">,</span> <span class="s1">&#39;cat(s)&#39;</span><span class="p">,</span> <span class="s1">&#39;human(s)&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_roommate</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">type_roommate</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;parrot(s)&#39;</span><span class="p">,</span> <span class="s1">&#39;cat(s)&#39;</span><span class="p">,</span> <span class="s1">&#39;human(s)&#39;</span><span class="p">,</span> <span class="s1">&#39;dog(s)&#39;</span><span class="p">,</span> <span class="s1">&#39;jumping spider(s)&#39;</span><span class="p">]</span>
 
-<span class="sa">f</span><span class="s2">&quot;Prof Roth lives with and </span><span class="si">{</span><span class="n">num_roommate</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">type_roommate</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">num_roommate</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">type_roommate</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">num_roommate</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">type_roommate</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">.&quot;</span>
+<span class="sa">f</span><span class="s2">&quot;Prof Roth lives with </span><span class="si">{</span><span class="n">num_roommate</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">type_roommate</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">num_roommate</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">type_roommate</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">num_roommate</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">type_roommate</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">.&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Prof Roth lives with and 2 parrot(s) and 1 cat(s) and 1 human(s).&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Prof Roth lives with 2 parrot(s) and 1 cat(s) and 1 human(s).&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Prof Roth lives with </span><span class="si">{</span><span class="n">num_roommate</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">type_roommate</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="k">for</span> <span class="n">num</span><span class="p">,</span> <span class="nb">type</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">num_roommate</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">type_roommate</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+    <span class="n">my_string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39; and </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="nb">type</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">my_string</span> <span class="o">+=</span> <span class="s1">&#39;.&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prof Roth lives with 2 parrot(s) and 1 cat(s) and 1 human(s) and 2 dog(s) and 1 jumping spider(s).
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Prof Roth lives with&#39;</span>
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">num_roommate</span><span class="p">,</span> <span class="n">type_roommate</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">k</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">my_string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="nb">type</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">my_string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39; and </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="nb">type</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">my_string</span> <span class="o">+=</span> <span class="s1">&#39;.&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prof Roth lives with 2 parrot(s) and 1 cat(s) and 1 human(s) and 2 dog(s) and 1 jumping spider(s).
 </pre></div>
 </div>
 </div>
@@ -569,6 +697,35 @@
 <ol class="arabic simple">
 <li><p>Write the code above (about Prof Roth’s roommates) in a way that is flexible enough that were he to get more pets, he could just add them to the lists and the string would be updated without changing any other code.</p></li>
 </ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hi</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
+<span class="n">bye</span> <span class="o">=</span> <span class="s1">&#39;goodbye&#39;</span>
+
+<span class="n">hi</span> <span class="o">+</span> <span class="s1">&#39; and &#39;</span> <span class="o">+</span> <span class="n">bye</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hello and goodbye&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">k</span> <span class="o">+=</span><span class="mi">5</span>
+<span class="n">k</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
 <ol class="arabic simple" start="2">
 <li><p>Generate a directory of names and email addresses for the data science faculty listed below.</p></li>
 </ol>
@@ -580,12 +737,32 @@
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">fn</span><span class="p">,</span> <span class="n">ln</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">fn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}{</span><span class="n">ln</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s1">@gettysburg.edu&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ln</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">fn</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Roth, Eatai (eroth@gettysburg.edu)
+Johnson, Ryan (rjohnson@gettysburg.edu)
+Powers, Mitch (mpowers@gettysburg.edu)
+Neller, Todd (tneller@gettysburg.edu)
+White, Dan (dwhite@gettysburg.edu)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="stump-eachother-stump-me">
 <h1><span class="section-number">9. </span>STUMP EACHOTHER, STUMP ME<a class="headerlink" href="#stump-eachother-stump-me" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://colab.research.google.com/drive/19GVLYrrDNdK-osU--TlwHzC2kufpVeOj?usp=sharing">https://colab.research.google.com/drive/19GVLYrrDNdK-osU–TlwHzC2kufpVeOj?usp=sharing</a></p>
+<p><a class="reference external" href="https://colab.research.google.com/drive/19GVLYrrDNdK-osU--TlwHzC2kufpVeOj?usp=sharing">Stump me</a></p>
+<p>Roth, Eatai (<a class="reference external" href="mailto:eroth&#37;&#52;&#48;gettysburg&#46;edu">eroth<span>&#64;</span>gettysburg<span>&#46;</span>edu</a>)
+Johnson, Ryan (<a class="reference external" href="mailto:rjohnson&#37;&#52;&#48;gettysburg&#46;edu">rjohnson<span>&#64;</span>gettysburg<span>&#46;</span>edu</a>)</p>
 </section>
 
     <script type="text/x-thebe-config">

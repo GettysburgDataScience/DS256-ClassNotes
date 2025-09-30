@@ -28,14 +28,21 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-studentAdvisory(60)
+def isLeapYear(year):
+    if year % 4 == 0 and year % 100 != 0:
+    elif year % 400 == 0:
+        return True
+    else:
+        return False
+    
+def isLeapYear(year):
+    return (year % 400 == 0) or (year % 4 == 0 and year % 100 !=0)
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m [43mstudentAdvisory[49m([38;5;241m60[39m)
+[0;36m  Cell [0;32mIn[4], line 3[0;36m[0m
+[0;31m    elif year % 400 == 0:[0m
+[0m    ^[0m
+[0;31mIndentationError[0m[0;31m:[0m expected an indented block after 'if' statement on line 2
 
-[0;31mNameError[0m: name 'studentAdvisory' is not defined
 
