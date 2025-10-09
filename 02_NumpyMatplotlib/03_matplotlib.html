@@ -630,7 +630,7 @@ This is not the most basic approach, but it’s very flexible. Learn it now and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/abbce6199c0ff5d90cb49159f839efa7ca5a5effcf10ea96bf7b78c3592f16c8.png" src="../_images/abbce6199c0ff5d90cb49159f839efa7ca5a5effcf10ea96bf7b78c3592f16c8.png" />
+<img alt="../_images/a7623241c05de5e401263656ba94cbbdc9d4301acad205e308ff69f01f2de319.png" src="../_images/a7623241c05de5e401263656ba94cbbdc9d4301acad205e308ff69f01f2de319.png" />
 </div>
 </div>
 </section>
@@ -684,7 +684,7 @@ This is not the most basic approach, but it’s very flexible. Learn it now and 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 <span class="n">sc</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">eq</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">],</span> <span class="n">eq</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">],</span>
                 <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> 
-                <span class="n">c</span> <span class="o">=</span> <span class="n">eq</span><span class="p">[</span><span class="s1">&#39;mag&#39;</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">mag</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;YlOrRd&#39;</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">eq</span><span class="p">[</span><span class="s1">&#39;mag&#39;</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">mag_01</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;YlOrRd&#39;</span>
                 <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
@@ -693,22 +693,7 @@ This is not the most basic approach, but it’s very flexible. Learn it now and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">mag_01</span> <span class="o">=</span> <span class="p">(</span><span class="n">eq</span><span class="p">[</span><span class="s1">&#39;mag&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">eq</span><span class="p">[</span><span class="s1">&#39;mag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">/</span><span class="p">(</span><span class="n">eq</span><span class="p">[</span><span class="s1">&#39;mag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">-</span><span class="n">eq</span><span class="p">[</span><span class="s1">&#39;mag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">sc</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">eq</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">],</span> <span class="n">eq</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>                 <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> 
-<span class="ne">----&gt; </span><span class="mi">9</span>                 <span class="n">c</span> <span class="o">=</span> <span class="n">eq</span><span class="p">[</span><span class="s1">&#39;mag&#39;</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">mag</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;YlOrRd&#39;</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>                 <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;mag&#39; is not defined
-</pre></div>
-</div>
-<img alt="../_images/a35c74b3a1422fa698f8a40011729f3a4fde5eb4c4118e17ce41638abfd59d0b.png" src="../_images/a35c74b3a1422fa698f8a40011729f3a4fde5eb4c4118e17ce41638abfd59d0b.png" />
+<img alt="../_images/09a94b04ba0620a09250a1b2ca091d61bfab1a5e2d9228d55dee33ef1f9d7059.png" src="../_images/09a94b04ba0620a09250a1b2ca091d61bfab1a5e2d9228d55dee33ef1f9d7059.png" />
 </div>
 </div>
 </section>
