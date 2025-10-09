@@ -1,5 +1,5 @@
 # Github Submission Guide
-#### **1. Save your work** 
+## **1. Save your work** 
 
 From the menu at the top of the notebook, select Restart kernel then Run all to check that your code runs without error. **Then Save the notebook.**
 
@@ -10,7 +10,7 @@ Make sure the notebook is in the github repository folder corresponding to that 
 ![github folder](../images/assignments_folder.png)
 
 
-#### **2. Submitting Code - (Option 1)**
+## **2. Submitting Code - (Option 1)**
 Uncomment the code in the final cell of the notebook and run that cell. This will commit and submit your work.
 
 ![git code](../images/git_code.png)![git code](../images/git_code2.png)
@@ -31,7 +31,7 @@ If your file is not being committed:
 Staging files tells git that you would like to track those files to later commit and push them. You can do this manually. Locate the file under "Changes" (see the screenshot above). If a file is unstaged, it will have a '+' to the right of the filename in Source Control. Click that '+' to stage a file before committing.
 
 
-#### **2. Submitting Code - (Option 3)**
+## **2. Submitting Code - (Option 3)**
 
 You can also drag and drop files into Github from your browser.
 
@@ -44,5 +44,5 @@ You should then see a screen like this. You can drag and drop your file(s) onto 
 ![upload](../images/github_dragdrop.png)
 
 
-#### **4. Verify the submission**  
+## **3. Verify the submission**  
 Go to your GitHub repository in a web browser. Open the assignments folder and navigate to the folder that should have your submitted assignment. Github provides a preview of the file; if that looks right, you're good to go.
