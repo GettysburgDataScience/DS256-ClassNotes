@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -172,6 +172,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../00_Resources/setup.html">1. Setting Up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Resources/genai_policy.html">2. Our course GenAI Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Resources/not_exam_solns.html">3. Not-an-exam 1: Solutions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
 <ul class="current nav bd-sidenav">
@@ -180,12 +181,28 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_lists.html">4. Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_conditionals.html">5. Control Flow: Conditional statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_loops.html">6. Control Flow: Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_TheGame.html">7. The GAME</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_loops_oddsends.html">8. Useful tidbits (loops and strings)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_dictionaries.html">9. Dictionaries</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy and Matplotlib</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_NumpyMatplotlib/01_import.html">1. Introducing (and importing) Packages and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_NumpyMatplotlib/02_numpy.html">2. Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_NumpyMatplotlib/03_matplotlib.html">3. Matplotlib</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../02_NumpyMatplotlib/04_dataplay.html">5. Playing with Data!</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/submitting.html">Github Submission Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps00.html">PS00</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps01.html">PS01</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps02.html">PS02</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps03.html">PS03 (v0.1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps04.html">PS04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/mp01.html">Mini-Project 1</a></li>
 </ul>
 
     </div>
@@ -392,7 +409,6 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="functions">
 <h1><span class="section-number">3. </span>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h1>
-<p>(Read <a class="reference external" href="https://jakevdp.github.io/WhirlwindTourOfPython/08-defining-functions.html">WTOP Ch 8</a>)</p>
 <p>Functions are our verbs in coding…kinda. You should think of a function as a machine that does things.</p>
 <p><strong>Note about thinking programmatically</strong>
 Consider what a washing machine does when you run it.</p>
@@ -426,6 +442,61 @@ Consider what a washing machine does when you run it.</p>
 <p>Everything else is optional. Functions need not have inputs or outputs. Functions need not have commands. But most useful functions have some of these.</p>
 <p>Notice that everything under that first line of the function definition is indented. That is called the <em>scope</em> of the function, all the code that belongs to that function.</p>
 <p><strong>Let’s write some functions!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">area_rect</span><span class="p">(</span><span class="n">length</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">length</span> <span class="o">*</span> <span class="n">width</span>
+    <span class="k">return</span> <span class="n">area</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">perim_rect</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+    <span class="n">perim</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">length</span> <span class="o">+</span> <span class="n">width</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">perim</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">perim_area_rect</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">perim_rect</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">),</span> <span class="n">area_rect</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">area1</span> <span class="o">=</span> <span class="n">area_rect</span><span class="p">(</span><span class="mf">7.3</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">)</span>
+<span class="n">perim1</span> <span class="o">=</span> <span class="n">perim_rect</span><span class="p">(</span><span class="mf">7.3</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">)</span>
+
+<span class="n">P</span><span class="p">,</span> <span class="n">A</span> <span class="o">=</span> <span class="n">perim_area_rect</span><span class="p">(</span><span class="n">width</span> <span class="o">=</span> <span class="mf">7.3</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mf">2.7</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.0
+19.71
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">repeater</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="o">*</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">repeater</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
