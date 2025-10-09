@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '02_NumpyMatplotlib/03_matplotlib';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Playing with Data!" href="04_dataplay.html" />
+    <link rel="next" title="5. Playing with Data!" href="04_dataplay.html" />
     <link rel="prev" title="2. Numpy" href="02_numpy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -191,7 +191,8 @@
 <li class="toctree-l1"><a class="reference internal" href="01_import.html">1. Introducing (and importing) Packages and Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_numpy.html">2. Numpy</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Matplotlib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_dataplay.html">4. Playing with Data!</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="04_dataplay.html">5. Playing with Data!</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -394,6 +395,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Matplotlib</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figures-axes-and-plots">3.1. Figures, Axes, and Plots</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plots">3.1.1. Plots</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axes">3.1.2. Axes</a></li>
@@ -403,10 +405,15 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-line-graphs">3.2. Example: Line graphs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-histogram">3.3. Example: histogram</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-scatter-plot">3.4. Example: Scatter plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#playing-with-data">3.5. Playing with Data!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">3.6. Text data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#election-data">3.7. Election Data</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#playing-with-data">4. Playing with Data!</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">4.1. Text data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#election-data">4.2. Election Data</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -623,7 +630,7 @@ This is not the most basic approach, but it’s very flexible. Learn it now and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4afa57cb8e3048b47f4dfb832d06333d795808fc3bd713cfa4dbd800e56b9731.png" src="../_images/4afa57cb8e3048b47f4dfb832d06333d795808fc3bd713cfa4dbd800e56b9731.png" />
+<img alt="../_images/52f0ef8490223b2dcf001444b8a4566f8e37865e83a42f18b718123d08b955ce.png" src="../_images/52f0ef8490223b2dcf001444b8a4566f8e37865e83a42f18b718123d08b955ce.png" />
 </div>
 </div>
 </section>
@@ -705,8 +712,9 @@ This is not the most basic approach, but it’s very flexible. Learn it now and 
 </div>
 </div>
 </section>
-<section id="playing-with-data">
-<h2><span class="section-number">3.5. </span>Playing with Data!<a class="headerlink" href="#playing-with-data" title="Link to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="playing-with-data">
+<h1><span class="section-number">4. </span>Playing with Data!<a class="headerlink" href="#playing-with-data" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -715,9 +723,8 @@ This is not the most basic approach, but it’s very flexible. Learn it now and 
 </div>
 </div>
 </div>
-</section>
 <section id="text-data">
-<h2><span class="section-number">3.6. </span>Text data<a class="headerlink" href="#text-data" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>Text data<a class="headerlink" href="#text-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/potter.txt&quot;</span>
@@ -729,7 +736,7 @@ This is not the most basic approach, but it’s very flexible. Learn it now and 
 </div>
 </section>
 <section id="election-data">
-<h2><span class="section-number">3.7. </span>Election Data<a class="headerlink" href="#election-data" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>Election Data<a class="headerlink" href="#election-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/countypres_2000-2024.csv&quot;</span>
@@ -815,7 +822,7 @@ This is not the most basic approach, but it’s very flexible. Learn it now and 
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Playing with Data!</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Playing with Data!</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -836,6 +843,7 @@ This is not the most basic approach, but it’s very flexible. Learn it now and 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Matplotlib</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figures-axes-and-plots">3.1. Figures, Axes, and Plots</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plots">3.1.1. Plots</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axes">3.1.2. Axes</a></li>
@@ -845,10 +853,15 @@ This is not the most basic approach, but it’s very flexible. Learn it now and 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-line-graphs">3.2. Example: Line graphs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-histogram">3.3. Example: histogram</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-scatter-plot">3.4. Example: Scatter plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#playing-with-data">3.5. Playing with Data!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">3.6. Text data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#election-data">3.7. Election Data</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#playing-with-data">4. Playing with Data!</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">4.1. Text data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#election-data">4.2. Election Data</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
