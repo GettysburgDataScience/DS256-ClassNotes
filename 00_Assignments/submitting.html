@@ -63,6 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '00_Assignments/submitting';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PS00" href="ps00.html" />
+    <link rel="prev" title="3. Matplotlib" href="../02_NumpyMatplotlib/03_matplotlib.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -113,8 +115,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -193,7 +193,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../02_NumpyMatplotlib/03_matplotlib.html">3. Matplotlib</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">How to Commit and Push a File to GitHub Using VS Code Source Control Panel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ps00.html">PS00</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ps01.html">PS01</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ps02.html">PS02</a></li>
@@ -392,10 +393,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">How to Commit and Push a File to GitHub Using VS Code Source Control Panel</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-your-work"><strong>1. Save your work</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-code-option-1"><strong>2. Submitting Code - (Option 1)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-code-option-3"><strong>2. Submitting Code - (Option 3)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-the-submission"><strong>4. Verify the submission</strong></a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -408,35 +410,42 @@
                   
   <section id="how-to-commit-and-push-a-file-to-github-using-vs-code-source-control-panel">
 <h1>How to Commit and Push a File to GitHub Using VS Code Source Control Panel<a class="headerlink" href="#how-to-commit-and-push-a-file-to-github-using-vs-code-source-control-panel" title="Link to this heading">#</a></h1>
-<ol class="arabic simple">
-<li><p><strong>Save your work</strong>
-From the menu at the top of the notebook, select Restart kernel then Run all to check that your code runs without error. Then Save the notebook.</p></li>
-</ol>
+<section id="save-your-work">
+<h2><strong>1. Save your work</strong><a class="headerlink" href="#save-your-work" title="Link to this heading">#</a></h2>
+<p>From the menu at the top of the notebook, select Restart kernel then Run all to check that your code runs without error. <strong>Then Save the notebook.</strong></p>
 <p>Make sure the notebook is in the github repository folder corresponding to that assignment (e.g. ps03.ipynb should be in the folder assignments-gitusername/PS01)</p>
 <p>1b. Before submitting, check that the top directory of your current VS Code session is your assingments-<githubusername> directory.</p>
-<p><strong>Submitting Code - (Option 1)</strong>
-2. Uncomment the code in the final cell of the notebook and run that cell. This will commit and submit your work.</p>
-<p><strong>Submitting Code - (Option 2)</strong>
-2. <strong>Stage the File</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Open the Source Control panel in VS Code by clicking on the Source Control icon in the Activity Bar (or pressing `Ctrl+Shift+G` / `Cmd+Shift+G` on macOS). Locate the file you want to stage under &quot;Changes&quot; and click the `+` icon next to it.
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p><strong>Commit the Changes</strong><br />
-In the text box at the top of the Source Control panel, type a meaningful commit message. Then click the checkmark icon (<code class="docutils literal notranslate"><span class="pre">✔</span></code>) to commit the staged changes.</p></li>
-<li><p><strong>Push to GitHub</strong><br />
-Click on the three-dot menu (<code class="docutils literal notranslate"><span class="pre">...</span></code>) in the Source Control panel and select <code class="docutils literal notranslate"><span class="pre">Push</span></code>. Alternatively, you can use the Command Palette (<code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code> / <code class="docutils literal notranslate"><span class="pre">Cmd+Shift+P</span></code> on macOS), type “Git: Push,” and press Enter.</p></li>
-<li><p><strong>Verify the Changes</strong><br />
-Go to your GitHub repository in a web browser to confirm the file has been updated.</p></li>
-</ol>
+<p><img alt="github folder" src="../_images/assignments_folder.png" /></p>
 </section>
-<section id="example">
-<h1>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h1>
-<ol class="arabic simple">
-<li><p>Stage <code class="docutils literal notranslate"><span class="pre">submitting.md</span></code> by clicking the <code class="docutils literal notranslate"><span class="pre">+</span></code> icon next to it.</p></li>
-<li><p>Commit with the message: “Add instructions for committing and pushing files.”</p></li>
-<li><p>Push the changes to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p></li>
-</ol>
+<section id="submitting-code-option-1">
+<h2><strong>2. Submitting Code - (Option 1)</strong><a class="headerlink" href="#submitting-code-option-1" title="Link to this heading">#</a></h2>
+<p>Uncomment the code in the final cell of the notebook and run that cell. This will commit and submit your work.</p>
+<p><img alt="git code" src="../_images/git_code.png" /><img alt="git code" src="../_images/git_code2.png" /></p>
+<p><strong>2. Submitting Code - (Option 2)</strong></p>
+<ul class="simple">
+<li><p>Open the Source Control panel on the left toolbar.</p></li>
+<li><p>Write a descriptive comment in the message bar.</p></li>
+<li><p>The blue COMMIT button has an drop down menu on the right. Select “Commit &amp; Push” from that menu.</p></li>
+<li><p>You may be asked something about staged files, click ‘Always’.</p></li>
+</ul>
+<p><strong>Staging files</strong>
+If your file is not being committed:
+- check that you’ve saved it
+- check whether it is ‘staged’.</p>
+<p>Staging files tells git that you would like to track those files to later commit and push them. You can do this manually. Locate the file under “Changes” (see the screenshot above). If a file is unstaged, it will have a ‘+’ to the right of the filename in Source Control. Click that ‘+’ to stage a file before committing.</p>
+</section>
+<section id="submitting-code-option-3">
+<h2><strong>2. Submitting Code - (Option 3)</strong><a class="headerlink" href="#submitting-code-option-3" title="Link to this heading">#</a></h2>
+<p>You can also drag and drop files into Github from your browser.</p>
+<p>First, navigate to the correct Problem Set (or Project) folder. In the upper right, click “Add file” then select “Upload files” from the dropdown.</p>
+<p><img alt="upload" src="../_images/github_upload.png" /></p>
+<p>You should then see a screen like this. You can drag and drop your file(s) onto the drop zone. To commit, write a message and hit the green “COMMIT” button.</p>
+<p><img alt="upload" src="../_images/github_dragdrop.png" /></p>
+</section>
+<section id="verify-the-submission">
+<h2><strong>4. Verify the submission</strong><a class="headerlink" href="#verify-the-submission" title="Link to this heading">#</a></h2>
+<p>Go to your GitHub repository in a web browser. Open the assignments folder and navigate to the folder that should have your submitted assignment. Github provides a preview of the file; if that looks right, you’re good to go.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -469,6 +478,24 @@ Go to your GitHub repository in a web browser to confirm the file has been updat
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../02_NumpyMatplotlib/03_matplotlib.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Matplotlib</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ps00.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PS00</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -486,10 +513,11 @@ Go to your GitHub repository in a web browser to confirm the file has been updat
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">How to Commit and Push a File to GitHub Using VS Code Source Control Panel</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-your-work"><strong>1. Save your work</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-code-option-1"><strong>2. Submitting Code - (Option 1)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-code-option-3"><strong>2. Submitting Code - (Option 3)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-the-submission"><strong>4. Verify the submission</strong></a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

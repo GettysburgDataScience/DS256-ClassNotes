@@ -194,6 +194,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/submitting.html">How to Commit and Push a File to GitHub Using VS Code Source Control Panel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps00.html">PS00</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps01.html">PS01</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps02.html">PS02</a></li>
@@ -393,7 +394,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unpacking-dictionaries">9.1. Unpacking dictionaries.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-of-dicts">9.2. Lists of dicts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-of-dicts-and-dicts-of-lists">9.2. Lists of dicts and Dicts of lists</a></li>
 </ul>
             </nav>
         </div>
@@ -497,6 +498,18 @@
 <p>If you don’t know what keys are in a dictionary, you can ask using <code class="docutils literal notranslate"><span class="pre">.keys()</span></code> and similarly for values using <code class="docutils literal notranslate"><span class="pre">.values()</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_a</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;first&#39;, &#39;last&#39;, &#39;id&#39;, &#39;major&#39;, &#39;minor&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_a</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -535,6 +548,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_c</span> <span class="o">=</span> <span class="p">{}</span>
+
 <span class="n">student_c</span><span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;James&#39;</span>
 <span class="n">student_c</span><span class="p">[</span><span class="s1">&#39;last&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Jameson&#39;</span>
 <span class="n">student_c</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;jamesja01@gettysburg.edu&#39;</span>
@@ -571,16 +585,19 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;\nLet&#39;s pass a dictionary to a function. \nWhy would we use this?\n&quot;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">contactInfo</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">first</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">last</span><span class="si">}</span><span class="s1">  can be reached at </span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># This is the clunky way    </span>
+<span class="n">contactInfo</span><span class="p">(</span><span class="n">student_c</span><span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">],</span> <span class="n">student_c</span><span class="p">[</span><span class="s1">&#39;last&#39;</span><span class="p">],</span> <span class="n">student_c</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>James Jameson  can be reached at jamesja01@gettysburg.edu
 </pre></div>
 </div>
 </div>
@@ -592,6 +609,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contactInfo</span><span class="p">(</span><span class="o">**</span><span class="n">student_c</span><span class="p">)</span>   <span class="c1"># ** means unpack</span>
+
+<span class="c1"># same as contactInfo(first = &#39;James&#39;, last = &#39;Jameson&#39;, email = &#39;jamesja01@gettysburg.edu&#39;)</span>
 </pre></div>
 </div>
 </div>
@@ -618,8 +637,8 @@
 </div>
 </div>
 </section>
-<section id="lists-of-dicts">
-<h2><span class="section-number">9.2. </span>Lists of dicts<a class="headerlink" href="#lists-of-dicts" title="Link to this heading">#</a></h2>
+<section id="lists-of-dicts-and-dicts-of-lists">
+<h2><span class="section-number">9.2. </span>Lists of dicts and Dicts of lists<a class="headerlink" href="#lists-of-dicts-and-dicts-of-lists" title="Link to this heading">#</a></h2>
 <p>If we have many dicts of the same format, we might want to package them together.
 We can do this as a list of dicts or a dict of lists.</p>
 <ul class="simple">
@@ -654,24 +673,24 @@ We can do this as a list of dicts or a dict of lists.</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;minor&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Data Science&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1112222
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_dict</span><span class="p">[</span><span class="s1">&#39;minor&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_dict</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Data Science&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1112222
 </pre></div>
 </div>
 </div>
@@ -745,7 +764,7 @@ We can do this as a list of dicts or a dict of lists.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unpacking-dictionaries">9.1. Unpacking dictionaries.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-of-dicts">9.2. Lists of dicts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-of-dicts-and-dicts-of-lists">9.2. Lists of dicts and Dicts of lists</a></li>
 </ul>
   </nav></div>
 
