@@ -1,4 +1,4 @@
-### How to Commit and Push a File to GitHub Using VS Code Source Control Panel
+# Github Submission Guide
 #### **1. Save your work** 
 
 From the menu at the top of the notebook, select Restart kernel then Run all to check that your code runs without error. **Then Save the notebook.**
