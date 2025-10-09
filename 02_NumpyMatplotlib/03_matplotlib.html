@@ -403,6 +403,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-line-graphs">3.2. Example: Line graphs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-histogram">3.3. Example: histogram</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-scatter-plot">3.4. Example: Scatter plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#playing-with-data">3.5. Playing with Data!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">3.6. Text data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#election-data">3.7. Election Data</a></li>
 </ul>
             </nav>
         </div>
@@ -620,7 +623,7 @@ This is not the most basic approach, but it’s very flexible. Learn it now and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2b3f2e138eb714c1fe73aabbf7d8f0ab08a0de6a8c6c7259ad7d36a26479a225.png" src="../_images/2b3f2e138eb714c1fe73aabbf7d8f0ab08a0de6a8c6c7259ad7d36a26479a225.png" />
+<img alt="../_images/4afa57cb8e3048b47f4dfb832d06333d795808fc3bd713cfa4dbd800e56b9731.png" src="../_images/4afa57cb8e3048b47f4dfb832d06333d795808fc3bd713cfa4dbd800e56b9731.png" />
 </div>
 </div>
 </section>
@@ -702,6 +705,70 @@ This is not the most basic approach, but it’s very flexible. Learn it now and 
 </div>
 </div>
 </section>
+<section id="playing-with-data">
+<h2><span class="section-number">3.5. </span>Playing with Data!<a class="headerlink" href="#playing-with-data" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="text-data">
+<h2><span class="section-number">3.6. </span>Text data<a class="headerlink" href="#text-data" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/potter.txt&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">potter_text</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="election-data">
+<h2><span class="section-number">3.7. </span>Election Data<a class="headerlink" href="#election-data" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/countypres_2000-2024.csv&quot;</span>
+<span class="n">csv_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">csv_response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+
+<span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+<span class="n">elec_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">header</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">reader</span><span class="o">.</span><span class="n">fieldnames</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">reader</span><span class="o">.</span><span class="n">fieldnames</span><span class="p">:</span>
+        <span class="n">elec_dict</span><span class="p">[</span><span class="n">header</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">header</span><span class="p">])</span>     
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elec_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;year&#39;, &#39;state&#39;, &#39;state_po&#39;, &#39;county_name&#39;, &#39;county_fips&#39;, &#39;office&#39;, &#39;candidate&#39;, &#39;party&#39;, &#39;candidatevotes&#39;, &#39;totalvotes&#39;, &#39;version&#39;, &#39;mode&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">elec_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">elec_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">elec_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]]</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -778,6 +845,9 @@ This is not the most basic approach, but it’s very flexible. Learn it now and 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-line-graphs">3.2. Example: Line graphs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-histogram">3.3. Example: histogram</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-scatter-plot">3.4. Example: Scatter plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#playing-with-data">3.5. Playing with Data!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">3.6. Text data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#election-data">3.7. Election Data</a></li>
 </ul>
   </nav></div>
 
