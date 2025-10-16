@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -191,8 +191,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../02_NumpyMatplotlib/01_import.html">1. Introducing (and importing) Packages and Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02_NumpyMatplotlib/02_numpy.html">2. Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02_NumpyMatplotlib/03_matplotlib.html">3. Matplotlib</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../02_NumpyMatplotlib/04_dataplay.html">5. Playing with Data!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_NumpyMatplotlib/04_dataplay.html">4. Playing with Data!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03_Pandas/01_pandas_intro.html">1. Pandas</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="current nav bd-sidenav">
@@ -202,7 +205,7 @@
 <li class="toctree-l1"><a class="reference internal" href="ps02.html">PS02</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ps03.html">PS03 (v0.1)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ps04.html">PS04</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mp01.html">Mini-Project 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp01.html">Mini-Project 1 (and examples!)</a></li>
 </ul>
 
     </div>
@@ -440,11 +443,8 @@
 <div class="cell tag_otter_answer_cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;your code here&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;your code here&#39;
+<span class="k">def</span><span class="w"> </span><span class="nf">hi_there</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hi there!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -457,13 +457,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># If you see the friendly message below this cell, you&#39;ve done it correctly.</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">hi_there</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;hi_there&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hi there!
 </pre></div>
 </div>
 </div>
@@ -475,6 +469,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;your code here&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -482,6 +481,99 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p><strong style='color: red;'><pre style='display: inline;'>q2</pre> results:</strong></p><p><strong><pre style='display: inline;'>q2 - 1</pre> result:</strong></p><pre>    ❌ Test case failed
+    Trying:
+        assert last_name_first('Eatai', 'Roth') == 'Roth, Eatai'
+    Expecting nothing
+    **********************************************************************
+    Line 1, in q2 0
+    Failed example:
+        assert last_name_first('Eatai', 'Roth') == 'Roth, Eatai'
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[0]>", line 1, in <module>
+            assert last_name_first('Eatai', 'Roth') == 'Roth, Eatai'
+                   ^^^^^^^^^^^^^^^
+        NameError: name 'last_name_first' is not defined
+    Trying:
+        assert last_name_first('Eatai') == '?, Eatai'
+    Expecting nothing
+    **********************************************************************
+    Line 2, in q2 0
+    Failed example:
+        assert last_name_first('Eatai') == '?, Eatai'
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[1]>", line 1, in <module>
+            assert last_name_first('Eatai') == '?, Eatai'
+                   ^^^^^^^^^^^^^^^
+        NameError: name 'last_name_first' is not defined
+    Trying:
+        assert last_name_first(last_name='Roth') == 'Roth, ?'
+    Expecting nothing
+    **********************************************************************
+    Line 3, in q2 0
+    Failed example:
+        assert last_name_first(last_name='Roth') == 'Roth, ?'
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[2]>", line 1, in <module>
+            assert last_name_first(last_name='Roth') == 'Roth, ?'
+                   ^^^^^^^^^^^^^^^
+        NameError: name 'last_name_first' is not defined
+    Trying:
+        assert last_name_first() == '?, ?'
+    Expecting nothing
+    **********************************************************************
+    Line 4, in q2 0
+    Failed example:
+        assert last_name_first() == '?, ?'
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[3]>", line 1, in <module>
+            assert last_name_first() == '?, ?'
+                   ^^^^^^^^^^^^^^^
+        NameError: name 'last_name_first' is not defined
+    Trying:
+        assert last_name_first('', '') == ', '
+    Expecting nothing
+    **********************************************************************
+    Line 5, in q2 0
+    Failed example:
+        assert last_name_first('', '') == ', '
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[4]>", line 1, in <module>
+            assert last_name_first('', '') == ', '
+                   ^^^^^^^^^^^^^^^
+        NameError: name 'last_name_first' is not defined
+</pre></div></div>
 </div>
 <p><strong>3.</strong> Write the function <code class="docutils literal notranslate"><span class="pre">echo</span></code> that takes as inputs ‘shout’ (a string) and ‘repeats’ (an integer). The function should return a string that repeats ‘shout’ the specified number of times. Between each repeat, there should be as many spaces as there are repeats; that is the more repeats, the more spaced out the words will be. There should be no trailing spaces; the output should end with the last instance of the shout word. If repeats is 0 or negative, the function should still return the original shout word.</p>
 <p>The function will not print the output, just return the string value.</p>
@@ -491,10 +583,25 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;your code here&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell tag_otter_answer_cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span><span class="p">(</span><span class="s1">&#39;bye&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">echo</span><span class="p">(</span><span class="s1">&#39;bye&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;echo&#39; is not defined
 </pre></div>
 </div>
 </div>

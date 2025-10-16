@@ -28,16 +28,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# If you see the friendly message below this cell, you've done it correctly.
-hi_there()
+echo('bye', -1)
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[4], line 2[0m
-[1;32m      1[0m [38;5;66;03m# If you see the friendly message below this cell, you've done it correctly.[39;00m
-[0;32m----> 2[0m [43mhi_there[49m()
+Cell [0;32mIn[8], line 1[0m
+[0;32m----> 1[0m [43mecho[49m([38;5;124m'[39m[38;5;124mbye[39m[38;5;124m'[39m, [38;5;241m-[39m[38;5;241m1[39m)
 
-[0;31mNameError[0m: name 'hi_there' is not defined
+[0;31mNameError[0m: name 'echo' is not defined
 
