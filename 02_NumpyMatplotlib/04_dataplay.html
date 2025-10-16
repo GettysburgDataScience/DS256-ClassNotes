@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Playing with Data! &#8212; DS325 Applied Data Science</title>
+    <title>4. In class problem-solving! &#8212; DS325 Applied Data Science</title>
   
   
   
@@ -191,7 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01_import.html">1. Introducing (and importing) Packages and Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_numpy.html">2. Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_matplotlib.html">3. Matplotlib</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Playing with Data!</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. In class problem-solving!</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
 <ul class="nav bd-sidenav">
@@ -388,7 +388,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Playing with Data!</h1>
+    <h1>In class problem-solving!</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -398,8 +398,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">4.1. Text data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#election-data">4.2. Election Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approaching-programming-problems">4.1. Approaching programming problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy">4.1.1. Strategy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">4.2. Text data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#election-data">4.3. Election Data</a></li>
 </ul>
             </nav>
         </div>
@@ -411,8 +415,38 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="playing-with-data">
-<h1><span class="section-number">4. </span>Playing with Data!<a class="headerlink" href="#playing-with-data" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="in-class-problem-solving">
+<h1><span class="section-number">4. </span>In class problem-solving!<a class="headerlink" href="#in-class-problem-solving" title="Link to this heading">#</a></h1>
+<section id="approaching-programming-problems">
+<h2><span class="section-number">4.1. </span>Approaching programming problems<a class="headerlink" href="#approaching-programming-problems" title="Link to this heading">#</a></h2>
+<p>Write a function to convert numbers from written english to numeric form. The function should be able to convert numbers zero through one trillion (and negatives?).</p>
+<section id="strategy">
+<h3><span class="section-number">4.1.1. </span>Strategy<a class="headerlink" href="#strategy" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>understand the question</p></li>
+<li><p>write out some cases, inputs and expected outputs. Include standard and non-standard cases.</p></li>
+<li><p>look for patterns. Patterns suggest resuable elements (functions, loops, etc).</p></li>
+<li><p>break the problem down into tasks and work incrementally, testing frequently.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text2dig</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;zero&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s1">&#39;one&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;two&#39;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;three&#39;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;four&#39;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s1">&#39;five&#39;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;six&#39;</span> <span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="s1">&#39;seven&#39;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="s1">&#39;eight&#39;</span> <span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s1">&#39;nine&#39;</span> <span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="s1">&#39;ten&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>    
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -421,8 +455,10 @@
 </div>
 </div>
 </div>
+</section>
+</section>
 <section id="text-data">
-<h2><span class="section-number">4.1. </span>Text data<a class="headerlink" href="#text-data" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>Text data<a class="headerlink" href="#text-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/potter.txt&quot;</span>
@@ -505,7 +541,7 @@ McGonagall: Do you think it wise to trust Hagrid with something as important as 
 </ul>
 </section>
 <section id="election-data">
-<h2><span class="section-number">4.2. </span>Election Data<a class="headerlink" href="#election-data" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.3. </span>Election Data<a class="headerlink" href="#election-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/countypres_2000-2024.csv&quot;</span>
@@ -832,8 +868,12 @@ McGonagall: Do you think it wise to trust Hagrid with something as important as 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">4.1. Text data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#election-data">4.2. Election Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approaching-programming-problems">4.1. Approaching programming problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy">4.1.1. Strategy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">4.2. Text data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#election-data">4.3. Election Data</a></li>
 </ul>
   </nav></div>
 
