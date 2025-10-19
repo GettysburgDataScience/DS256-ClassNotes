@@ -28,14 +28,26 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-def sum_until(num_list, target):
-'your code here'
+def combo_menu(entree, side):
+...
+    
 
+# Test your code, does it do what it should?
+entree = {'Burger': 5, 'Taco': 3}
+side = {'Fries': 2, 'Salad': 1}
+
+expected = {
+    'Burger and Fries': 7,
+    'Burger and Salad': 6,
+    'Taco and Fries': 5,
+    'Taco and Salad': 4,
+}
+assert combo_menu(entree, side) == expected
 ------------------
 
 
-[0;36m  Cell [0;32mIn[2], line 2[0;36m[0m
-[0;31m    'your code here'[0m
+[0;36m  Cell [0;32mIn[2], line 6[0;36m[0m
+[0;31m    entree = {'Burger': 5, 'Taco': 3}[0m
 [0m    ^[0m
 [0;31mIndentationError[0m[0;31m:[0m expected an indented block after function definition on line 1
 
