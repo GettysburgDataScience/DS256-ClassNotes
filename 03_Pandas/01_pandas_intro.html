@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -400,18 +400,23 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe">1.1. Pandas Dataframe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dataframe">1.2. Creating a dataframe</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-on-columns">1.2.1. Calculations on Columns</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-inspecting-data">1.2.2. Importing and Inspecting Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dataframe">1.2. Creating a dataframe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-on-columns">1.3. Calculations on Columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-inspecting-data">1.4. Importing and Inspecting Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-mcu-dataset">1.5. Example: MCU dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">1.5.1. Data Cleaning</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-bad-data">1.5.1.1. Dropping bad data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-columns">1.5.1.2. Renaming Columns</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-strings-to-numbers">1.5.1.3. Converting strings to numbers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inspection">1.5.1.4. Inspection</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-bad-data">1.3. Dropping bad data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-dataframes">1.3.1. Slicing dataframes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-column">1.3.2. Adding a column</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-dataframes">1.3.3. Filtering dataframes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">1.3.4. Practice Problems</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-dataframes">1.6. Slicing dataframes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-column">1.7. Adding a column</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-dataframes">1.8. Filtering dataframes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">1.9. Practice Problems</a></li>
 </ul>
             </nav>
         </div>
@@ -595,8 +600,9 @@
 </table>
 </div></div></div>
 </div>
+</section>
 <section id="calculations-on-columns">
-<h3><span class="section-number">1.2.1. </span>Calculations on Columns<a class="headerlink" href="#calculations-on-columns" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">1.3. </span>Calculations on Columns<a class="headerlink" href="#calculations-on-columns" title="Link to this heading">#</a></h2>
 <p>When extracting a column, you can use numpy functions to get different measures of those data:</p>
 <ul class="simple">
 <li><p>.mean()</p></li>
@@ -608,12 +614,15 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">earnings_df</span><span class="p">[</span><span class="s1">&#39;gross&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">earnings_df</span><span class="p">[</span><span class="s1">&#39;gross&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(21500.0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    22000
+1    24500
+2    18000
+Name: gross, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -664,7 +673,7 @@
 </div>
 </section>
 <section id="importing-and-inspecting-data">
-<h3><span class="section-number">1.2.2. </span>Importing and Inspecting Data<a class="headerlink" href="#importing-and-inspecting-data" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">1.4. </span>Importing and Inspecting Data<a class="headerlink" href="#importing-and-inspecting-data" title="Link to this heading">#</a></h2>
 <p>Most of the time, we’ll be using data that exist outside of Python, either data that somebody else has collected or data that we’ve collected and saved to some other kind of file (.csv, .json, etc). We’ll import data into the dataframe using:</p>
 <p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_csv(data.csv)</span></code></p>
 <p>Where <code class="docutils literal notranslate"><span class="pre">data.csv</span></code> could be a filepath on your computer or a url to a file that exists online. There are other commands that allow pandas to import a variety of data filetypes.</p>
@@ -676,30 +685,19 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">df.columns</span></code> - Get a list of feature names</p></li>
 </ul>
 <p>We’ll import and inspect the Marvel Cinematic Universe (MCU) Movies &amp; Series dataset, compiled by Stephen Tracy and published on Kaggle: <a class="reference external" href="https://www.kaggle.com/datasets/stevetracy/marvel-cinematic-universe-mcu-movies-and-series">https://www.kaggle.com/datasets/stevetracy/marvel-cinematic-universe-mcu-movies-and-series</a></p>
+</section>
+<section id="example-mcu-dataset">
+<h2><span class="section-number">1.5. </span>Example: MCU dataset<a class="headerlink" href="#example-mcu-dataset" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/mcu_data_apr_2024.csv&#39;</span><span class="p">)</span>
-
-<span class="n">rename_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">col</span><span class="p">:</span><span class="n">col</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">mcu_df</span><span class="o">.</span><span class="n">columns</span><span class="p">}</span>
-<span class="n">mcu_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">rename_dict</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">convert_dollars</span><span class="p">(</span><span class="n">entry</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">entry</span> <span class="o">==</span> <span class="s1">&#39; - &#39;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="n">entry</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
-
-<span class="n">money_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;production_budget&#39;</span><span class="p">,</span> <span class="s1">&#39;domestic_box_office&#39;</span><span class="p">,</span><span class="s1">&#39;international_box_office&#39;</span><span class="p">,</span> <span class="s1">&#39;worldwide_box_office&#39;</span><span class="p">]</span>
-    
-<span class="n">mcu_df</span><span class="p">[</span><span class="n">money_cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcu_df</span><span class="p">[</span><span class="n">money_cols</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">convert_dollars</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -741,59 +739,155 @@
   </thead>
   <tbody>
     <tr>
-      <th>35</th>
-      <td>Thor: Love and Thunder</td>
+      <th>0</th>
+      <td>Iron Man</td>
       <td>Movie</td>
-      <td>4.0</td>
-      <td>MCU Phase 4</td>
-      <td>7/8/22</td>
-      <td>2022.0</td>
-      <td>63.0</td>
-      <td>76.0</td>
-      <td>6.2</td>
-      <td>57.0</td>
-      <td>4.8</td>
-      <td>2.500000e+08</td>
-      <td>3.432568e+08</td>
-      <td>4.176713e+08</td>
-      <td>7.609281e+08</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>She-Hulk</td>
-      <td>TV Show</td>
-      <td>4.0</td>
-      <td>MCU Phase 4</td>
-      <td>8/18/22</td>
-      <td>2022.0</td>
-      <td>77.0</td>
-      <td>32.0</td>
-      <td>5.3</td>
-      <td>67.0</td>
-      <td>2.7</td>
-      <td>2.250000e+08</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>Black Panther: Wakanda Forever</td>
-      <td>Movie</td>
-      <td>4.0</td>
-      <td>MCU Phase 4</td>
-      <td>11/11/22</td>
-      <td>2022.0</td>
-      <td>83.0</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>5/2/08</td>
+      <td>2008.0</td>
       <td>94.0</td>
-      <td>6.7</td>
-      <td>67.0</td>
-      <td>5.2</td>
-      <td>2.000000e+08</td>
-      <td>4.538291e+08</td>
-      <td>4.053798e+08</td>
-      <td>8.592088e+08</td>
+      <td>91.0</td>
+      <td>7.9</td>
+      <td>79.0</td>
+      <td>8.6</td>
+      <td>$140,000,000</td>
+      <td>$319,034,126</td>
+      <td>$266,762,121</td>
+      <td>$585,796,247</td>
     </tr>
+    <tr>
+      <th>1</th>
+      <td>The Incredible Hulk</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>6/13/08</td>
+      <td>2008.0</td>
+      <td>67.0</td>
+      <td>70.0</td>
+      <td>6.6</td>
+      <td>61.0</td>
+      <td>6.8</td>
+      <td>$140,000,000</td>
+      <td>$134,806,913</td>
+      <td>$128,620,638</td>
+      <td>$263,427,551</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Iron Man 2</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>5/7/10</td>
+      <td>2010.0</td>
+      <td>72.0</td>
+      <td>71.0</td>
+      <td>6.9</td>
+      <td>57.0</td>
+      <td>6.4</td>
+      <td>$200,000,000</td>
+      <td>$312,433,331</td>
+      <td>$311,500,000</td>
+      <td>$623,933,331</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Thor</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>5/6/11</td>
+      <td>2011.0</td>
+      <td>77.0</td>
+      <td>76.0</td>
+      <td>7.0</td>
+      <td>57.0</td>
+      <td>7.0</td>
+      <td>$150,000,000</td>
+      <td>$181,030,624</td>
+      <td>$268,295,994</td>
+      <td>$449,326,618</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Captain America: The First Avenger</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>7/22/11</td>
+      <td>2011.0</td>
+      <td>79.0</td>
+      <td>75.0</td>
+      <td>6.9</td>
+      <td>66.0</td>
+      <td>6.8</td>
+      <td>$140,000,000</td>
+      <td>$176,654,505</td>
+      <td>$193,915,269</td>
+      <td>$370,569,774</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="data-cleaning">
+<h3><span class="section-number">1.5.1. </span>Data Cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h3>
+<p>The data have three main issues:</p>
+<ul class="simple">
+<li><p>The last two rows are missing all data. Easy fix.</p></li>
+<li><p>Some of the headings have leading and trailing spaces (e.g. ‘ worldwide_box_office ‘). Annoying.</p></li>
+<li><p>All the budget and revenue columns list the dollar amounts as strings with $ and commas. Annnoyyyyying.</p></li>
+</ul>
+<p>For now, I’m just cleaning the data for you. We’ll cover these tools later.</p>
+<section id="dropping-bad-data">
+<h4><span class="section-number">1.5.1.1. </span>Dropping bad data<a class="headerlink" href="#dropping-bad-data" title="Link to this heading">#</a></h4>
+<p>Data can be ‘bad’ for numerous reasons, but most immediately obvious are missing data. We drop missing data with <code class="docutils literal notranslate"><span class="pre">df.dropna</span></code> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html">dropna documentation</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mcu_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>Type</th>
+      <th>mcu_phase_number</th>
+      <th>mcu_phase_text</th>
+      <th>release_date</th>
+      <th>release_year</th>
+      <th>rt_tomato_meter</th>
+      <th>rt_audience_score</th>
+      <th>imdb-rating</th>
+      <th>metacritic_metascore</th>
+      <th>metacritic_userscore</th>
+      <th>production_budget</th>
+      <th>domestic_box_office</th>
+      <th>international_box_office</th>
+      <th>worldwide_box_office</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <th>38</th>
       <td>Ant-Man and the Wasp: Quantumania</td>
@@ -807,10 +901,10 @@
       <td>6.1</td>
       <td>48.0</td>
       <td>5.5</td>
-      <td>2.000000e+08</td>
-      <td>2.145049e+08</td>
-      <td>2.615663e+08</td>
-      <td>4.760712e+08</td>
+      <td>$200,000,000</td>
+      <td>$214,504,909</td>
+      <td>$261,566,271</td>
+      <td>$476,071,180</td>
     </tr>
     <tr>
       <th>39</th>
@@ -825,10 +919,10 @@
       <td>7.9</td>
       <td>64.0</td>
       <td>7.9</td>
-      <td>2.500000e+08</td>
-      <td>3.589958e+08</td>
-      <td>4.865600e+08</td>
-      <td>8.455558e+08</td>
+      <td>$250,000,000</td>
+      <td>$358,995,815</td>
+      <td>$486,559,962</td>
+      <td>$845,555,777</td>
     </tr>
     <tr>
       <th>40</th>
@@ -843,10 +937,10 @@
       <td>5.9</td>
       <td>63.0</td>
       <td>3.5</td>
-      <td>2.110000e+08</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>$211,000,000</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
     </tr>
     <tr>
       <th>41</th>
@@ -861,10 +955,10 @@
       <td>5.6</td>
       <td>50.0</td>
       <td>3.8</td>
-      <td>2.700000e+08</td>
-      <td>8.450022e+07</td>
-      <td>1.216127e+08</td>
-      <td>2.061129e+08</td>
+      <td>$270,000,000</td>
+      <td>$84,500,223</td>
+      <td>$121,612,709</td>
+      <td>$206,112,932</td>
     </tr>
     <tr>
       <th>42</th>
@@ -879,50 +973,84 @@
       <td>6.0</td>
       <td>62.0</td>
       <td>5.2</td>
-      <td>4.000000e+07</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>44</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>8.157000e+09</td>
-      <td>1.179950e+10</td>
-      <td>1.802709e+10</td>
-      <td>2.982615e+10</td>
+      <td>$40,000,000</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
+</div>
+</section>
+<section id="renaming-columns">
+<h4><span class="section-number">1.5.1.2. </span>Renaming Columns<a class="headerlink" href="#renaming-columns" title="Link to this heading">#</a></h4>
+<p>We can rename columns using the function <code class="docutils literal notranslate"><span class="pre">.rename()</span></code> which takes as input a dictionary. The keys of the dictionary are the current column headers and the values are the replacement headers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rename_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">col</span><span class="p">:</span><span class="n">col</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">mcu_df</span><span class="o">.</span><span class="n">columns</span><span class="p">}</span>
+<span class="n">mcu_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">rename_dict</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="converting-strings-to-numbers">
+<h4><span class="section-number">1.5.1.3. </span>Converting strings to numbers<a class="headerlink" href="#converting-strings-to-numbers" title="Link to this heading">#</a></h4>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">map</span></code> function to modify entries of the DataFrame by some function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">convert_dollars</span><span class="p">(</span><span class="n">entry</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">entry</span> <span class="o">==</span> <span class="s1">&#39; - &#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">entry</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+
+<span class="n">money_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;production_budget&#39;</span><span class="p">,</span> <span class="s1">&#39;domestic_box_office&#39;</span><span class="p">,</span><span class="s1">&#39;international_box_office&#39;</span><span class="p">,</span> <span class="s1">&#39;worldwide_box_office&#39;</span><span class="p">]</span>
+    
+<span class="n">mcu_df</span><span class="p">[</span><span class="n">money_cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcu_df</span><span class="p">[</span><span class="n">money_cols</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">convert_dollars</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="inspection">
+<h4><span class="section-number">1.5.1.4. </span>Inspection<a class="headerlink" href="#inspection" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>What movies/tv shows are on the list?</p></li>
+<li><p>What are the statistics of the numeric columns?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;movie_title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Iron Man&#39;, &#39;The Incredible Hulk&#39;, &#39;Iron Man 2&#39;, &#39;Thor&#39;,
+       &#39;Captain America: The First Avenger&#39;, &#39;The Avengers&#39;, &#39;Iron Man 3&#39;,
+       &#39;Thor: The Dark World&#39;, &#39;Captain America: The Winter Soldier&#39;,
+       &#39;Guardians of the Galaxy&#39;, &#39;Avengers: Age of Ultron&#39;, &#39;Ant-Man&#39;,
+       &#39;Captain America: Civil War&#39;, &#39;Doctor Strange&#39;,
+       &#39;Guardians of the Galaxy Vol. 2&#39;, &#39;Spider-Man: Homecoming&#39;,
+       &#39;Thor: Ragnarok&#39;, &#39;Black Panther&#39;, &#39;Avengers: Infinity War&#39;,
+       &#39;Ant-Man and the Wasp&#39;, &#39;Captain Marvel&#39;, &#39;Avengers: Endgame&#39;,
+       &#39;Spider-Man: Far From Home&#39;, &#39;WandaVision&#39;,
+       &#39;The Falcon and the Winter Soldier&#39;, &#39;Loki&#39;, &#39;Black Widow&#39;,
+       &#39;What If…?&#39;, &#39;Shang-Chi and the Legend of the Ten Rings&#39;,
+       &#39;Eternals&#39;, &#39;Hawkeye&#39;, &#39;Spider-Man: No Way Home&#39;, &#39;Moon Knight&#39;,
+       &#39;Doctor Strange: Multiverse of Madness&#39;, &#39;Ms. Marvel&#39;,
+       &#39;Thor: Love and Thunder&#39;, &#39;She-Hulk&#39;,
+       &#39;Black Panther: Wakanda Forever&#39;,
+       &#39;Ant-Man and the Wasp: Quantumania&#39;,
+       &#39;Guardians of the Galaxy Vol. 3&#39;, &#39;Secret Invasion&#39;, &#39;The Marvels&#39;,
+       &#39;Echo&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -968,6 +1096,42 @@
   </thead>
   <tbody>
     <tr>
+      <th>38</th>
+      <td>Ant-Man and the Wasp: Quantumania</td>
+      <td>Movie</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>2/17/23</td>
+      <td>2023.0</td>
+      <td>46.0</td>
+      <td>82.0</td>
+      <td>6.1</td>
+      <td>48.0</td>
+      <td>5.5</td>
+      <td>200000000.0</td>
+      <td>214504909.0</td>
+      <td>261566271.0</td>
+      <td>476071180.0</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Guardians of the Galaxy Vol. 3</td>
+      <td>Movie</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>5/5/23</td>
+      <td>2023.0</td>
+      <td>82.0</td>
+      <td>94.0</td>
+      <td>7.9</td>
+      <td>64.0</td>
+      <td>7.9</td>
+      <td>250000000.0</td>
+      <td>358995815.0</td>
+      <td>486559962.0</td>
+      <td>845555777.0</td>
+    </tr>
+    <tr>
       <th>40</th>
       <td>Secret Invasion</td>
       <td>TV Show</td>
@@ -980,7 +1144,7 @@
       <td>5.9</td>
       <td>63.0</td>
       <td>3.5</td>
-      <td>2.110000e+08</td>
+      <td>211000000.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -998,10 +1162,10 @@
       <td>5.6</td>
       <td>50.0</td>
       <td>3.8</td>
-      <td>2.700000e+08</td>
-      <td>8.450022e+07</td>
-      <td>1.216127e+08</td>
-      <td>2.061129e+08</td>
+      <td>270000000.0</td>
+      <td>84500223.0</td>
+      <td>121612709.0</td>
+      <td>206112932.0</td>
     </tr>
     <tr>
       <th>42</th>
@@ -1016,46 +1180,10 @@
       <td>6.0</td>
       <td>62.0</td>
       <td>5.2</td>
-      <td>4.000000e+07</td>
+      <td>40000000.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>44</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>8.157000e+09</td>
-      <td>1.179950e+10</td>
-      <td>1.802709e+10</td>
-      <td>2.982615e+10</td>
     </tr>
   </tbody>
 </table>
@@ -1063,7 +1191,88 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_describe</span> <span class="o">=</span> <span class="n">mcu_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Describe creates another dataframe and we can save this as a variable and interact with it.</p>
+</section>
+</section>
+</section>
+<section id="slicing-dataframes">
+<h2><span class="section-number">1.6. </span>Slicing dataframes<a class="headerlink" href="#slicing-dataframes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.COLUMN_NAME</span></code> or <code class="docutils literal notranslate"><span class="pre">df[COLUMN_NAME]</span></code> or <code class="docutils literal notranslate"><span class="pre">df.loc[COLUMN_NAME]</span></code> - slice an individual column</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df[LIST_OF_COLUMN_NAMES]</span></code> or <code class="docutils literal notranslate"><span class="pre">df.loc[LIST_OF_COLUMN_NAME]</span></code>- slice multiple columns</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.iloc[ROW_INDICES]</span></code>- slice multiple rows</p></li>
+</ul>
+<p>How does Pandas know whether you meant to slice a column or a row?</p>
+<p>You can ‘slice’ columns or rows from a dataframe using:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df[LIST_OF_COLUMN_NAMES].iloc[ROW_INDICES]</span></code> - slice along columns and rows</p></li>
+</ul>
+<p>Let’s get the movie_title, release_date, rt_audience_score, metacritic_userscore, production_budget, and worldwide_box_office for the last ten most recent entries (as of the time this list was made).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A single column</span>
+<span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;movie_title&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0                                      Iron Man
+1                           The Incredible Hulk
+2                                    Iron Man 2
+3                                          Thor
+4            Captain America: The First Avenger
+5                                  The Avengers
+6                                    Iron Man 3
+7                          Thor: The Dark World
+8           Captain America: The Winter Soldier
+9                       Guardians of the Galaxy
+10                      Avengers: Age of Ultron
+11                                      Ant-Man
+12                   Captain America: Civil War
+13                               Doctor Strange
+14               Guardians of the Galaxy Vol. 2
+15                       Spider-Man: Homecoming
+16                               Thor: Ragnarok
+17                                Black Panther
+18                       Avengers: Infinity War
+19                         Ant-Man and the Wasp
+20                               Captain Marvel
+21                            Avengers: Endgame
+22                    Spider-Man: Far From Home
+23                                  WandaVision
+24            The Falcon and the Winter Soldier
+25                                         Loki
+26                                  Black Widow
+27                                    What If…?
+28    Shang-Chi and the Legend of the Ten Rings
+29                                     Eternals
+30                                      Hawkeye
+31                      Spider-Man: No Way Home
+32                                  Moon Knight
+33        Doctor Strange: Multiverse of Madness
+34                                   Ms. Marvel
+35                       Thor: Love and Thunder
+36                                     She-Hulk
+37               Black Panther: Wakanda Forever
+38            Ant-Man and the Wasp: Quantumania
+39               Guardians of the Galaxy Vol. 3
+40                              Secret Invasion
+41                                  The Marvels
+42                                         Echo
+Name: movie_title, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mulitple columns as a list</span>
+<span class="n">mcu_df</span><span class="p">[[</span><span class="s1">&#39;movie_title&#39;</span><span class="p">,</span> <span class="s1">&#39;release_year&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -1086,7 +1295,262 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>movie_title</th>
+      <th>release_year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Iron Man</td>
+      <td>2008.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>The Incredible Hulk</td>
+      <td>2008.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Iron Man 2</td>
+      <td>2010.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Thor</td>
+      <td>2011.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Captain America: The First Avenger</td>
+      <td>2011.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>The Avengers</td>
+      <td>2012.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Iron Man 3</td>
+      <td>2013.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Thor: The Dark World</td>
+      <td>2013.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Captain America: The Winter Soldier</td>
+      <td>2014.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Guardians of the Galaxy</td>
+      <td>2014.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Avengers: Age of Ultron</td>
+      <td>2015.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Ant-Man</td>
+      <td>2015.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Captain America: Civil War</td>
+      <td>2016.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Doctor Strange</td>
+      <td>2016.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Guardians of the Galaxy Vol. 2</td>
+      <td>2017.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Spider-Man: Homecoming</td>
+      <td>2017.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Thor: Ragnarok</td>
+      <td>2017.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Black Panther</td>
+      <td>2018.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Avengers: Infinity War</td>
+      <td>2018.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Ant-Man and the Wasp</td>
+      <td>2018.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Captain Marvel</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Avengers: Endgame</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Spider-Man: Far From Home</td>
+      <td>2019.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>WandaVision</td>
+      <td>2021.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>The Falcon and the Winter Soldier</td>
+      <td>2021.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Loki</td>
+      <td>2021.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Black Widow</td>
+      <td>2021.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>What If…?</td>
+      <td>2021.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Shang-Chi and the Legend of the Ten Rings</td>
+      <td>2021.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Eternals</td>
+      <td>2021.0</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Hawkeye</td>
+      <td>2021.0</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Spider-Man: No Way Home</td>
+      <td>2021.0</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Moon Knight</td>
+      <td>2022.0</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Doctor Strange: Multiverse of Madness</td>
+      <td>2022.0</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Ms. Marvel</td>
+      <td>2022.0</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Thor: Love and Thunder</td>
+      <td>2022.0</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>She-Hulk</td>
+      <td>2022.0</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Black Panther: Wakanda Forever</td>
+      <td>2022.0</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Ant-Man and the Wasp: Quantumania</td>
+      <td>2023.0</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Guardians of the Galaxy Vol. 3</td>
+      <td>2023.0</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Secret Invasion</td>
+      <td>2023.0</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>The Marvels</td>
+      <td>2023.0</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Echo</td>
+      <td>2024.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specific rows by index</span>
+
+<span class="n">mcu_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>Type</th>
       <th>mcu_phase_number</th>
+      <th>mcu_phase_text</th>
+      <th>release_date</th>
       <th>release_year</th>
       <th>rt_tomato_meter</th>
       <th>rt_audience_score</th>
@@ -1101,131 +1565,103 @@
   </thead>
   <tbody>
     <tr>
-      <th>count</th>
-      <td>43.000000</td>
-      <td>43.000000</td>
-      <td>43.000000</td>
-      <td>43.000000</td>
-      <td>43.000000</td>
-      <td>43.000000</td>
-      <td>43.000000</td>
-      <td>4.300000e+01</td>
-      <td>3.400000e+01</td>
-      <td>3.400000e+01</td>
-      <td>3.400000e+01</td>
+      <th>5</th>
+      <td>The Avengers</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>5/4/12</td>
+      <td>2012.0</td>
+      <td>91.0</td>
+      <td>91.0</td>
+      <td>8.0</td>
+      <td>69.0</td>
+      <td>8.0</td>
+      <td>220000000.0</td>
+      <td>623357910.0</td>
+      <td>895442000.0</td>
+      <td>1.518800e+09</td>
     </tr>
     <tr>
-      <th>mean</th>
-      <td>3.162791</td>
-      <td>2018.023256</td>
-      <td>81.511628</td>
-      <td>81.906977</td>
-      <td>7.158140</td>
-      <td>67.093023</td>
-      <td>6.593023</td>
-      <td>3.793953e+08</td>
-      <td>6.940882e+08</td>
-      <td>1.060417e+09</td>
-      <td>1.754479e+09</td>
+      <th>6</th>
+      <td>Iron Man 3</td>
+      <td>Movie</td>
+      <td>2.0</td>
+      <td>MCU Phase 2</td>
+      <td>5/3/13</td>
+      <td>2013.0</td>
+      <td>79.0</td>
+      <td>78.0</td>
+      <td>7.1</td>
+      <td>62.0</td>
+      <td>6.7</td>
+      <td>200000000.0</td>
+      <td>409013994.0</td>
+      <td>806426000.0</td>
+      <td>1.215440e+09</td>
     </tr>
     <tr>
-      <th>std</th>
-      <td>1.233080</td>
-      <td>4.431964</td>
-      <td>13.017154</td>
-      <td>13.876692</td>
-      <td>0.753794</td>
-      <td>8.242786</td>
-      <td>1.493381</td>
-      <td>1.215664e+09</td>
-      <td>1.971402e+09</td>
-      <td>3.021327e+09</td>
-      <td>4.990436e+09</td>
+      <th>7</th>
+      <td>Thor: The Dark World</td>
+      <td>Movie</td>
+      <td>2.0</td>
+      <td>MCU Phase 2</td>
+      <td>11/8/13</td>
+      <td>2013.0</td>
+      <td>66.0</td>
+      <td>75.0</td>
+      <td>6.8</td>
+      <td>54.0</td>
+      <td>7.0</td>
+      <td>170000000.0</td>
+      <td>206362140.0</td>
+      <td>438421000.0</td>
+      <td>6.447831e+08</td>
     </tr>
     <tr>
-      <th>min</th>
-      <td>1.000000</td>
-      <td>2008.000000</td>
-      <td>46.000000</td>
-      <td>32.000000</td>
-      <td>5.300000</td>
-      <td>48.000000</td>
-      <td>2.700000</td>
-      <td>4.000000e+07</td>
-      <td>8.450022e+07</td>
-      <td>1.216127e+08</td>
-      <td>2.061129e+08</td>
+      <th>8</th>
+      <td>Captain America: The Winter Soldier</td>
+      <td>Movie</td>
+      <td>2.0</td>
+      <td>MCU Phase 2</td>
+      <td>4/4/14</td>
+      <td>2014.0</td>
+      <td>90.0</td>
+      <td>92.0</td>
+      <td>7.7</td>
+      <td>70.0</td>
+      <td>8.3</td>
+      <td>170000000.0</td>
+      <td>259766572.0</td>
+      <td>454654931.0</td>
+      <td>7.144215e+08</td>
     </tr>
     <tr>
-      <th>25%</th>
-      <td>2.000000</td>
-      <td>2015.000000</td>
-      <td>76.500000</td>
-      <td>78.000000</td>
-      <td>6.750000</td>
-      <td>62.500000</td>
-      <td>5.950000</td>
-      <td>1.500000e+08</td>
-      <td>2.150409e+08</td>
-      <td>2.790970e+08</td>
-      <td>5.359330e+08</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>3.000000</td>
-      <td>2019.000000</td>
-      <td>85.000000</td>
-      <td>86.000000</td>
-      <td>7.300000</td>
-      <td>68.000000</td>
-      <td>6.900000</td>
-      <td>2.000000e+08</td>
-      <td>3.336889e+08</td>
-      <td>4.498575e+08</td>
-      <td>8.092151e+08</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>4.000000</td>
-      <td>2021.500000</td>
-      <td>92.000000</td>
-      <td>91.000000</td>
-      <td>7.750000</td>
-      <td>72.000000</td>
-      <td>7.750000</td>
-      <td>2.305000e+08</td>
-      <td>4.229553e+08</td>
-      <td>7.313400e+08</td>
-      <td>1.147925e+09</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>5.000000</td>
-      <td>2024.000000</td>
-      <td>98.000000</td>
-      <td>98.000000</td>
-      <td>8.400000</td>
-      <td>88.000000</td>
-      <td>8.600000</td>
-      <td>8.157000e+09</td>
-      <td>1.179950e+10</td>
-      <td>1.802709e+10</td>
-      <td>2.982615e+10</td>
+      <th>9</th>
+      <td>Guardians of the Galaxy</td>
+      <td>Movie</td>
+      <td>2.0</td>
+      <td>MCU Phase 2</td>
+      <td>8/1/14</td>
+      <td>2014.0</td>
+      <td>92.0</td>
+      <td>92.0</td>
+      <td>8.0</td>
+      <td>76.0</td>
+      <td>8.2</td>
+      <td>170000000.0</td>
+      <td>333176600.0</td>
+      <td>439697800.0</td>
+      <td>7.728744e+08</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>Describe creates another dataframe and we can save this as a variable and interact with it.</p>
-</section>
-</section>
-<section id="dropping-bad-data">
-<h2><span class="section-number">1.3. </span>Dropping bad data<a class="headerlink" href="#dropping-bad-data" title="Link to this heading">#</a></h2>
-<p>Data can be ‘bad’ for numerous reasons, but most immediately obvious are missing data. We drop missing data with <code class="docutils literal notranslate"><span class="pre">df.dropna</span></code> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html">dropna documentation</a>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">mcu_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># specified columns and in reverse order using [::-1] slice</span>
+<span class="n">mcu_df</span><span class="p">[[</span><span class="s1">&#39;movie_title&#39;</span><span class="p">,</span> <span class="s1">&#39;release_year&#39;</span><span class="p">,</span> <span class="s1">&#39;rt_audience_score&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1248,174 +1684,1480 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>movie_title</th>
+      <th>release_year</th>
+      <th>rt_audience_score</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>40</th>
+      <th>42</th>
+      <td>Echo</td>
+      <td>2024.0</td>
+      <td>61.0</td>
     </tr>
     <tr>
       <th>41</th>
+      <td>The Marvels</td>
+      <td>2023.0</td>
+      <td>82.0</td>
     </tr>
     <tr>
-      <th>42</th>
+      <th>40</th>
+      <td>Secret Invasion</td>
+      <td>2023.0</td>
+      <td>46.0</td>
     </tr>
     <tr>
-      <th>43</th>
+      <th>39</th>
+      <td>Guardians of the Galaxy Vol. 3</td>
+      <td>2023.0</td>
+      <td>94.0</td>
     </tr>
     <tr>
-      <th>44</th>
+      <th>38</th>
+      <td>Ant-Man and the Wasp: Quantumania</td>
+      <td>2023.0</td>
+      <td>82.0</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Black Panther: Wakanda Forever</td>
+      <td>2022.0</td>
+      <td>94.0</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>She-Hulk</td>
+      <td>2022.0</td>
+      <td>32.0</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Thor: Love and Thunder</td>
+      <td>2022.0</td>
+      <td>76.0</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Ms. Marvel</td>
+      <td>2022.0</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Doctor Strange: Multiverse of Madness</td>
+      <td>2022.0</td>
+      <td>85.0</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Moon Knight</td>
+      <td>2022.0</td>
+      <td>89.0</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Spider-Man: No Way Home</td>
+      <td>2021.0</td>
+      <td>98.0</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Hawkeye</td>
+      <td>2021.0</td>
+      <td>88.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Eternals</td>
+      <td>2021.0</td>
+      <td>78.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Shang-Chi and the Legend of the Ten Rings</td>
+      <td>2021.0</td>
+      <td>98.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>What If…?</td>
+      <td>2021.0</td>
+      <td>92.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Black Widow</td>
+      <td>2021.0</td>
+      <td>91.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Loki</td>
+      <td>2021.0</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>The Falcon and the Winter Soldier</td>
+      <td>2021.0</td>
+      <td>82.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>WandaVision</td>
+      <td>2021.0</td>
+      <td>88.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Spider-Man: Far From Home</td>
+      <td>2019.0</td>
+      <td>95.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Avengers: Endgame</td>
+      <td>2019.0</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Captain Marvel</td>
+      <td>2019.0</td>
+      <td>45.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Ant-Man and the Wasp</td>
+      <td>2018.0</td>
+      <td>81.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Avengers: Infinity War</td>
+      <td>2018.0</td>
+      <td>91.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Black Panther</td>
+      <td>2018.0</td>
+      <td>79.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Thor: Ragnarok</td>
+      <td>2017.0</td>
+      <td>87.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Spider-Man: Homecoming</td>
+      <td>2017.0</td>
+      <td>87.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Guardians of the Galaxy Vol. 2</td>
+      <td>2017.0</td>
+      <td>87.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Doctor Strange</td>
+      <td>2016.0</td>
+      <td>86.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Captain America: Civil War</td>
+      <td>2016.0</td>
+      <td>89.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Ant-Man</td>
+      <td>2015.0</td>
+      <td>85.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Avengers: Age of Ultron</td>
+      <td>2015.0</td>
+      <td>83.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Guardians of the Galaxy</td>
+      <td>2014.0</td>
+      <td>92.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Captain America: The Winter Soldier</td>
+      <td>2014.0</td>
+      <td>92.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Thor: The Dark World</td>
+      <td>2013.0</td>
+      <td>75.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Iron Man 3</td>
+      <td>2013.0</td>
+      <td>78.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>The Avengers</td>
+      <td>2012.0</td>
+      <td>91.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Captain America: The First Avenger</td>
+      <td>2011.0</td>
+      <td>75.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Thor</td>
+      <td>2011.0</td>
+      <td>76.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Iron Man 2</td>
+      <td>2010.0</td>
+      <td>71.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>The Incredible Hulk</td>
+      <td>2008.0</td>
+      <td>70.0</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Iron Man</td>
+      <td>2008.0</td>
+      <td>91.0</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<section id="slicing-dataframes">
-<h3><span class="section-number">1.3.1. </span>Slicing dataframes<a class="headerlink" href="#slicing-dataframes" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">df.COLUMN_NAME</span></code> or <code class="docutils literal notranslate"><span class="pre">df[COLUMN_NAME]</span></code> or <code class="docutils literal notranslate"><span class="pre">df.loc[COLUMN_NAME]</span></code> - slice an individual column</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">df[LIST_OF_COLUMN_NAMES]</span></code> or <code class="docutils literal notranslate"><span class="pre">df.loc[LIST_OF_COLUMN_NAME]</span></code>- slice multiple columns</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">df.iloc[ROW_INDICES]</span></code>- slice multiple rows</p></li>
-</ul>
-<p>How does Pandas know whether you meant to slice a column or a row?</p>
-<p>You can ‘slice’ columns or rows from a dataframe using:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">df[LIST_OF_COLUMN_NAMES].iloc[ROW_INDICES]</span></code> - slice along columns and rows</p></li>
-</ul>
-<p>Let’s get the movie_title, release_date, rt_audience_score, metacritic_userscore, production_budget, and worldwide_box_office for the last ten most recent entries (as of the time this list was made).</p>
+</section>
+<section id="adding-a-column">
+<h2><span class="section-number">1.7. </span>Adding a column<a class="headerlink" href="#adding-a-column" title="Link to this heading">#</a></h2>
+<p>Just as in dictionaries, you can add a calculated column as you go.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a new column indicating whether viewers or critics liked the movie more</span>
+<span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;audience_vs_critic&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;rt_audience_score&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;rt_tomato_meter&#39;</span><span class="p">]</span>
 
-<span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;release_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">40</span><span class="p">]</span>
+<span class="c1"># a new column calculating the net revenue</span>
+<span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;profit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;worldwide_box_office&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;production_budget&#39;</span><span class="p">]</span>
+
+<span class="c1"># a new column using the new column above</span>
+<span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;profit_margin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;profit&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;worldwide_box_office&#39;</span><span class="p">]</span>
+
+<span class="n">mcu_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">File ~/.pyenv/versions/datascience/lib/python3.13/site-packages/pandas/core/indexes/base.py:3805,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3804</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">3805</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3806</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File index.pyx:167,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File index.pyx:196,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
-
-<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:7081,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
-
-<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:7089,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
-
-<span class="ne">KeyError</span>: &#39;release_date&#39;
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">mcu_df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;release_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">40</span><span class="p">]</span>
-
-<span class="nn">File ~/.pyenv/versions/datascience/lib/python3.13/site-packages/pandas/core/frame.py:4102,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4100</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">4101</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_multilevel</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">4102</span> <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4103</span> <span class="k">if</span> <span class="n">is_integer</span><span class="p">(</span><span class="n">indexer</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">4104</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="p">[</span><span class="n">indexer</span><span class="p">]</span>
-
-<span class="nn">File ~/.pyenv/versions/datascience/lib/python3.13/site-packages/pandas/core/indexes/base.py:3812,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3807</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">3808</span>         <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3809</span>         <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">casted_key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3810</span>     <span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">3811</span>         <span class="k">raise</span> <span class="n">InvalidIndexError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">3812</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">err</span>
-<span class="g g-Whitespace">   </span><span class="mi">3813</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">3814</span>     <span class="c1"># If we have a listlike key, _check_indexing_error will raise</span>
-<span class="g g-Whitespace">   </span><span class="mi">3815</span>     <span class="c1">#  InvalidIndexError. Otherwise we fall through and re-raise</span>
-<span class="g g-Whitespace">   </span><span class="mi">3816</span>     <span class="c1">#  the TypeError.</span>
-<span class="g g-Whitespace">   </span><span class="mi">3817</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_check_indexing_error</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-
-<span class="ne">KeyError</span>: &#39;release_date&#39;
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="adding-a-column">
-<h3><span class="section-number">1.3.2. </span>Adding a column<a class="headerlink" href="#adding-a-column" title="Link to this heading">#</a></h3>
-<p>Just as in dictionaries, you can add a calculated column as you go.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;audience_vs_critic&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;rt_audience_score&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;rt_tomato_meter&#39;</span><span class="p">]</span>
-<span class="n">mcu_df</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mcu_df[&#39;profit&#39;] = mcu_df[&#39; worldwide_box_office &#39;]-mcu_df[&#39; production_budget &#39;]</span>
-<span class="c1"># mcu_df[&#39;profit_margin&#39;] = mcu_df[&#39;profit&#39;]/mcu_df[&#39; production_budget &#39;]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="p">[(</span><span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Movie&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;release_year&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">2013</span><span class="p">)]</span>
-
-<span class="n">desired_type</span> <span class="o">=</span> <span class="s1">&#39;Movie&#39;</span>
-<span class="n">mcu_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Type == @desired_type and release_year &lt; 2013&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>Type</th>
+      <th>mcu_phase_number</th>
+      <th>mcu_phase_text</th>
+      <th>release_date</th>
+      <th>release_year</th>
+      <th>rt_tomato_meter</th>
+      <th>rt_audience_score</th>
+      <th>imdb-rating</th>
+      <th>metacritic_metascore</th>
+      <th>metacritic_userscore</th>
+      <th>production_budget</th>
+      <th>domestic_box_office</th>
+      <th>international_box_office</th>
+      <th>worldwide_box_office</th>
+      <th>audience_vs_critic</th>
+      <th>profit</th>
+      <th>profit_margin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Iron Man</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>5/2/08</td>
+      <td>2008.0</td>
+      <td>94.0</td>
+      <td>91.0</td>
+      <td>7.9</td>
+      <td>79.0</td>
+      <td>8.6</td>
+      <td>140000000.0</td>
+      <td>319034126.0</td>
+      <td>266762121.0</td>
+      <td>585796247.0</td>
+      <td>-3.0</td>
+      <td>445796247.0</td>
+      <td>0.761009</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>The Incredible Hulk</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>6/13/08</td>
+      <td>2008.0</td>
+      <td>67.0</td>
+      <td>70.0</td>
+      <td>6.6</td>
+      <td>61.0</td>
+      <td>6.8</td>
+      <td>140000000.0</td>
+      <td>134806913.0</td>
+      <td>128620638.0</td>
+      <td>263427551.0</td>
+      <td>3.0</td>
+      <td>123427551.0</td>
+      <td>0.468545</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Iron Man 2</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>5/7/10</td>
+      <td>2010.0</td>
+      <td>72.0</td>
+      <td>71.0</td>
+      <td>6.9</td>
+      <td>57.0</td>
+      <td>6.4</td>
+      <td>200000000.0</td>
+      <td>312433331.0</td>
+      <td>311500000.0</td>
+      <td>623933331.0</td>
+      <td>-1.0</td>
+      <td>423933331.0</td>
+      <td>0.679453</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Thor</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>5/6/11</td>
+      <td>2011.0</td>
+      <td>77.0</td>
+      <td>76.0</td>
+      <td>7.0</td>
+      <td>57.0</td>
+      <td>7.0</td>
+      <td>150000000.0</td>
+      <td>181030624.0</td>
+      <td>268295994.0</td>
+      <td>449326618.0</td>
+      <td>-1.0</td>
+      <td>299326618.0</td>
+      <td>0.666167</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Captain America: The First Avenger</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>7/22/11</td>
+      <td>2011.0</td>
+      <td>79.0</td>
+      <td>75.0</td>
+      <td>6.9</td>
+      <td>66.0</td>
+      <td>6.8</td>
+      <td>140000000.0</td>
+      <td>176654505.0</td>
+      <td>193915269.0</td>
+      <td>370569774.0</td>
+      <td>-4.0</td>
+      <td>230569774.0</td>
+      <td>0.622203</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="filtering-dataframes">
-<h3><span class="section-number">1.3.3. </span>Filtering dataframes<a class="headerlink" href="#filtering-dataframes" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">1.8. </span>Filtering dataframes<a class="headerlink" href="#filtering-dataframes" title="Link to this heading">#</a></h2>
 <p>You can also select rows of a dataframe that satisfy some condition (e.g. greater than some value, string starts with, before some date, value in a range, etc).</p>
 <p>There are two main ways to filter dataframes based on conditions:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">df[CONDITION]</span></code> - the condition in terms of df.COLUMN_NAME</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">df.query['CONDITION']</span></code> - the condition in terms of COLUMN_NAME</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.query('CONDITION')</span></code> - the condition in terms of COLUMN_NAME</p></li>
 </ul>
 <p>The syntaxes of these two approaches are illustrated by an example.</p>
-<p><em>Example</em>: Find me the most liked of the MCU movies to watch. How will we define most liked?</p>
+<p><em>Example</em>:</p>
+<p>Find me only movies that were released before 2018.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;rt_audience_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movie_type</span> <span class="o">=</span> <span class="s2">&quot;Movie&quot;</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">2018</span>
+
+<span class="c1"># Standard filter</span>
+<span class="n">mcu_df</span><span class="p">[(</span><span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">movie_type</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;release_year&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="n">year</span><span class="p">)]</span>
+
+<span class="c1"># Query</span>
+<span class="n">mcu_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Type == @movie_type and release_year &lt; @year&#39;</span><span class="p">)</span>
+<span class="n">mcu_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Type == &quot;Movie&quot; and release_year &lt; 2018&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>Type</th>
+      <th>mcu_phase_number</th>
+      <th>mcu_phase_text</th>
+      <th>release_date</th>
+      <th>release_year</th>
+      <th>rt_tomato_meter</th>
+      <th>rt_audience_score</th>
+      <th>imdb-rating</th>
+      <th>metacritic_metascore</th>
+      <th>metacritic_userscore</th>
+      <th>production_budget</th>
+      <th>domestic_box_office</th>
+      <th>international_box_office</th>
+      <th>worldwide_box_office</th>
+      <th>audience_vs_critic</th>
+      <th>profit</th>
+      <th>profit_margin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Iron Man</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>5/2/08</td>
+      <td>2008.0</td>
+      <td>94.0</td>
+      <td>91.0</td>
+      <td>7.9</td>
+      <td>79.0</td>
+      <td>8.6</td>
+      <td>140000000.0</td>
+      <td>319034126.0</td>
+      <td>266762121.0</td>
+      <td>5.857962e+08</td>
+      <td>-3.0</td>
+      <td>4.457962e+08</td>
+      <td>0.761009</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>The Incredible Hulk</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>6/13/08</td>
+      <td>2008.0</td>
+      <td>67.0</td>
+      <td>70.0</td>
+      <td>6.6</td>
+      <td>61.0</td>
+      <td>6.8</td>
+      <td>140000000.0</td>
+      <td>134806913.0</td>
+      <td>128620638.0</td>
+      <td>2.634276e+08</td>
+      <td>3.0</td>
+      <td>1.234276e+08</td>
+      <td>0.468545</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Iron Man 2</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>5/7/10</td>
+      <td>2010.0</td>
+      <td>72.0</td>
+      <td>71.0</td>
+      <td>6.9</td>
+      <td>57.0</td>
+      <td>6.4</td>
+      <td>200000000.0</td>
+      <td>312433331.0</td>
+      <td>311500000.0</td>
+      <td>6.239333e+08</td>
+      <td>-1.0</td>
+      <td>4.239333e+08</td>
+      <td>0.679453</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Thor</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>5/6/11</td>
+      <td>2011.0</td>
+      <td>77.0</td>
+      <td>76.0</td>
+      <td>7.0</td>
+      <td>57.0</td>
+      <td>7.0</td>
+      <td>150000000.0</td>
+      <td>181030624.0</td>
+      <td>268295994.0</td>
+      <td>4.493266e+08</td>
+      <td>-1.0</td>
+      <td>2.993266e+08</td>
+      <td>0.666167</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Captain America: The First Avenger</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>7/22/11</td>
+      <td>2011.0</td>
+      <td>79.0</td>
+      <td>75.0</td>
+      <td>6.9</td>
+      <td>66.0</td>
+      <td>6.8</td>
+      <td>140000000.0</td>
+      <td>176654505.0</td>
+      <td>193915269.0</td>
+      <td>3.705698e+08</td>
+      <td>-4.0</td>
+      <td>2.305698e+08</td>
+      <td>0.622203</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>The Avengers</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>5/4/12</td>
+      <td>2012.0</td>
+      <td>91.0</td>
+      <td>91.0</td>
+      <td>8.0</td>
+      <td>69.0</td>
+      <td>8.0</td>
+      <td>220000000.0</td>
+      <td>623357910.0</td>
+      <td>895442000.0</td>
+      <td>1.518800e+09</td>
+      <td>0.0</td>
+      <td>1.298800e+09</td>
+      <td>0.855149</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Iron Man 3</td>
+      <td>Movie</td>
+      <td>2.0</td>
+      <td>MCU Phase 2</td>
+      <td>5/3/13</td>
+      <td>2013.0</td>
+      <td>79.0</td>
+      <td>78.0</td>
+      <td>7.1</td>
+      <td>62.0</td>
+      <td>6.7</td>
+      <td>200000000.0</td>
+      <td>409013994.0</td>
+      <td>806426000.0</td>
+      <td>1.215440e+09</td>
+      <td>-1.0</td>
+      <td>1.015440e+09</td>
+      <td>0.835451</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Thor: The Dark World</td>
+      <td>Movie</td>
+      <td>2.0</td>
+      <td>MCU Phase 2</td>
+      <td>11/8/13</td>
+      <td>2013.0</td>
+      <td>66.0</td>
+      <td>75.0</td>
+      <td>6.8</td>
+      <td>54.0</td>
+      <td>7.0</td>
+      <td>170000000.0</td>
+      <td>206362140.0</td>
+      <td>438421000.0</td>
+      <td>6.447831e+08</td>
+      <td>9.0</td>
+      <td>4.747831e+08</td>
+      <td>0.736345</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Captain America: The Winter Soldier</td>
+      <td>Movie</td>
+      <td>2.0</td>
+      <td>MCU Phase 2</td>
+      <td>4/4/14</td>
+      <td>2014.0</td>
+      <td>90.0</td>
+      <td>92.0</td>
+      <td>7.7</td>
+      <td>70.0</td>
+      <td>8.3</td>
+      <td>170000000.0</td>
+      <td>259766572.0</td>
+      <td>454654931.0</td>
+      <td>7.144215e+08</td>
+      <td>2.0</td>
+      <td>5.444215e+08</td>
+      <td>0.762045</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Guardians of the Galaxy</td>
+      <td>Movie</td>
+      <td>2.0</td>
+      <td>MCU Phase 2</td>
+      <td>8/1/14</td>
+      <td>2014.0</td>
+      <td>92.0</td>
+      <td>92.0</td>
+      <td>8.0</td>
+      <td>76.0</td>
+      <td>8.2</td>
+      <td>170000000.0</td>
+      <td>333176600.0</td>
+      <td>439697800.0</td>
+      <td>7.728744e+08</td>
+      <td>0.0</td>
+      <td>6.028744e+08</td>
+      <td>0.780042</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Avengers: Age of Ultron</td>
+      <td>Movie</td>
+      <td>2.0</td>
+      <td>MCU Phase 2</td>
+      <td>5/1/15</td>
+      <td>2015.0</td>
+      <td>76.0</td>
+      <td>83.0</td>
+      <td>7.3</td>
+      <td>66.0</td>
+      <td>7.1</td>
+      <td>250000000.0</td>
+      <td>459005868.0</td>
+      <td>943786000.0</td>
+      <td>1.402792e+09</td>
+      <td>7.0</td>
+      <td>1.152792e+09</td>
+      <td>0.821784</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Ant-Man</td>
+      <td>Movie</td>
+      <td>2.0</td>
+      <td>MCU Phase 2</td>
+      <td>7/17/15</td>
+      <td>2015.0</td>
+      <td>83.0</td>
+      <td>85.0</td>
+      <td>7.2</td>
+      <td>64.0</td>
+      <td>7.4</td>
+      <td>130000000.0</td>
+      <td>180202163.0</td>
+      <td>339109802.0</td>
+      <td>5.193120e+08</td>
+      <td>2.0</td>
+      <td>3.893120e+08</td>
+      <td>0.749669</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Captain America: Civil War</td>
+      <td>Movie</td>
+      <td>3.0</td>
+      <td>MCU Phase 3</td>
+      <td>5/6/16</td>
+      <td>2016.0</td>
+      <td>90.0</td>
+      <td>89.0</td>
+      <td>7.8</td>
+      <td>75.0</td>
+      <td>8.0</td>
+      <td>250000000.0</td>
+      <td>408084349.0</td>
+      <td>745231193.0</td>
+      <td>1.153316e+09</td>
+      <td>-1.0</td>
+      <td>9.033155e+08</td>
+      <td>0.783234</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Doctor Strange</td>
+      <td>Movie</td>
+      <td>3.0</td>
+      <td>MCU Phase 3</td>
+      <td>11/4/16</td>
+      <td>2016.0</td>
+      <td>89.0</td>
+      <td>86.0</td>
+      <td>7.5</td>
+      <td>72.0</td>
+      <td>8.0</td>
+      <td>165000000.0</td>
+      <td>232641920.0</td>
+      <td>445060000.0</td>
+      <td>6.777184e+08</td>
+      <td>-3.0</td>
+      <td>5.127184e+08</td>
+      <td>0.756536</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Guardians of the Galaxy Vol. 2</td>
+      <td>Movie</td>
+      <td>3.0</td>
+      <td>MCU Phase 3</td>
+      <td>5/5/17</td>
+      <td>2017.0</td>
+      <td>85.0</td>
+      <td>87.0</td>
+      <td>7.6</td>
+      <td>67.0</td>
+      <td>7.8</td>
+      <td>200000000.0</td>
+      <td>389813101.0</td>
+      <td>473900000.0</td>
+      <td>8.637561e+08</td>
+      <td>2.0</td>
+      <td>6.637561e+08</td>
+      <td>0.768453</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Spider-Man: Homecoming</td>
+      <td>Movie</td>
+      <td>3.0</td>
+      <td>MCU Phase 3</td>
+      <td>7/7/17</td>
+      <td>2017.0</td>
+      <td>92.0</td>
+      <td>87.0</td>
+      <td>7.4</td>
+      <td>73.0</td>
+      <td>7.5</td>
+      <td>175000000.0</td>
+      <td>334201140.0</td>
+      <td>546171626.0</td>
+      <td>8.803728e+08</td>
+      <td>-5.0</td>
+      <td>7.053728e+08</td>
+      <td>0.801221</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Thor: Ragnarok</td>
+      <td>Movie</td>
+      <td>3.0</td>
+      <td>MCU Phase 3</td>
+      <td>11/3/17</td>
+      <td>2017.0</td>
+      <td>93.0</td>
+      <td>87.0</td>
+      <td>7.9</td>
+      <td>74.0</td>
+      <td>7.7</td>
+      <td>180000000.0</td>
+      <td>315058289.0</td>
+      <td>538958924.0</td>
+      <td>8.540172e+08</td>
+      <td>-6.0</td>
+      <td>6.740172e+08</td>
+      <td>0.789231</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
+<p>Here’s a snapshot of the code above. These lines of code all produce the same results.</p>
+<p><img alt="filterquery" src="../_images/filterquery.png" /></p>
+<p>What differences are there between the standard filter and the query?</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Standard</p></th>
+<th class="head"><p>Query</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Uses Python boolean indexing</p></td>
+<td><p>Uses a string expression</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uses &amp; and | (element-wise and/or)</p></td>
+<td><p>uses ‘and’ and ‘or’</p></td>
+</tr>
+<tr class="row-even"><td><p>Column names must be referenced as <code class="docutils literal notranslate"><span class="pre">df['col']</span></code></p></td>
+<td><p>Column names referenced directly as <code class="docutils literal notranslate"><span class="pre">col</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Can use variables directly</p></td>
+<td><p>Use <code class="docutils literal notranslate"><span class="pre">&#64;variable</span></code> to reference Python variables</p></td>
+</tr>
+<tr class="row-even"><td><p>More flexible for complex conditions</p></td>
+<td><p>More readable for simple conditions</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Note</strong>: I use .query almost exclusively. I find it faster to write and easier to read. But many people prefer the standard format, so you should be familiar with it so you know what it means if you come across it in somebody else’s code.</p>
 </section>
 <section id="practice-problems">
-<h3><span class="section-number">1.3.4. </span>Practice Problems<a class="headerlink" href="#practice-problems" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">1.9. </span>Practice Problems<a class="headerlink" href="#practice-problems" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Add a column that says what percentage of worldwide box office were made in the opening weekend (for each movie)?</p></li>
-<li><p>Which movies were liked by audiences more than by the critics?</p></li>
+<li><p>Which movies made over $500,000,000 domestic box office? Provide the title, release_year, and domestic_box_office.</p></li>
+<li><p>Which movies were liked by audiences more than by the critics? Provide all the info.</p></li>
 <li><p>Find all the movies with Captain America in the title and tell me their metacritic scores.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Which movies made over $500,000,000 domestic box office? Provide the title, release_year, and domestic_box_office.</span>
 
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">mcu_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;domestic_box_office &gt; 500000000&#39;</span><span class="p">)[[</span><span class="s1">&#39;movie_title&#39;</span><span class="p">,</span> <span class="s1">&#39;release_year&#39;</span><span class="p">,</span> <span class="s1">&#39;domestic_box_office&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>release_year</th>
+      <th>domestic_box_office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>The Avengers</td>
+      <td>2012.0</td>
+      <td>623357910.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Black Panther</td>
+      <td>2018.0</td>
+      <td>700059566.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Avengers: Infinity War</td>
+      <td>2018.0</td>
+      <td>678815482.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Avengers: Endgame</td>
+      <td>2019.0</td>
+      <td>858372000.0</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Spider-Man: No Way Home</td>
+      <td>2021.0</td>
+      <td>814115070.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-<p><a class="reference internal" href="02_crackthecode.html"><span class="std std-doc">crack the code</span></a></p>
-</section>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Which movies were liked by audiences more than by the critics? Provide all the info.</span>
+
+<span class="n">mcu_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;rt_audience_score&gt;rt_tomato_meter&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>Type</th>
+      <th>mcu_phase_number</th>
+      <th>mcu_phase_text</th>
+      <th>release_date</th>
+      <th>release_year</th>
+      <th>rt_tomato_meter</th>
+      <th>rt_audience_score</th>
+      <th>imdb-rating</th>
+      <th>metacritic_metascore</th>
+      <th>metacritic_userscore</th>
+      <th>production_budget</th>
+      <th>domestic_box_office</th>
+      <th>international_box_office</th>
+      <th>worldwide_box_office</th>
+      <th>audience_vs_critic</th>
+      <th>profit</th>
+      <th>profit_margin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>The Incredible Hulk</td>
+      <td>Movie</td>
+      <td>1.0</td>
+      <td>MCU Phase 1</td>
+      <td>6/13/08</td>
+      <td>2008.0</td>
+      <td>67.0</td>
+      <td>70.0</td>
+      <td>6.6</td>
+      <td>61.0</td>
+      <td>6.8</td>
+      <td>140000000.0</td>
+      <td>134806913.0</td>
+      <td>1.286206e+08</td>
+      <td>2.634276e+08</td>
+      <td>3.0</td>
+      <td>1.234276e+08</td>
+      <td>0.468545</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Thor: The Dark World</td>
+      <td>Movie</td>
+      <td>2.0</td>
+      <td>MCU Phase 2</td>
+      <td>11/8/13</td>
+      <td>2013.0</td>
+      <td>66.0</td>
+      <td>75.0</td>
+      <td>6.8</td>
+      <td>54.0</td>
+      <td>7.0</td>
+      <td>170000000.0</td>
+      <td>206362140.0</td>
+      <td>4.384210e+08</td>
+      <td>6.447831e+08</td>
+      <td>9.0</td>
+      <td>4.747831e+08</td>
+      <td>0.736345</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Captain America: The Winter Soldier</td>
+      <td>Movie</td>
+      <td>2.0</td>
+      <td>MCU Phase 2</td>
+      <td>4/4/14</td>
+      <td>2014.0</td>
+      <td>90.0</td>
+      <td>92.0</td>
+      <td>7.7</td>
+      <td>70.0</td>
+      <td>8.3</td>
+      <td>170000000.0</td>
+      <td>259766572.0</td>
+      <td>4.546549e+08</td>
+      <td>7.144215e+08</td>
+      <td>2.0</td>
+      <td>5.444215e+08</td>
+      <td>0.762045</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Avengers: Age of Ultron</td>
+      <td>Movie</td>
+      <td>2.0</td>
+      <td>MCU Phase 2</td>
+      <td>5/1/15</td>
+      <td>2015.0</td>
+      <td>76.0</td>
+      <td>83.0</td>
+      <td>7.3</td>
+      <td>66.0</td>
+      <td>7.1</td>
+      <td>250000000.0</td>
+      <td>459005868.0</td>
+      <td>9.437860e+08</td>
+      <td>1.402792e+09</td>
+      <td>7.0</td>
+      <td>1.152792e+09</td>
+      <td>0.821784</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Ant-Man</td>
+      <td>Movie</td>
+      <td>2.0</td>
+      <td>MCU Phase 2</td>
+      <td>7/17/15</td>
+      <td>2015.0</td>
+      <td>83.0</td>
+      <td>85.0</td>
+      <td>7.2</td>
+      <td>64.0</td>
+      <td>7.4</td>
+      <td>130000000.0</td>
+      <td>180202163.0</td>
+      <td>3.391098e+08</td>
+      <td>5.193120e+08</td>
+      <td>2.0</td>
+      <td>3.893120e+08</td>
+      <td>0.749669</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Guardians of the Galaxy Vol. 2</td>
+      <td>Movie</td>
+      <td>3.0</td>
+      <td>MCU Phase 3</td>
+      <td>5/5/17</td>
+      <td>2017.0</td>
+      <td>85.0</td>
+      <td>87.0</td>
+      <td>7.6</td>
+      <td>67.0</td>
+      <td>7.8</td>
+      <td>200000000.0</td>
+      <td>389813101.0</td>
+      <td>4.739000e+08</td>
+      <td>8.637561e+08</td>
+      <td>2.0</td>
+      <td>6.637561e+08</td>
+      <td>0.768453</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Avengers: Infinity War</td>
+      <td>Movie</td>
+      <td>3.0</td>
+      <td>MCU Phase 3</td>
+      <td>4/27/18</td>
+      <td>2018.0</td>
+      <td>85.0</td>
+      <td>91.0</td>
+      <td>8.4</td>
+      <td>68.0</td>
+      <td>8.5</td>
+      <td>300000000.0</td>
+      <td>678815482.0</td>
+      <td>1.369544e+09</td>
+      <td>2.048360e+09</td>
+      <td>6.0</td>
+      <td>1.748360e+09</td>
+      <td>0.853541</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Spider-Man: Far From Home</td>
+      <td>Movie</td>
+      <td>3.0</td>
+      <td>MCU Phase 3</td>
+      <td>7/2/19</td>
+      <td>2019.0</td>
+      <td>90.0</td>
+      <td>95.0</td>
+      <td>7.4</td>
+      <td>69.0</td>
+      <td>7.5</td>
+      <td>160000000.0</td>
+      <td>390532085.0</td>
+      <td>7.412200e+08</td>
+      <td>1.131752e+09</td>
+      <td>5.0</td>
+      <td>9.717521e+08</td>
+      <td>0.858626</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Black Widow</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>7/9/21</td>
+      <td>2021.0</td>
+      <td>79.0</td>
+      <td>91.0</td>
+      <td>6.7</td>
+      <td>68.0</td>
+      <td>6.0</td>
+      <td>288000000.0</td>
+      <td>183651655.0</td>
+      <td>1.961000e+08</td>
+      <td>3.797517e+08</td>
+      <td>12.0</td>
+      <td>9.175166e+07</td>
+      <td>0.241610</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Shang-Chi and the Legend of the Ten Rings</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>9/3/21</td>
+      <td>2021.0</td>
+      <td>91.0</td>
+      <td>98.0</td>
+      <td>7.4</td>
+      <td>71.0</td>
+      <td>7.0</td>
+      <td>150000000.0</td>
+      <td>224543292.0</td>
+      <td>2.077000e+08</td>
+      <td>4.322433e+08</td>
+      <td>7.0</td>
+      <td>2.822433e+08</td>
+      <td>0.652973</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Eternals</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>11/5/21</td>
+      <td>2021.0</td>
+      <td>47.0</td>
+      <td>78.0</td>
+      <td>6.3</td>
+      <td>52.0</td>
+      <td>6.1</td>
+      <td>236000000.0</td>
+      <td>164870234.0</td>
+      <td>2.371947e+08</td>
+      <td>4.020649e+08</td>
+      <td>31.0</td>
+      <td>1.660649e+08</td>
+      <td>0.413030</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Spider-Man: No Way Home</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>12/17/21</td>
+      <td>2021.0</td>
+      <td>93.0</td>
+      <td>98.0</td>
+      <td>8.2</td>
+      <td>71.0</td>
+      <td>8.5</td>
+      <td>200000000.0</td>
+      <td>814115070.0</td>
+      <td>1.107732e+09</td>
+      <td>1.921847e+09</td>
+      <td>5.0</td>
+      <td>1.721847e+09</td>
+      <td>0.895933</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Moon Knight</td>
+      <td>TV Show</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>3/30/22</td>
+      <td>2022.0</td>
+      <td>86.0</td>
+      <td>89.0</td>
+      <td>7.3</td>
+      <td>69.0</td>
+      <td>6.9</td>
+      <td>148000000.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Doctor Strange: Multiverse of Madness</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>5/6/22</td>
+      <td>2022.0</td>
+      <td>73.0</td>
+      <td>85.0</td>
+      <td>6.9</td>
+      <td>60.0</td>
+      <td>5.9</td>
+      <td>294000000.0</td>
+      <td>411331607.0</td>
+      <td>5.444442e+08</td>
+      <td>9.557758e+08</td>
+      <td>12.0</td>
+      <td>6.617758e+08</td>
+      <td>0.692396</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Thor: Love and Thunder</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>7/8/22</td>
+      <td>2022.0</td>
+      <td>63.0</td>
+      <td>76.0</td>
+      <td>6.2</td>
+      <td>57.0</td>
+      <td>4.8</td>
+      <td>250000000.0</td>
+      <td>343256830.0</td>
+      <td>4.176713e+08</td>
+      <td>7.609281e+08</td>
+      <td>13.0</td>
+      <td>5.109281e+08</td>
+      <td>0.671454</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Black Panther: Wakanda Forever</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>11/11/22</td>
+      <td>2022.0</td>
+      <td>83.0</td>
+      <td>94.0</td>
+      <td>6.7</td>
+      <td>67.0</td>
+      <td>5.2</td>
+      <td>200000000.0</td>
+      <td>453829060.0</td>
+      <td>4.053798e+08</td>
+      <td>8.592088e+08</td>
+      <td>11.0</td>
+      <td>6.592088e+08</td>
+      <td>0.767228</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Ant-Man and the Wasp: Quantumania</td>
+      <td>Movie</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>2/17/23</td>
+      <td>2023.0</td>
+      <td>46.0</td>
+      <td>82.0</td>
+      <td>6.1</td>
+      <td>48.0</td>
+      <td>5.5</td>
+      <td>200000000.0</td>
+      <td>214504909.0</td>
+      <td>2.615663e+08</td>
+      <td>4.760712e+08</td>
+      <td>36.0</td>
+      <td>2.760712e+08</td>
+      <td>0.579895</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Guardians of the Galaxy Vol. 3</td>
+      <td>Movie</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>5/5/23</td>
+      <td>2023.0</td>
+      <td>82.0</td>
+      <td>94.0</td>
+      <td>7.9</td>
+      <td>64.0</td>
+      <td>7.9</td>
+      <td>250000000.0</td>
+      <td>358995815.0</td>
+      <td>4.865600e+08</td>
+      <td>8.455558e+08</td>
+      <td>12.0</td>
+      <td>5.955558e+08</td>
+      <td>0.704336</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>The Marvels</td>
+      <td>Movie</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>11/10/23</td>
+      <td>2023.0</td>
+      <td>62.0</td>
+      <td>82.0</td>
+      <td>5.6</td>
+      <td>50.0</td>
+      <td>3.8</td>
+      <td>270000000.0</td>
+      <td>84500223.0</td>
+      <td>1.216127e+08</td>
+      <td>2.061129e+08</td>
+      <td>20.0</td>
+      <td>-6.388707e+07</td>
+      <td>-0.309961</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find all the movies with Captain America in the title and tell me their metacritic scores.</span>
+<span class="c1"># Notice, to use string functions, you have to prepend the function with str.</span>
+
+<span class="n">mcu_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;movie_title.str.contains(&quot;Captain America&quot;)&#39;</span><span class="p">)[[</span><span class="s1">&#39;movie_title&#39;</span><span class="p">,</span> <span class="s1">&#39;metacritic_metascore&#39;</span><span class="p">,</span> <span class="s1">&#39;metacritic_userscore&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>metacritic_metascore</th>
+      <th>metacritic_userscore</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>Captain America: The First Avenger</td>
+      <td>66.0</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Captain America: The Winter Soldier</td>
+      <td>70.0</td>
+      <td>8.3</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Captain America: Civil War</td>
+      <td>75.0</td>
+      <td>8.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </section>
 </section>
 
@@ -1485,18 +3227,23 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe">1.1. Pandas Dataframe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dataframe">1.2. Creating a dataframe</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-on-columns">1.2.1. Calculations on Columns</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-inspecting-data">1.2.2. Importing and Inspecting Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dataframe">1.2. Creating a dataframe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-on-columns">1.3. Calculations on Columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-inspecting-data">1.4. Importing and Inspecting Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-mcu-dataset">1.5. Example: MCU dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">1.5.1. Data Cleaning</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-bad-data">1.5.1.1. Dropping bad data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-columns">1.5.1.2. Renaming Columns</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-strings-to-numbers">1.5.1.3. Converting strings to numbers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inspection">1.5.1.4. Inspection</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-bad-data">1.3. Dropping bad data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-dataframes">1.3.1. Slicing dataframes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-column">1.3.2. Adding a column</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-dataframes">1.3.3. Filtering dataframes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">1.3.4. Practice Problems</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-dataframes">1.6. Slicing dataframes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-column">1.7. Adding a column</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-dataframes">1.8. Filtering dataframes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">1.9. Practice Problems</a></li>
 </ul>
   </nav></div>
 
