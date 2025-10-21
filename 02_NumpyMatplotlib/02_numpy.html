@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. Numpy &#8212; DS325 Applied Data Science</title>
+    <title>2. Numpy &#8212; DS256 Data Science Programming</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -148,8 +148,8 @@
       
     
     
-    <img src="../_static/ds256_sticker.png" class="logo__image only-light" alt="DS325 Applied Data Science - Home"/>
-    <img src="../_static/ds256_sticker.png" class="logo__image only-dark pst-js-only" alt="DS325 Applied Data Science - Home"/>
+    <img src="../_static/ds256_sticker.png" class="logo__image only-light" alt="DS256 Data Science Programming - Home"/>
+    <img src="../_static/ds256_sticker.png" class="logo__image only-dark pst-js-only" alt="DS256 Data Science Programming - Home"/>
   
   
 </a></div>
@@ -403,14 +403,8 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-numpy-array">2.1. Creating a Numpy array</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-dimensional-arrays">2.2. Multi-dimensional arrays</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#masking">2.3. Masking</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenge-question">2.3.1. Challenge question</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#views-vs-copies">2.4. Views vs Copies</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-exercise">2.4.1. Demo Exercise</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#masking">2.3. Masking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#views-vs-copies">2.4. Views vs Copies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#math-on-arrays">2.5. Math on arrays</a></li>
 </ul>
             </nav>
@@ -499,7 +493,7 @@
         55.,  60.,  65.,  70.,  75.,  80.,  85.,  90.,  95., 100.])
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6, 1, 0, 8, 0, 9, 8, 0, 0, 8, 1, 9, 4, 0, 2, 0, 4, 4, 0, 5])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 5, 7, 9, 1, 6, 8, 0, 9, 9, 6, 6, 0, 7, 9, 9, 2, 9, 3, 9])
 </pre></div>
 </div>
 </div>
@@ -702,9 +696,8 @@ x_{2,0} &amp; x_{2,1} &amp; x_{2,2} &amp; x_{2,3}\\
 </div>
 </div>
 </div>
-<section id="challenge-question">
-<h3><span class="section-number">2.3.1. </span>Challenge question<a class="headerlink" href="#challenge-question" title="Link to this heading">#</a></h3>
-<p>Create a 10x10 array of numbers between -50 and 150. Then create a new array in which any number below 0 is replaced with 1 and any number greater than 100 is replaced with 100.</p>
+<p><strong>Challenge question</strong>
+Create a 10x10 array of numbers between -50 and 150. Then create a new array in which any number below 0 is replaced with 1 and any number greater than 100 is replaced with 100.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
@@ -759,15 +752,13 @@ x_{2,0} &amp; x_{2,1} &amp; x_{2,2} &amp; x_{2,3}\\
 </div>
 </div>
 </section>
-</section>
 <section id="views-vs-copies">
 <h2><span class="section-number">2.4. </span>Views vs Copies<a class="headerlink" href="#views-vs-copies" title="Link to this heading">#</a></h2>
 <p>When you slice an array, the resulting sub-array is a <em>view</em> into the main array. This is true even if you save the sub-array as a new variable. What does this mean?</p>
 <p>You are not allocating new memory to save this view, so any change made to the sub-array is made to the original array.</p>
 <p>If we want to slice a sub-array and have it exist as an array independent of the original array, we must <code class="docutils literal notranslate"><span class="pre">.copy()</span></code>.</p>
 <p>While views might be confusing, they are incredibly useful for breaking up large data arrays to work with manageable chunks.</p>
-<section id="demo-exercise">
-<h3><span class="section-number">2.4.1. </span>Demo Exercise<a class="headerlink" href="#demo-exercise" title="Link to this heading">#</a></h3>
+<p><strong>Demo Exercise</strong></p>
 <ul class="simple">
 <li><p>Let’s create a 10 x 10 matrix of random numbers from 1-5, call it Z.</p></li>
 <li><p>Then let’s extract the upper-right quadrant as a view and the lower-right quadrant as a copy, Z_tr and Z_br respectively.</p></li>
@@ -951,7 +942,6 @@ x_{2,0} &amp; x_{2,1} &amp; x_{2,2} &amp; x_{2,3}\\
 </div>
 </div>
 </section>
-</section>
 <section id="math-on-arrays">
 <h2><span class="section-number">2.5. </span>Math on arrays<a class="headerlink" href="#math-on-arrays" title="Link to this heading">#</a></h2>
 <p>The nicest thing about numpy arrays is that they have been optimized for performing vectorized math operations. What does that mean? A math operation can be applied to every element of an array without a loop, and these vectorized operations are MUCH MUCH MUCH faster.</p>
@@ -1090,14 +1080,8 @@ x_{2,0} &amp; x_{2,1} &amp; x_{2,2} &amp; x_{2,3}\\
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-numpy-array">2.1. Creating a Numpy array</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-dimensional-arrays">2.2. Multi-dimensional arrays</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#masking">2.3. Masking</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenge-question">2.3.1. Challenge question</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#views-vs-copies">2.4. Views vs Copies</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-exercise">2.4.1. Demo Exercise</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#masking">2.3. Masking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#views-vs-copies">2.4. Views vs Copies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#math-on-arrays">2.5. Math on arrays</a></li>
 </ul>
   </nav></div>

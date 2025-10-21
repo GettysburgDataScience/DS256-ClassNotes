@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Pandas &#8212; DS325 Applied Data Science</title>
+    <title>1. Pandas &#8212; DS256 Data Science Programming</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -146,8 +146,8 @@
       
     
     
-    <img src="../_static/ds256_sticker.png" class="logo__image only-light" alt="DS325 Applied Data Science - Home"/>
-    <img src="../_static/ds256_sticker.png" class="logo__image only-dark pst-js-only" alt="DS325 Applied Data Science - Home"/>
+    <img src="../_static/ds256_sticker.png" class="logo__image only-light" alt="DS256 Data Science Programming - Home"/>
+    <img src="../_static/ds256_sticker.png" class="logo__image only-dark pst-js-only" alt="DS256 Data Science Programming - Home"/>
   
   
 </a></div>
@@ -401,7 +401,8 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe">1.1. Pandas Dataframe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dataframe">1.2. Creating a dataframe</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-inspecting-data">1.2.1. Importing and Inspecting Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-on-columns">1.2.1. Calculations on Columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-inspecting-data">1.2.2. Importing and Inspecting Data</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-bad-data">1.3. Dropping bad data</a><ul class="nav section-nav flex-column">
@@ -477,14 +478,142 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">earnings_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">earnings_dict</span><span class="p">)</span>
+
+<span class="n">earnings_df</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>month</th>
+      <th>gross</th>
+      <th>expenses</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Sept</td>
+      <td>22000</td>
+      <td>16000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Oct</td>
+      <td>24500</td>
+      <td>16000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Nov</td>
+      <td>18000</td>
+      <td>8000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>And like a dictionary, we can append new columns on the fly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">earnings_df</span><span class="p">[</span><span class="s1">&#39;net&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">earnings_df</span><span class="p">[</span><span class="s1">&#39;gross&#39;</span><span class="p">]</span><span class="o">-</span> <span class="n">earnings_df</span><span class="p">[</span><span class="s1">&#39;expenses&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">earnings_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>month</th>
+      <th>gross</th>
+      <th>expenses</th>
+      <th>net</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Sept</td>
+      <td>22000</td>
+      <td>16000</td>
+      <td>6000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Oct</td>
+      <td>24500</td>
+      <td>16000</td>
+      <td>8500</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Nov</td>
+      <td>18000</td>
+      <td>8000</td>
+      <td>10000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="calculations-on-columns">
+<h3><span class="section-number">1.2.1. </span>Calculations on Columns<a class="headerlink" href="#calculations-on-columns" title="Link to this heading">#</a></h3>
+<p>When extracting a column, you can use numpy functions to get different measures of those data:</p>
+<ul class="simple">
+<li><p>.mean()</p></li>
+<li><p>.std()</p></li>
+<li><p>.min()</p></li>
+<li><p>.max()</p></li>
+<li><p>.sum()</p></li>
+<li><p>.unique()</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">earnings_df</span><span class="p">[</span><span class="s1">&#39;gross&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(21500.0)
 </pre></div>
 </div>
 </div>
@@ -533,8 +662,9 @@
 <img alt="../_images/3335e4d5de20dd580d13d14dfe61f7f612d17fa2921478ee632e70e3d6f7068f.png" src="../_images/3335e4d5de20dd580d13d14dfe61f7f612d17fa2921478ee632e70e3d6f7068f.png" />
 </div>
 </div>
+</section>
 <section id="importing-and-inspecting-data">
-<h3><span class="section-number">1.2.1. </span>Importing and Inspecting Data<a class="headerlink" href="#importing-and-inspecting-data" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.2.2. </span>Importing and Inspecting Data<a class="headerlink" href="#importing-and-inspecting-data" title="Link to this heading">#</a></h3>
 <p>Most of the time, we’ll be using data that exist outside of Python, either data that somebody else has collected or data that we’ve collected and saved to some other kind of file (.csv, .json, etc). We’ll import data into the dataframe using:</p>
 <p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_csv(data.csv)</span></code></p>
 <p>Where <code class="docutils literal notranslate"><span class="pre">data.csv</span></code> could be a filepath on your computer or a url to a file that exists online. There are other commands that allow pandas to import a variety of data filetypes.</p>
@@ -549,26 +679,250 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/mcu_data_apr_2024.csv&#39;</span><span class="p">)</span>
+
+<span class="n">rename_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">col</span><span class="p">:</span><span class="n">col</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">mcu_df</span><span class="o">.</span><span class="n">columns</span><span class="p">}</span>
+<span class="n">mcu_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">rename_dict</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">convert_dollars</span><span class="p">(</span><span class="n">entry</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">entry</span> <span class="o">==</span> <span class="s1">&#39; - &#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">entry</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+
+<span class="n">money_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;production_budget&#39;</span><span class="p">,</span> <span class="s1">&#39;domestic_box_office&#39;</span><span class="p">,</span><span class="s1">&#39;international_box_office&#39;</span><span class="p">,</span> <span class="s1">&#39;worldwide_box_office&#39;</span><span class="p">]</span>
+    
+<span class="n">mcu_df</span><span class="p">[</span><span class="n">money_cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcu_df</span><span class="p">[</span><span class="n">money_cols</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">convert_dollars</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">columns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;movie_title&#39;, &#39;Type&#39;, &#39;mcu_phase_number&#39;, &#39;mcu_phase_text&#39;,
-       &#39;release_date&#39;, &#39;release_year&#39;, &#39;rt_tomato_meter&#39;, &#39;rt_audience_score&#39;,
-       &#39;imdb-rating&#39;, &#39;metacritic_metascore&#39;, &#39;metacritic_userscore&#39;,
-       &#39; production_budget &#39;, &#39; domestic_box_office &#39;,
-       &#39; international_box_office &#39;, &#39; worldwide_box_office &#39;],
-      dtype=&#39;object&#39;)
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>Type</th>
+      <th>mcu_phase_number</th>
+      <th>mcu_phase_text</th>
+      <th>release_date</th>
+      <th>release_year</th>
+      <th>rt_tomato_meter</th>
+      <th>rt_audience_score</th>
+      <th>imdb-rating</th>
+      <th>metacritic_metascore</th>
+      <th>metacritic_userscore</th>
+      <th>production_budget</th>
+      <th>domestic_box_office</th>
+      <th>international_box_office</th>
+      <th>worldwide_box_office</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>35</th>
+      <td>Thor: Love and Thunder</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>7/8/22</td>
+      <td>2022.0</td>
+      <td>63.0</td>
+      <td>76.0</td>
+      <td>6.2</td>
+      <td>57.0</td>
+      <td>4.8</td>
+      <td>2.500000e+08</td>
+      <td>3.432568e+08</td>
+      <td>4.176713e+08</td>
+      <td>7.609281e+08</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>She-Hulk</td>
+      <td>TV Show</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>8/18/22</td>
+      <td>2022.0</td>
+      <td>77.0</td>
+      <td>32.0</td>
+      <td>5.3</td>
+      <td>67.0</td>
+      <td>2.7</td>
+      <td>2.250000e+08</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Black Panther: Wakanda Forever</td>
+      <td>Movie</td>
+      <td>4.0</td>
+      <td>MCU Phase 4</td>
+      <td>11/11/22</td>
+      <td>2022.0</td>
+      <td>83.0</td>
+      <td>94.0</td>
+      <td>6.7</td>
+      <td>67.0</td>
+      <td>5.2</td>
+      <td>2.000000e+08</td>
+      <td>4.538291e+08</td>
+      <td>4.053798e+08</td>
+      <td>8.592088e+08</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Ant-Man and the Wasp: Quantumania</td>
+      <td>Movie</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>2/17/23</td>
+      <td>2023.0</td>
+      <td>46.0</td>
+      <td>82.0</td>
+      <td>6.1</td>
+      <td>48.0</td>
+      <td>5.5</td>
+      <td>2.000000e+08</td>
+      <td>2.145049e+08</td>
+      <td>2.615663e+08</td>
+      <td>4.760712e+08</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Guardians of the Galaxy Vol. 3</td>
+      <td>Movie</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>5/5/23</td>
+      <td>2023.0</td>
+      <td>82.0</td>
+      <td>94.0</td>
+      <td>7.9</td>
+      <td>64.0</td>
+      <td>7.9</td>
+      <td>2.500000e+08</td>
+      <td>3.589958e+08</td>
+      <td>4.865600e+08</td>
+      <td>8.455558e+08</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Secret Invasion</td>
+      <td>TV Show</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>6/21/23</td>
+      <td>2023.0</td>
+      <td>53.0</td>
+      <td>46.0</td>
+      <td>5.9</td>
+      <td>63.0</td>
+      <td>3.5</td>
+      <td>2.110000e+08</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>The Marvels</td>
+      <td>Movie</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>11/10/23</td>
+      <td>2023.0</td>
+      <td>62.0</td>
+      <td>82.0</td>
+      <td>5.6</td>
+      <td>50.0</td>
+      <td>3.8</td>
+      <td>2.700000e+08</td>
+      <td>8.450022e+07</td>
+      <td>1.216127e+08</td>
+      <td>2.061129e+08</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Echo</td>
+      <td>TV Show</td>
+      <td>5.0</td>
+      <td>MCU Phase 5</td>
+      <td>1/9/24</td>
+      <td>2024.0</td>
+      <td>71.0</td>
+      <td>61.0</td>
+      <td>6.0</td>
+      <td>62.0</td>
+      <td>5.2</td>
+      <td>4.000000e+07</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.157000e+09</td>
+      <td>1.179950e+10</td>
+      <td>1.802709e+10</td>
+      <td>2.982615e+10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -626,10 +980,10 @@
       <td>5.9</td>
       <td>63.0</td>
       <td>3.5</td>
-      <td>$211,000,000</td>
-      <td>-</td>
-      <td>-</td>
-      <td>-</td>
+      <td>2.110000e+08</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>41</th>
@@ -644,10 +998,10 @@
       <td>5.6</td>
       <td>50.0</td>
       <td>3.8</td>
-      <td>$270,000,000</td>
-      <td>$84,500,223</td>
-      <td>$121,612,709</td>
-      <td>$206,112,932</td>
+      <td>2.700000e+08</td>
+      <td>8.450022e+07</td>
+      <td>1.216127e+08</td>
+      <td>2.061129e+08</td>
     </tr>
     <tr>
       <th>42</th>
@@ -662,10 +1016,10 @@
       <td>6.0</td>
       <td>62.0</td>
       <td>5.2</td>
-      <td>$40,000,000</td>
-      <td>-</td>
-      <td>-</td>
-      <td>-</td>
+      <td>4.000000e+07</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>43</th>
@@ -698,10 +1052,10 @@
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>$8,157,000,000</td>
-      <td>$11,799,499,952</td>
-      <td>$18,027,089,947</td>
-      <td>$29,826,145,377</td>
+      <td>8.157000e+09</td>
+      <td>1.179950e+10</td>
+      <td>1.802709e+10</td>
+      <td>2.982615e+10</td>
     </tr>
   </tbody>
 </table>
@@ -739,6 +1093,10 @@
       <th>imdb-rating</th>
       <th>metacritic_metascore</th>
       <th>metacritic_userscore</th>
+      <th>production_budget</th>
+      <th>domestic_box_office</th>
+      <th>international_box_office</th>
+      <th>worldwide_box_office</th>
     </tr>
   </thead>
   <tbody>
@@ -751,6 +1109,10 @@
       <td>43.000000</td>
       <td>43.000000</td>
       <td>43.000000</td>
+      <td>4.300000e+01</td>
+      <td>3.400000e+01</td>
+      <td>3.400000e+01</td>
+      <td>3.400000e+01</td>
     </tr>
     <tr>
       <th>mean</th>
@@ -761,6 +1123,10 @@
       <td>7.158140</td>
       <td>67.093023</td>
       <td>6.593023</td>
+      <td>3.793953e+08</td>
+      <td>6.940882e+08</td>
+      <td>1.060417e+09</td>
+      <td>1.754479e+09</td>
     </tr>
     <tr>
       <th>std</th>
@@ -771,6 +1137,10 @@
       <td>0.753794</td>
       <td>8.242786</td>
       <td>1.493381</td>
+      <td>1.215664e+09</td>
+      <td>1.971402e+09</td>
+      <td>3.021327e+09</td>
+      <td>4.990436e+09</td>
     </tr>
     <tr>
       <th>min</th>
@@ -781,6 +1151,10 @@
       <td>5.300000</td>
       <td>48.000000</td>
       <td>2.700000</td>
+      <td>4.000000e+07</td>
+      <td>8.450022e+07</td>
+      <td>1.216127e+08</td>
+      <td>2.061129e+08</td>
     </tr>
     <tr>
       <th>25%</th>
@@ -791,6 +1165,10 @@
       <td>6.750000</td>
       <td>62.500000</td>
       <td>5.950000</td>
+      <td>1.500000e+08</td>
+      <td>2.150409e+08</td>
+      <td>2.790970e+08</td>
+      <td>5.359330e+08</td>
     </tr>
     <tr>
       <th>50%</th>
@@ -801,6 +1179,10 @@
       <td>7.300000</td>
       <td>68.000000</td>
       <td>6.900000</td>
+      <td>2.000000e+08</td>
+      <td>3.336889e+08</td>
+      <td>4.498575e+08</td>
+      <td>8.092151e+08</td>
     </tr>
     <tr>
       <th>75%</th>
@@ -811,6 +1193,10 @@
       <td>7.750000</td>
       <td>72.000000</td>
       <td>7.750000</td>
+      <td>2.305000e+08</td>
+      <td>4.229553e+08</td>
+      <td>7.313400e+08</td>
+      <td>1.147925e+09</td>
     </tr>
     <tr>
       <th>max</th>
@@ -821,6 +1207,10 @@
       <td>8.400000</td>
       <td>88.000000</td>
       <td>8.600000</td>
+      <td>8.157000e+09</td>
+      <td>1.179950e+10</td>
+      <td>1.802709e+10</td>
+      <td>2.982615e+10</td>
     </tr>
   </tbody>
 </table>
@@ -832,22 +1222,10 @@
 <section id="dropping-bad-data">
 <h2><span class="section-number">1.3. </span>Dropping bad data<a class="headerlink" href="#dropping-bad-data" title="Link to this heading">#</a></h2>
 <p>Data can be ‘bad’ for numerous reasons, but most immediately obvious are missing data. We drop missing data with <code class="docutils literal notranslate"><span class="pre">df.dropna</span></code> (<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html">dropna documentation</a>)</p>
-<section id="slicing-dataframes">
-<h3><span class="section-number">1.3.1. </span>Slicing dataframes<a class="headerlink" href="#slicing-dataframes" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">df.COLUMN_NAME</span></code> or <code class="docutils literal notranslate"><span class="pre">df[COLUMN_NAME]</span></code> or <code class="docutils literal notranslate"><span class="pre">df.loc[COLUMN_NAME]</span></code> - slice an individual column</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">df[LIST_OF_COLUMN_NAMES]</span></code> or <code class="docutils literal notranslate"><span class="pre">df.loc[LIST_OF_COLUMN_NAME]</span></code>- slice multiple columns</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">df[ROW_INDICES]</span></code> or <code class="docutils literal notranslate"><span class="pre">df.iloc[ROW_INDICES]</span></code>- slice multiple rows</p></li>
-</ul>
-<p>How does Pandas know whether you meant to slice a column or a row?</p>
-<p>You can ‘slice’ columns or rows from a dataframe using:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">df[LIST_OF_COLUMN_NAMES][ROW_INDICES]</span></code> - slice along columns and rows</p></li>
-</ul>
-<p>Let’s get the movie_title, release_date, rt_audience_score, metacritic_userscore, production_budget, and worldwide_box_office for the last ten most recent entries (as of the time this list was made).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mcu_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -870,122 +1248,136 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>movie_title</th>
-      <th>Type</th>
-      <th>mcu_phase_number</th>
-      <th>mcu_phase_text</th>
-      <th>release_date</th>
-      <th>release_year</th>
-      <th>rt_tomato_meter</th>
-      <th>rt_audience_score</th>
-      <th>imdb-rating</th>
-      <th>metacritic_metascore</th>
-      <th>metacritic_userscore</th>
-      <th>production_budget</th>
-      <th>domestic_box_office</th>
-      <th>international_box_office</th>
-      <th>worldwide_box_office</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>5</th>
-      <td>The Avengers</td>
-      <td>Movie</td>
-      <td>1.0</td>
-      <td>MCU Phase 1</td>
-      <td>5/4/12</td>
-      <td>2012.0</td>
-      <td>91.0</td>
-      <td>91.0</td>
-      <td>8.0</td>
-      <td>69.0</td>
-      <td>8.0</td>
-      <td>$220,000,000</td>
-      <td>$623,357,910</td>
-      <td>$895,442,000</td>
-      <td>$1,518,799,910</td>
+      <th>40</th>
     </tr>
     <tr>
-      <th>6</th>
-      <td>Iron Man 3</td>
-      <td>Movie</td>
-      <td>2.0</td>
-      <td>MCU Phase 2</td>
-      <td>5/3/13</td>
-      <td>2013.0</td>
-      <td>79.0</td>
-      <td>78.0</td>
-      <td>7.1</td>
-      <td>62.0</td>
-      <td>6.7</td>
-      <td>$200,000,000</td>
-      <td>$409,013,994</td>
-      <td>$806,426,000</td>
-      <td>$1,215,439,994</td>
+      <th>41</th>
     </tr>
     <tr>
-      <th>7</th>
-      <td>Thor: The Dark World</td>
-      <td>Movie</td>
-      <td>2.0</td>
-      <td>MCU Phase 2</td>
-      <td>11/8/13</td>
-      <td>2013.0</td>
-      <td>66.0</td>
-      <td>75.0</td>
-      <td>6.8</td>
-      <td>54.0</td>
-      <td>7.0</td>
-      <td>$170,000,000</td>
-      <td>$206,362,140</td>
-      <td>$438,421,000</td>
-      <td>$644,783,140</td>
+      <th>42</th>
     </tr>
     <tr>
-      <th>8</th>
-      <td>Captain America: The Winter Soldier</td>
-      <td>Movie</td>
-      <td>2.0</td>
-      <td>MCU Phase 2</td>
-      <td>4/4/14</td>
-      <td>2014.0</td>
-      <td>90.0</td>
-      <td>92.0</td>
-      <td>7.7</td>
-      <td>70.0</td>
-      <td>8.3</td>
-      <td>$170,000,000</td>
-      <td>$259,766,572</td>
-      <td>$454,654,931</td>
-      <td>$714,421,503</td>
+      <th>43</th>
     </tr>
     <tr>
-      <th>9</th>
-      <td>Guardians of the Galaxy</td>
-      <td>Movie</td>
-      <td>2.0</td>
-      <td>MCU Phase 2</td>
-      <td>8/1/14</td>
-      <td>2014.0</td>
-      <td>92.0</td>
-      <td>92.0</td>
-      <td>8.0</td>
-      <td>76.0</td>
-      <td>8.2</td>
-      <td>$170,000,000</td>
-      <td>$333,176,600</td>
-      <td>$439,697,800</td>
-      <td>$772,874,400</td>
+      <th>44</th>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
+<section id="slicing-dataframes">
+<h3><span class="section-number">1.3.1. </span>Slicing dataframes<a class="headerlink" href="#slicing-dataframes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.COLUMN_NAME</span></code> or <code class="docutils literal notranslate"><span class="pre">df[COLUMN_NAME]</span></code> or <code class="docutils literal notranslate"><span class="pre">df.loc[COLUMN_NAME]</span></code> - slice an individual column</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df[LIST_OF_COLUMN_NAMES]</span></code> or <code class="docutils literal notranslate"><span class="pre">df.loc[LIST_OF_COLUMN_NAME]</span></code>- slice multiple columns</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.iloc[ROW_INDICES]</span></code>- slice multiple rows</p></li>
+</ul>
+<p>How does Pandas know whether you meant to slice a column or a row?</p>
+<p>You can ‘slice’ columns or rows from a dataframe using:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df[LIST_OF_COLUMN_NAMES].iloc[ROW_INDICES]</span></code> - slice along columns and rows</p></li>
+</ul>
+<p>Let’s get the movie_title, release_date, rt_audience_score, metacritic_userscore, production_budget, and worldwide_box_office for the last ten most recent entries (as of the time this list was made).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;release_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">40</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">File ~/.pyenv/versions/datascience/lib/python3.13/site-packages/pandas/core/indexes/base.py:3805,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3804</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3805</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3806</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+
+<span class="nn">File index.pyx:167,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">File index.pyx:196,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:7081,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
+
+<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:7089,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
+
+<span class="ne">KeyError</span>: &#39;release_date&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">mcu_df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;release_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">40</span><span class="p">]</span>
+
+<span class="nn">File ~/.pyenv/versions/datascience/lib/python3.13/site-packages/pandas/core/frame.py:4102,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4100</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">4101</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_multilevel</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">4102</span> <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4103</span> <span class="k">if</span> <span class="n">is_integer</span><span class="p">(</span><span class="n">indexer</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4104</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="p">[</span><span class="n">indexer</span><span class="p">]</span>
+
+<span class="nn">File ~/.pyenv/versions/datascience/lib/python3.13/site-packages/pandas/core/indexes/base.py:3812,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3807</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3808</span>         <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3809</span>         <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3810</span>     <span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3811</span>         <span class="k">raise</span> <span class="n">InvalidIndexError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3812</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">err</span>
+<span class="g g-Whitespace">   </span><span class="mi">3813</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3814</span>     <span class="c1"># If we have a listlike key, _check_indexing_error will raise</span>
+<span class="g g-Whitespace">   </span><span class="mi">3815</span>     <span class="c1">#  InvalidIndexError. Otherwise we fall through and re-raise</span>
+<span class="g g-Whitespace">   </span><span class="mi">3816</span>     <span class="c1">#  the TypeError.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3817</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_check_indexing_error</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: &#39;release_date&#39;
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="adding-a-column">
 <h3><span class="section-number">1.3.2. </span>Adding a column<a class="headerlink" href="#adding-a-column" title="Link to this heading">#</a></h3>
 <p>Just as in dictionaries, you can add a calculated column as you go.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;audience_vs_critic&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;rt_audience_score&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;rt_tomato_meter&#39;</span><span class="p">]</span>
+<span class="n">mcu_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mcu_df[&#39;profit&#39;] = mcu_df[&#39; worldwide_box_office &#39;]-mcu_df[&#39; production_budget &#39;]</span>
+<span class="c1"># mcu_df[&#39;profit_margin&#39;] = mcu_df[&#39;profit&#39;]/mcu_df[&#39; production_budget &#39;]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="p">[(</span><span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Movie&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;release_year&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">2013</span><span class="p">)]</span>
+
+<span class="n">desired_type</span> <span class="o">=</span> <span class="s1">&#39;Movie&#39;</span>
+<span class="n">mcu_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Type == @desired_type and release_year &lt; 2013&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="filtering-dataframes">
 <h3><span class="section-number">1.3.3. </span>Filtering dataframes<a class="headerlink" href="#filtering-dataframes" title="Link to this heading">#</a></h3>
@@ -997,6 +1389,13 @@
 </ul>
 <p>The syntaxes of these two approaches are illustrated by an example.</p>
 <p><em>Example</em>: Find me the most liked of the MCU movies to watch. How will we define most liked?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcu_df</span><span class="p">[</span><span class="s1">&#39;rt_audience_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="practice-problems">
 <h3><span class="section-number">1.3.4. </span>Practice Problems<a class="headerlink" href="#practice-problems" title="Link to this heading">#</a></h3>
@@ -1005,6 +1404,17 @@
 <li><p>Which movies were liked by audiences more than by the critics?</p></li>
 <li><p>Find all the movies with Captain America in the title and tell me their metacritic scores.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference internal" href="02_crackthecode.html"><span class="std std-doc">crack the code</span></a></p>
 </section>
 </section>
 </section>
@@ -1076,7 +1486,8 @@
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe">1.1. Pandas Dataframe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-dataframe">1.2. Creating a dataframe</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-inspecting-data">1.2.1. Importing and Inspecting Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-on-columns">1.2.1. Calculations on Columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-and-inspecting-data">1.2.2. Importing and Inspecting Data</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-bad-data">1.3. Dropping bad data</a><ul class="nav section-nav flex-column">

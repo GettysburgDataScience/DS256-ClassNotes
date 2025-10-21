@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. In class problem-solving! &#8212; DS325 Applied Data Science</title>
+    <title>4. In class problem-solving! &#8212; DS256 Data Science Programming</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -146,8 +146,8 @@
       
     
     
-    <img src="../_static/ds256_sticker.png" class="logo__image only-light" alt="DS325 Applied Data Science - Home"/>
-    <img src="../_static/ds256_sticker.png" class="logo__image only-dark pst-js-only" alt="DS325 Applied Data Science - Home"/>
+    <img src="../_static/ds256_sticker.png" class="logo__image only-light" alt="DS256 Data Science Programming - Home"/>
+    <img src="../_static/ds256_sticker.png" class="logo__image only-dark pst-js-only" alt="DS256 Data Science Programming - Home"/>
   
   
 </a></div>
@@ -403,8 +403,11 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy">4.1.1. Strategy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">4.2. Text data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#election-data">4.3. Election Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#playing-with-data">4.2. Playing with Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">4.2.1. Text data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#election-data">4.2.2. Election Data</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -535,49 +538,18 @@ Test 4: 19000
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_string</span> <span class="o">=</span> <span class="s1">&#39;one hundred nineteen billion, three hundred one million, twelve&#39;</span>
-<span class="n">test_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;thousand&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;one hundred nineteen billion, three hundred one million, twelve&#39;]
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+</section>
+<section id="playing-with-data">
+<h2><span class="section-number">4.2. </span>Playing with Data<a class="headerlink" href="#playing-with-data" title="Link to this heading">#</a></h2>
+<section id="text-data">
+<h3><span class="section-number">4.2.1. </span>Text data<a class="headerlink" href="#text-data" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="text-data">
-<h2><span class="section-number">4.2. </span>Text data<a class="headerlink" href="#text-data" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;five hundred&#39;</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;thousand&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">r</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;five hundred&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/potter.txt&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/potter.txt&quot;</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">potter_text</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
 </pre></div>
@@ -657,7 +629,7 @@ McGonagall: Do you think it wise to trust Hagrid with something as important as 
 </ul>
 </section>
 <section id="election-data">
-<h2><span class="section-number">4.3. </span>Election Data<a class="headerlink" href="#election-data" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">4.2.2. </span>Election Data<a class="headerlink" href="#election-data" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/countypres_2000-2024.csv&quot;</span>
@@ -918,6 +890,7 @@ McGonagall: Do you think it wise to trust Hagrid with something as important as 
 - percentage of voter turnout for every county vs party lean</p>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -988,8 +961,11 @@ McGonagall: Do you think it wise to trust Hagrid with something as important as 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy">4.1.1. Strategy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">4.2. Text data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#election-data">4.3. Election Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#playing-with-data">4.2. Playing with Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">4.2.1. Text data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#election-data">4.2.2. Election Data</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
