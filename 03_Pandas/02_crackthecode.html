@@ -888,18 +888,17 @@
 
 <span class="n">ans</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">]</span>
 
-
 <span class="n">message_a</span> <span class="o">=</span> <span class="n">decode_message</span><span class="p">(</span><span class="n">secret_message_a</span><span class="p">,</span> <span class="n">ans</span><span class="p">)</span>
 <span class="n">message_b</span> <span class="o">=</span> <span class="n">decode_message</span><span class="p">(</span><span class="n">secret_message_b</span><span class="p">,</span> <span class="n">ans</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">message_a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">message_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Quote 1: </span><span class="si">{</span><span class="n">message_a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Quote 2: </span><span class="si">{</span><span class="n">message_b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Huh. ____ _____ ____ __________ _____ ______
-_____ _____ ______ __ _____ ____ roads.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quote 1: Huh. ____ _____ ____ __________ _____ ______
+Quote 2: _____ _____ ______ __ _____ ____ roads.
 </pre></div>
 </div>
 </div>
