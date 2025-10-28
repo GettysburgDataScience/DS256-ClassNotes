@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. Pandas - Grouping and Aggregation &#8212; DS256 Data Science Programming</title>
+    <title>4. Pandas - Grouping and Aggregation &#8212; DS256 Data Science Programming</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '03_Pandas/03_pandas_groupby';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Pandas - Merging DataFrames" href="04_pandas_merge.html" />
-    <link rel="prev" title="2. Crack the Code!" href="02_crackthecode.html" />
+    <link rel="next" title="5. Pandas - Merging DataFrames" href="04_pandas_merge.html" />
+    <link rel="prev" title="3. Crack the Code!" href="02_crackthecode_solutions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -197,8 +197,9 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_pandas_intro.html">1. Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_crackthecode.html">2. Crack the Code!</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Pandas - Grouping and Aggregation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_pandas_merge.html">4. Pandas - Merging DataFrames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_crackthecode_solutions.html">3. Crack the Code!</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Pandas - Grouping and Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_pandas_merge.html">5. Pandas - Merging DataFrames</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -403,14 +404,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby-and-aggregate">3.1. Groupby and Aggregate</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-aggregation-functions">3.1.1. Common Aggregation Functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-aggregations">3.1.2. Multiple Aggregations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">3.1.3. Use Cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby-and-aggregate">4.1. Groupby and Aggregate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-aggregation-functions">4.1.1. Common Aggregation Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-aggregations">4.1.2. Multiple Aggregations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">4.1.3. Use Cases</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-pandas-functions-for-sorting-counting-and-finding-maxima-minima-in-data">3.2. Useful Pandas Functions for Sorting, Counting, and Finding Maxima/Minima in Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crack-the-code">3.3. Crack the Code!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-pandas-functions-for-sorting-counting-and-finding-maxima-minima-in-data">4.2. Useful Pandas Functions for Sorting, Counting, and Finding Maxima/Minima in Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crack-the-code">4.3. Crack the Code!</a></li>
 </ul>
             </nav>
         </div>
@@ -423,7 +424,7 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas-grouping-and-aggregation">
-<h1><span class="section-number">3. </span>Pandas - Grouping and Aggregation<a class="headerlink" href="#pandas-grouping-and-aggregation" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>Pandas - Grouping and Aggregation<a class="headerlink" href="#pandas-grouping-and-aggregation" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -695,7 +696,7 @@
 </div></div></div>
 </div>
 <section id="groupby-and-aggregate">
-<h2><span class="section-number">3.1. </span>Groupby and Aggregate<a class="headerlink" href="#groupby-and-aggregate" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>Groupby and Aggregate<a class="headerlink" href="#groupby-and-aggregate" title="Link to this heading">#</a></h2>
 <p>Often in data science, we want to partition our data set into groups based on some feature and compare statistics of those groups.</p>
 <p>In pandas, <code class="docutils literal notranslate"><span class="pre">groupby</span></code> is used to split the data into groups based on the values in one or more columns. After grouping, you can apply aggregation (<code class="docutils literal notranslate"><span class="pre">agg</span></code>) functions to summarize or transform each group.</p>
 <p><code class="docutils literal notranslate"><span class="pre">groupby</span></code> works by:</p>
@@ -715,7 +716,7 @@
 </pre></div>
 </div>
 <section id="common-aggregation-functions">
-<h3><span class="section-number">3.1.1. </span>Common Aggregation Functions<a class="headerlink" href="#common-aggregation-functions" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.1.1. </span>Common Aggregation Functions<a class="headerlink" href="#common-aggregation-functions" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">sum()</span></code>: Total of values in each group</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mean()</span></code>: Average of values in each group</p></li>
@@ -724,7 +725,7 @@
 </ul>
 </section>
 <section id="multiple-aggregations">
-<h3><span class="section-number">3.1.2. </span>Multiple Aggregations<a class="headerlink" href="#multiple-aggregations" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.1.2. </span>Multiple Aggregations<a class="headerlink" href="#multiple-aggregations" title="Link to this heading">#</a></h3>
 <p>You can apply multiple aggregation functions at once using <code class="docutils literal notranslate"><span class="pre">.agg()</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;County&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
     <span class="s1">&#39;Electric Range&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">],</span>
@@ -735,7 +736,7 @@
 <p>This produces a summary table with the specified statistics for each group.</p>
 </section>
 <section id="use-cases">
-<h3><span class="section-number">3.1.3. </span>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.1.3. </span>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Summarizing data by categories (e.g., average sales per region)</p></li>
 <li><p>Counting occurrences (e.g., number of vehicles per manufacturer)</p></li>
@@ -1098,7 +1099,7 @@ Name: Electric Range, Length: 239, dtype: float64
 </section>
 </section>
 <section id="useful-pandas-functions-for-sorting-counting-and-finding-maxima-minima-in-data">
-<h2><span class="section-number">3.2. </span>Useful Pandas Functions for Sorting, Counting, and Finding Maxima/Minima in Data<a class="headerlink" href="#useful-pandas-functions-for-sorting-counting-and-finding-maxima-minima-in-data" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>Useful Pandas Functions for Sorting, Counting, and Finding Maxima/Minima in Data<a class="headerlink" href="#useful-pandas-functions-for-sorting-counting-and-finding-maxima-minima-in-data" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Sorting Values:</strong> Sort the DataFrame by a column (e.g., Electric Range):</p></li>
 </ul>
@@ -1199,7 +1200,7 @@ Name: Electric Range, Length: 239, dtype: float64
 </div>
 </section>
 <section id="crack-the-code">
-<h2><span class="section-number">3.3. </span>Crack the Code!<a class="headerlink" href="#crack-the-code" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.3. </span>Crack the Code!<a class="headerlink" href="#crack-the-code" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>a</strong> What is the maximum Electric Range of the vehicles in this dataset?</p></li>
 <li><p><strong>b</strong> How many electric vehicles are registered in Snohomish County?</p></li>
@@ -1324,12 +1325,12 @@ ____ __ ______ # ______ _______ __ _________
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="02_crackthecode.html"
+       href="02_crackthecode_solutions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Crack the Code!</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Crack the Code!</p>
       </div>
     </a>
     <a class="right-next"
@@ -1337,7 +1338,7 @@ ____ __ ______ # ______ _______ __ _________
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Pandas - Merging DataFrames</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Pandas - Merging DataFrames</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1358,14 +1359,14 @@ ____ __ ______ # ______ _______ __ _________
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby-and-aggregate">3.1. Groupby and Aggregate</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-aggregation-functions">3.1.1. Common Aggregation Functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-aggregations">3.1.2. Multiple Aggregations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">3.1.3. Use Cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby-and-aggregate">4.1. Groupby and Aggregate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-aggregation-functions">4.1.1. Common Aggregation Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-aggregations">4.1.2. Multiple Aggregations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">4.1.3. Use Cases</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-pandas-functions-for-sorting-counting-and-finding-maxima-minima-in-data">3.2. Useful Pandas Functions for Sorting, Counting, and Finding Maxima/Minima in Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crack-the-code">3.3. Crack the Code!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-pandas-functions-for-sorting-counting-and-finding-maxima-minima-in-data">4.2. Useful Pandas Functions for Sorting, Counting, and Finding Maxima/Minima in Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crack-the-code">4.3. Crack the Code!</a></li>
 </ul>
   </nav></div>
 
