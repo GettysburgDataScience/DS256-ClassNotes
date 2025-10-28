@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '03_Pandas/03_pandas_groupby';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Github Submission Guide" href="../00_Assignments/submitting.html" />
+    <link rel="next" title="4. Pandas - Merging DataFrames" href="04_pandas_merge.html" />
     <link rel="prev" title="2. Crack the Code!" href="02_crackthecode.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -198,6 +198,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01_pandas_intro.html">1. Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_crackthecode.html">2. Crack the Code!</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Pandas - Grouping and Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_pandas_merge.html">4. Pandas - Merging DataFrames</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -209,6 +210,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps04.html">PS04</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/mp01.html">Mini-Project 1 (and examples!)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps05.html">PS05</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps06.html">PS06</a></li>
 </ul>
 
     </div>
@@ -739,6 +741,360 @@
 <li><p>Counting occurrences (e.g., number of vehicles per manufacturer)</p></li>
 <li><p>Finding maximum/minimum values within groups</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;County&#39;</span><span class="p">,</span> <span class="s1">&#39;Make&#39;</span><span class="p">])[</span><span class="s1">&#39;VIN (1-10)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>County  Make      
+Ada     TESLA          2
+Adams   BMW            4
+        CADILLAC       3
+        CHEVROLET      7
+        CHRYSLER       1
+                      ..
+Yakima  VOLKSWAGEN    31
+        VOLVO         31
+York    TESLA          2
+        VOLKSWAGEN     1
+Yuba    TESLA          1
+Name: VIN (1-10), Length: 1543, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;County&#39;</span><span class="p">)[</span><span class="s1">&#39;Electric Range&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>County</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Ada</th>
+      <td>2.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Adams</th>
+      <td>109.0</td>
+      <td>52.504587</td>
+      <td>93.387348</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>39.0</td>
+      <td>322.0</td>
+    </tr>
+    <tr>
+      <th>Alameda</th>
+      <td>10.0</td>
+      <td>2.100000</td>
+      <td>6.640783</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>21.0</td>
+    </tr>
+    <tr>
+      <th>Albemarle</th>
+      <td>2.0</td>
+      <td>104.000000</td>
+      <td>147.078210</td>
+      <td>0.0</td>
+      <td>52.0</td>
+      <td>104.0</td>
+      <td>156.0</td>
+      <td>208.0</td>
+    </tr>
+    <tr>
+      <th>Alexandria</th>
+      <td>7.0</td>
+      <td>86.142857</td>
+      <td>138.338267</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>136.5</td>
+      <td>330.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>Whitman</th>
+      <td>536.0</td>
+      <td>36.694030</td>
+      <td>67.823408</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>39.0</td>
+      <td>322.0</td>
+    </tr>
+    <tr>
+      <th>Williamson</th>
+      <td>5.0</td>
+      <td>48.600000</td>
+      <td>96.331719</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>23.0</td>
+      <td>220.0</td>
+    </tr>
+    <tr>
+      <th>Yakima</th>
+      <td>1791.0</td>
+      <td>49.169179</td>
+      <td>86.251936</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>39.5</td>
+      <td>330.0</td>
+    </tr>
+    <tr>
+      <th>York</th>
+      <td>3.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Yuba</th>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>239 rows × 8 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;County&#39;</span><span class="p">)[</span><span class="s1">&#39;Electric Range&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>County
+Ada             0.000000
+Adams          52.504587
+Alameda         2.100000
+Albemarle     104.000000
+Alexandria     86.142857
+                 ...    
+Whitman        36.694030
+Williamson     48.600000
+Yakima         49.169179
+York            0.000000
+Yuba            0.000000
+Name: Electric Range, Length: 239, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;County&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;Electric Range&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Model Year&#39;</span><span class="p">:</span> <span class="s1">&#39;count&#39;</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3" halign="left">Electric Range</th>
+      <th>Model Year</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>mean</th>
+      <th>max</th>
+      <th>min</th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>County</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Ada</th>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Adams</th>
+      <td>52.504587</td>
+      <td>322.0</td>
+      <td>0.0</td>
+      <td>109</td>
+    </tr>
+    <tr>
+      <th>Alameda</th>
+      <td>2.100000</td>
+      <td>21.0</td>
+      <td>0.0</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>Albemarle</th>
+      <td>104.000000</td>
+      <td>208.0</td>
+      <td>0.0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Alexandria</th>
+      <td>86.142857</td>
+      <td>330.0</td>
+      <td>0.0</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>Whitman</th>
+      <td>36.694030</td>
+      <td>322.0</td>
+      <td>0.0</td>
+      <td>536</td>
+    </tr>
+    <tr>
+      <th>Williamson</th>
+      <td>48.600000</td>
+      <td>220.0</td>
+      <td>0.0</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>Yakima</th>
+      <td>49.169179</td>
+      <td>330.0</td>
+      <td>0.0</td>
+      <td>1791</td>
+    </tr>
+    <tr>
+      <th>York</th>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Yuba</th>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>239 rows × 4 columns</p>
+</div></div></div>
+</div>
 </section>
 </section>
 <section id="useful-pandas-functions-for-sorting-counting-and-finding-maxima-minima-in-data">
@@ -758,6 +1114,7 @@
 <ul class="simple">
 <li><p><strong>Counting in Groups:</strong> Count the number of vehicles by county and model:</p></li>
 </ul>
+<p>is this outdated ?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;County&#39;</span><span class="p">,</span> <span class="s1">&#39;Model&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -770,6 +1127,75 @@
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ev_df</span><span class="p">[</span><span class="s1">&#39;Electric Range&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()]</span>
 </pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Electric Range&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>VIN (1-10)</th>
+      <th>County</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Postal Code</th>
+      <th>Model Year</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Electric Vehicle Type</th>
+      <th>Clean Alternative Fuel Vehicle (CAFV) Eligibility</th>
+      <th>Electric Range</th>
+      <th>Base MSRP</th>
+      <th>Legislative District</th>
+      <th>DOL Vehicle ID</th>
+      <th>Vehicle Location</th>
+      <th>Electric Utility</th>
+      <th>2020 Census Tract</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>109226</th>
+      <td>5YJSA1E48L</td>
+      <td>Pierce</td>
+      <td>Tacoma</td>
+      <td>WA</td>
+      <td>98422.0</td>
+      <td>2020</td>
+      <td>TESLA</td>
+      <td>MODEL S</td>
+      <td>Battery Electric Vehicle (BEV)</td>
+      <td>Clean Alternative Fuel Vehicle Eligible</td>
+      <td>337.0</td>
+      <td>0</td>
+      <td>27.0</td>
+      <td>128568478</td>
+      <td>POINT (-122.39471 47.28159)</td>
+      <td>BONNEVILLE POWER ADMINISTRATION||CITY OF TACOM...</td>
+      <td>5.305394e+10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="crack-the-code">
@@ -846,8 +1272,8 @@
 
 <span class="n">ans_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">]</span>
 
-<span class="n">code_a</span> <span class="o">=</span> <span class="s1">&#39;234202361 538145258415488147671 613621493620 248671 492671619262419197494605148094094094 653315 318671493490671197266 203494364&#39;</span>
-<span class="n">code_b</span> <span class="o">=</span> <span class="s1">&#39;182482423319 309685 685309549490206325 475 248671434214419684 622605492619365209208 551150 271209377318375605156306424&#39;</span>
+<span class="n">code_a</span> <span class="o">=</span> <span class="s1">&#39;234202361 538145258415488147671 613621493620 538251 492671619262419197494605148094094094 653315 318671493490671197266 203494364&#39;</span>
+<span class="n">code_b</span> <span class="o">=</span> <span class="s1">&#39;182482423319 309685 685309549490206325 475 538251266214541318 622605492619365209208 551150 271209377318375605156306424&#39;</span>
 
 <span class="n">message_a</span> <span class="o">=</span> <span class="n">decode_message</span><span class="p">(</span><span class="n">code_a</span><span class="p">,</span> <span class="n">ans_list</span><span class="p">)</span>
 <span class="n">message_b</span> <span class="o">=</span> <span class="n">decode_message</span><span class="p">(</span><span class="n">code_b</span><span class="p">,</span> <span class="n">ans_list</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -907,11 +1333,11 @@ ____ __ ______ # ______ _______ __ _________
       </div>
     </a>
     <a class="right-next"
-       href="../00_Assignments/submitting.html"
+       href="04_pandas_merge.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Github Submission Guide</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Pandas - Merging DataFrames</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
