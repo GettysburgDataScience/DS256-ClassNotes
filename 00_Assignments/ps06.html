@@ -196,8 +196,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../03_Pandas/01_pandas_intro.html">1. Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03_Pandas/02_crackthecode.html">2. Crack the Code!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03_Pandas/03_pandas_groupby.html">3. Pandas - Grouping and Aggregation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03_Pandas/04_pandas_merge.html">4. Pandas - Merging DataFrames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Pandas/02_crackthecode_solutions.html">3. Crack the Code!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Pandas/03_pandas_groupby.html">4. Pandas - Grouping and Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Pandas/04_pandas_merge.html">5. Pandas - Merging DataFrames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Pandas/05_pandas_cheatsheet.html">6. Pandas Cheat Sheet</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="current nav bd-sidenav">
@@ -425,6 +428,18 @@
 <li><p>Within a row, there should be columns for each party candidate and the number of votes they received.</p></li>
 <li><p>No duplicated or unnecessary data.</p></li>
 </ul>
+<p>Columns should be:</p>
+<ul class="simple">
+<li><p>year</p></li>
+<li><p>state_po</p></li>
+<li><p>county</p></li>
+<li><p>county_fips</p></li>
+<li><p>candidate_D</p></li>
+<li><p>votes_D</p></li>
+<li><p>candidate_R</p></li>
+<li><p>votes_R</p></li>
+<li><p>totalvotes</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -437,7 +452,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elec_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/us_political/countypres_2000-2024.csv&#39;</span><span class="p">)</span>
-
 <span class="n">elec_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>

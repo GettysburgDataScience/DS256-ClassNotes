@@ -1,0 +1,1322 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PS05 &#8212; DS256 Data Science Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '00_Assignments/ps06_Roth';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ds256_sticker.png" class="logo__image only-light" alt="DS256 Data Science Programming - Home"/>
+    <img src="../_static/ds256_sticker.png" class="logo__image only-dark pst-js-only" alt="DS256 Data Science Programming - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to DS256 Data Science Programming
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Setting Up and Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_Resources/setup.html">1. Setting Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Resources/genai_policy.html">2. Our course GenAI Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Resources/not_exam_solns.html">3. Not-an-exam 1: Solutions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/01_jupyter_variables.html">1. Intro to Notebooks and Python First Steps</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/02_functions.html">3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/03_lists.html">4. Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/04_conditionals.html">5. Control Flow: Conditional statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/05_loops.html">6. Control Flow: Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/06_TheGame.html">7. The GAME</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/07_loops_oddsends.html">8. Useful tidbits (loops and strings)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_Intro/08_dictionaries.html">9. Dictionaries</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy and Matplotlib</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_NumpyMatplotlib/01_import.html">1. Introducing (and importing) Packages and Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_NumpyMatplotlib/02_numpy.html">2. Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_NumpyMatplotlib/03_matplotlib.html">3. Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_NumpyMatplotlib/04_dataplay.html">4. In class problem-solving!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03_Pandas/01_pandas_intro.html">1. Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Pandas/02_crackthecode.html">2. Crack the Code!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Pandas/02_crackthecode_solutions.html">3. Crack the Code!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Pandas/03_pandas_groupby.html">4. Pandas - Grouping and Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Pandas/04_pandas_merge.html">5. Pandas - Merging DataFrames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Pandas/05_pandas_cheatsheet.html">6. Pandas Cheat Sheet</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="submitting.html">Github Submission Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ps00.html">PS00</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ps01.html">PS01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ps02.html">PS02</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ps03.html">PS03 (v0.1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ps04.html">PS04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mp01.html">Mini-Project 1 (and examples!)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ps05.html">PS05</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ps06.html">PS06</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F00_Assignments/ps06_Roth.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/00_Assignments/ps06_Roth.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PS05</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ps05">
+<h1>PS05<a class="headerlink" href="#ps05" title="Link to this heading">#</a></h1>
+<p>DS256, Gettysburg College</p>
+<p>Prof Eatai Roth</p>
+<p>Due: Oct 24, 2025 5p (soft deadline…you may hand in up until the following Monday.)</p>
+<p>The questions are in no particular order in terms of difficulty, so if you feel stuck, skip the question and come back to it.</p>
+<p><strong>Your Name</strong>: …</p>
+<p><strong>Collaborators</strong>: …</p>
+<p>By submitting this work, you attest that:</p>
+<ul class="simple">
+<li><p>it reflects your own effort and understanding of the material</p></li>
+<li><p>you did not ask for help from students outside the course, other than PLAs</p></li>
+<li><p>you did not use a generative AI to produce any code used below.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize Otter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">otter</span>
+<span class="n">grader</span> <span class="o">=</span> <span class="n">otter</span><span class="o">.</span><span class="n">Notebook</span><span class="p">(</span><span class="s2">&quot;ps05.ipynb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>1.</strong>
+Write the function <code class="docutils literal notranslate"><span class="pre">combo_menu</span></code> that takes as input two dictionaries: entree and side. The keys to the dictionary are the names of menu items. The values are the prices of the menu items.</p>
+<p>The function should return a new dictionary called <code class="docutils literal notranslate"><span class="pre">combo</span></code> that has keys in the form of “<entree> and <side>” and the value is the cost of the combo (the sum of the entree and side costs).</p>
+<div class="cell tag_otter_answer_cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">combo_menu</span><span class="p">(</span><span class="n">entree</span><span class="p">,</span> <span class="n">side</span><span class="p">):</span>
+<span class="o">...</span>
+    
+
+<span class="c1"># Test your code, does it do what it should?</span>
+<span class="n">entree</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Burger&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Taco&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">side</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Fries&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Salad&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+
+<span class="n">expected</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Burger and Fries&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="s1">&#39;Burger and Salad&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="s1">&#39;Taco and Fries&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;Taco and Salad&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="k">assert</span> <span class="n">combo_menu</span><span class="p">(</span><span class="n">entree</span><span class="p">,</span> <span class="n">side</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+    <span class="n">entree</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Burger&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Taco&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block after function definition on line 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;q1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p><strong style='color: red;'><pre style='display: inline;'>q1</pre> results:</strong></p><p><strong><pre style='display: inline;'>q1 - 1</pre> result:</strong></p><pre>    ❌ Test case failed
+    Trying:
+        entree = {'Burger': 5, 'Taco': 3}
+    Expecting nothing
+    ok
+    Trying:
+        side = {'Fries': 2, 'Salad': 1}
+    Expecting nothing
+    ok
+    Trying:
+        assert combo_menu(entree, side) == {'Burger and Fries': 7, 'Burger and Salad': 6, 'Taco and Fries': 5, 'Taco and Salad': 4}
+    Expecting nothing
+    **********************************************************************
+    Line 3, in q1 0
+    Failed example:
+        assert combo_menu(entree, side) == {'Burger and Fries': 7, 'Burger and Salad': 6, 'Taco and Fries': 5, 'Taco and Salad': 4}
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q1 0[2]>", line 1, in <module>
+            assert combo_menu(entree, side) == {'Burger and Fries': 7, 'Burger and Salad': 6, 'Taco and Fries': 5, 'Taco and Salad': 4}
+                   ^^^^^^^^^^
+        NameError: name 'combo_menu' is not defined
+    Trying:
+        assert combo_menu({}, {'Fries': 2, 'Salad': 1}) == {}
+    Expecting nothing
+    **********************************************************************
+    Line 4, in q1 0
+    Failed example:
+        assert combo_menu({}, {'Fries': 2, 'Salad': 1}) == {}
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q1 0[3]>", line 1, in <module>
+            assert combo_menu({}, {'Fries': 2, 'Salad': 1}) == {}
+                   ^^^^^^^^^^
+        NameError: name 'combo_menu' is not defined
+    Trying:
+        assert combo_menu({'Burger': 5, 'Taco': 3}, {}) == {}
+    Expecting nothing
+    **********************************************************************
+    Line 5, in q1 0
+    Failed example:
+        assert combo_menu({'Burger': 5, 'Taco': 3}, {}) == {}
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q1 0[4]>", line 1, in <module>
+            assert combo_menu({'Burger': 5, 'Taco': 3}, {}) == {}
+                   ^^^^^^^^^^
+        NameError: name 'combo_menu' is not defined
+    Trying:
+        assert combo_menu({'Pasta': 8}, {'Bread': 2}) == {'Pasta and Bread': 10}
+    Expecting nothing
+    **********************************************************************
+    Line 6, in q1 0
+    Failed example:
+        assert combo_menu({'Pasta': 8}, {'Bread': 2}) == {'Pasta and Bread': 10}
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q1 0[5]>", line 1, in <module>
+            assert combo_menu({'Pasta': 8}, {'Bread': 2}) == {'Pasta and Bread': 10}
+                   ^^^^^^^^^^
+        NameError: name 'combo_menu' is not defined
+    Trying:
+        entree = {'Promo': 0, 'Discount': -1}
+    Expecting nothing
+    ok
+    Trying:
+        side = {'Small': 0, 'Freebie': 0}
+    Expecting nothing
+    ok
+    Trying:
+        assert combo_menu(entree, side) == {'Promo and Small': 0, 'Promo and Freebie': 0, 'Discount and Small': -1, 'Discount and Freebie': -1}
+    Expecting nothing
+    **********************************************************************
+    Line 9, in q1 0
+    Failed example:
+        assert combo_menu(entree, side) == {'Promo and Small': 0, 'Promo and Freebie': 0, 'Discount and Small': -1, 'Discount and Freebie': -1}
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q1 0[8]>", line 1, in <module>
+            assert combo_menu(entree, side) == {'Promo and Small': 0, 'Promo and Freebie': 0, 'Discount and Small': -1, 'Discount and Freebie': -1}
+                   ^^^^^^^^^^
+        NameError: name 'combo_menu' is not defined
+</pre></div></div>
+</div>
+<p><strong>2.</strong> Write the function <code class="docutils literal notranslate"><span class="pre">update_inventory()</span></code> that takes as input the dictionary inventory, requested item as a string, and quantity as an integer and returns the updated inventory.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">inventory</span></code> a dictionary with keys representing items in stock and values representing quantities in stock</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">item</span></code> is a string representing the name of a requested item</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">quantity</span></code> is an integer representing the number of items being added to or removed from inventory. If you are adding inventory for an item that wasn’t in inventory before, add that item to the dictionary with the correct quantity. If you are removing items from inventory and there aren’t enough, remove the item entirely from the inventory.</p></li>
+</ul>
+<p><em>Tip</em>: To remove a key from a dictionary, you can use the function <code class="docutils literal notranslate"> <span class="pre">my_dict.pop(key_to_remove)</span></code>.</p>
+<div class="cell tag_otter_answer_cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">update_inventory</span><span class="p">(</span><span class="n">inventory</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">quantity</span><span class="p">):</span>
+<span class="o">...</span>
+
+<span class="c1"># Tests for update_inventory</span>
+<span class="n">shop</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">shop</span> <span class="o">=</span> <span class="n">update_inventory</span><span class="p">(</span><span class="n">shop</span><span class="p">,</span> <span class="s1">&#39;Snickers&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">shop</span> <span class="o">=</span> <span class="n">update_inventory</span><span class="p">(</span><span class="n">shop</span><span class="p">,</span> <span class="s1">&#39;Milky Way&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">shop</span> <span class="o">=</span> <span class="n">update_inventory</span><span class="p">(</span><span class="n">shop</span><span class="p">,</span> <span class="s1">&#39;Milky Way&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">shop</span> <span class="o">=</span> <span class="n">update_inventory</span><span class="p">(</span><span class="n">shop</span><span class="p">,</span> <span class="s1">&#39;Snickers&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">shop</span><span class="p">)</span>
+<span class="c1"># The shop should just have 6 for shop[&#39;Milky Way&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+    <span class="n">shop</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block after function definition on line 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;q2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p><strong style='color: red;'><pre style='display: inline;'>q2</pre> results:</strong></p><p><strong><pre style='display: inline;'>q2 - 1</pre> result:</strong></p><pre>    ❌ Test case failed
+    Trying:
+        inv = {'apple': 5, 'orange': 2}
+    Expecting nothing
+    ok
+    Trying:
+        res = update_inventory(inv.copy(), 'banana', 3)
+    Expecting nothing
+    **********************************************************************
+    Line 2, in q2 0
+    Failed example:
+        res = update_inventory(inv.copy(), 'banana', 3)
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[1]>", line 1, in <module>
+            res = update_inventory(inv.copy(), 'banana', 3)
+                  ^^^^^^^^^^^^^^^^
+        NameError: name 'update_inventory' is not defined
+    Trying:
+        assert res == {'apple': 5, 'orange': 2, 'banana': 3}
+    Expecting nothing
+    **********************************************************************
+    Line 3, in q2 0
+    Failed example:
+        assert res == {'apple': 5, 'orange': 2, 'banana': 3}
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[2]>", line 1, in <module>
+            assert res == {'apple': 5, 'orange': 2, 'banana': 3}
+                   ^^^
+        NameError: name 'res' is not defined
+    Trying:
+        inv = {'apple': 5, 'banana': 3}
+    Expecting nothing
+    ok
+    Trying:
+        res = update_inventory(inv.copy(), 'apple', 2)
+    Expecting nothing
+    **********************************************************************
+    Line 5, in q2 0
+    Failed example:
+        res = update_inventory(inv.copy(), 'apple', 2)
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[4]>", line 1, in <module>
+            res = update_inventory(inv.copy(), 'apple', 2)
+                  ^^^^^^^^^^^^^^^^
+        NameError: name 'update_inventory' is not defined
+    Trying:
+        assert res == {'apple': 7, 'banana': 3}
+    Expecting nothing
+    **********************************************************************
+    Line 6, in q2 0
+    Failed example:
+        assert res == {'apple': 7, 'banana': 3}
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[5]>", line 1, in <module>
+            assert res == {'apple': 7, 'banana': 3}
+                   ^^^
+        NameError: name 'res' is not defined
+    Trying:
+        inv = {'apple': 5, 'banana': 3}
+    Expecting nothing
+    ok
+    Trying:
+        res = update_inventory(inv.copy(), 'apple', -2)
+    Expecting nothing
+    **********************************************************************
+    Line 8, in q2 0
+    Failed example:
+        res = update_inventory(inv.copy(), 'apple', -2)
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[7]>", line 1, in <module>
+            res = update_inventory(inv.copy(), 'apple', -2)
+                  ^^^^^^^^^^^^^^^^
+        NameError: name 'update_inventory' is not defined
+    Trying:
+        assert res == {'apple': 3, 'banana': 3}
+    Expecting nothing
+    **********************************************************************
+    Line 9, in q2 0
+    Failed example:
+        assert res == {'apple': 3, 'banana': 3}
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[8]>", line 1, in <module>
+            assert res == {'apple': 3, 'banana': 3}
+                   ^^^
+        NameError: name 'res' is not defined
+    Trying:
+        res = update_inventory({'apple': 3}, 'apple', -3)
+    Expecting nothing
+    **********************************************************************
+    Line 10, in q2 0
+    Failed example:
+        res = update_inventory({'apple': 3}, 'apple', -3)
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[9]>", line 1, in <module>
+            res = update_inventory({'apple': 3}, 'apple', -3)
+                  ^^^^^^^^^^^^^^^^
+        NameError: name 'update_inventory' is not defined
+    Trying:
+        assert res == {}
+    Expecting nothing
+    **********************************************************************
+    Line 11, in q2 0
+    Failed example:
+        assert res == {}
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[10]>", line 1, in <module>
+            assert res == {}
+                   ^^^
+        NameError: name 'res' is not defined
+    Trying:
+        res = update_inventory({'apple': 3}, 'apple', -10)
+    Expecting nothing
+    **********************************************************************
+    Line 12, in q2 0
+    Failed example:
+        res = update_inventory({'apple': 3}, 'apple', -10)
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[11]>", line 1, in <module>
+            res = update_inventory({'apple': 3}, 'apple', -10)
+                  ^^^^^^^^^^^^^^^^
+        NameError: name 'update_inventory' is not defined
+    Trying:
+        assert res == {}
+    Expecting nothing
+    **********************************************************************
+    Line 13, in q2 0
+    Failed example:
+        assert res == {}
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[12]>", line 1, in <module>
+            assert res == {}
+                   ^^^
+        NameError: name 'res' is not defined
+    Trying:
+        res = update_inventory({}, 'pear', 0)
+    Expecting nothing
+    **********************************************************************
+    Line 14, in q2 0
+    Failed example:
+        res = update_inventory({}, 'pear', 0)
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[13]>", line 1, in <module>
+            res = update_inventory({}, 'pear', 0)
+                  ^^^^^^^^^^^^^^^^
+        NameError: name 'update_inventory' is not defined
+    Trying:
+        assert res == {}
+    Expecting nothing
+    **********************************************************************
+    Line 15, in q2 0
+    Failed example:
+        assert res == {}
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[14]>", line 1, in <module>
+            assert res == {}
+                   ^^^
+        NameError: name 'res' is not defined
+    Trying:
+        res = update_inventory({}, 'pear', -1)
+    Expecting nothing
+    **********************************************************************
+    Line 16, in q2 0
+    Failed example:
+        res = update_inventory({}, 'pear', -1)
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[15]>", line 1, in <module>
+            res = update_inventory({}, 'pear', -1)
+                  ^^^^^^^^^^^^^^^^
+        NameError: name 'update_inventory' is not defined
+    Trying:
+        assert res == {}
+    Expecting nothing
+    **********************************************************************
+    Line 17, in q2 0
+    Failed example:
+        assert res == {}
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[16]>", line 1, in <module>
+            assert res == {}
+                   ^^^
+        NameError: name 'res' is not defined
+    Trying:
+        inv = {'a': 1}
+    Expecting nothing
+    ok
+    Trying:
+        res = update_inventory(inv, 'b', 2)
+    Expecting nothing
+    **********************************************************************
+    Line 19, in q2 0
+    Failed example:
+        res = update_inventory(inv, 'b', 2)
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[18]>", line 1, in <module>
+            res = update_inventory(inv, 'b', 2)
+                  ^^^^^^^^^^^^^^^^
+        NameError: name 'update_inventory' is not defined
+    Trying:
+        res = update_inventory(inv, 'a', -1)
+    Expecting nothing
+    **********************************************************************
+    Line 20, in q2 0
+    Failed example:
+        res = update_inventory(inv, 'a', -1)
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[19]>", line 1, in <module>
+            res = update_inventory(inv, 'a', -1)
+                  ^^^^^^^^^^^^^^^^
+        NameError: name 'update_inventory' is not defined
+    Trying:
+        assert res == {'b': 2}
+    Expecting nothing
+    **********************************************************************
+    Line 21, in q2 0
+    Failed example:
+        assert res == {'b': 2}
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q2 0[20]>", line 1, in <module>
+            assert res == {'b': 2}
+                   ^^^
+        NameError: name 'res' is not defined
+</pre></div></div>
+</div>
+<p><strong>3.</strong> Write the function <code class="docutils literal notranslate"><span class="pre">assignment_mean</span></code> that takes as input a class roster as dictionary and an assignment name as a string and returns the average grade for that assignment.</p>
+<ul class="simple">
+<li><p>The keys to the class roster dictionary are student names</p></li>
+<li><p>Each student contains a dictionary of assignments (a dictionary of dictionaries). The values of the .</p></li>
+<li><p>If an assignment is missing, it’s marked with an ‘M’. Otherwise there is a number for the grade.</p></li>
+<li><p>If all assignment is missing for every student, return (NOT print) the letter ‘M’</p></li>
+</ul>
+<p>Below is an example roster.</p>
+<p><em>Tip</em>: first extract the specific grade from each student as a list (excluding missing assignments), then convert the list to a numpy array to take the average.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">roster</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Argyle&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ps01&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+        <span class="s1">&#39;ps02&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s1">&#39;ps03&#39;</span> <span class="p">:</span> <span class="mf">8.5</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;Belinda&#39;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ps01&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s1">&#39;ps02&#39;</span> <span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+        <span class="s1">&#39;ps03&#39;</span> <span class="p">:</span> <span class="s1">&#39;M&#39;</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;Camilla&#39;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ps01&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s1">&#39;ps02&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s1">&#39;ps03&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;Dana&#39;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ps01&#39;</span> <span class="p">:</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;ps02&#39;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s1">&#39;ps03&#39;</span> <span class="p">:</span> <span class="s1">&#39;M&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Getting an assignment grade for a student</span>
+<span class="n">roster</span><span class="p">[</span><span class="s1">&#39;Belinda&#39;</span><span class="p">][</span><span class="s1">&#39;ps03&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;M&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_otter_answer_cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">assignment_mean</span><span class="p">(</span><span class="n">roster</span><span class="p">,</span> <span class="n">assignment</span><span class="p">):</span>
+
+<span class="o">...</span>
+
+
+
+<span class="n">assignment_mean</span><span class="p">(</span><span class="n">roster</span><span class="p">,</span> <span class="s1">&#39;ps01&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+    <span class="o">...</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block after function definition on line 3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;q3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p><strong style='color: red;'><pre style='display: inline;'>q3</pre> results:</strong></p><p><strong><pre style='display: inline;'>q3 - 1</pre> result:</strong></p><pre>    ❌ Test case failed
+    Trying:
+        roster = {'Argyle': {'ps01': 9, 'ps02': 10, 'ps03': 'M'}, 'Belinda': {'ps01': 10, 'ps02': 8, 'ps03': 'M'}, 'Camilla': {'ps01': 10, 'ps02': 10, 'ps03': 'M'}, 'Dana': {'ps01': 'M', 'ps02': 5, 'ps03': 'M'}}
+    Expecting nothing
+    ok
+    Trying:
+        assert abs(assignment_mean(roster, 'ps01') - (9 + 10 + 10) / 3) < 1e-08
+    Expecting nothing
+    **********************************************************************
+    Line 2, in q3 0
+    Failed example:
+        assert abs(assignment_mean(roster, 'ps01') - (9 + 10 + 10) / 3) < 1e-08
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q3 0[1]>", line 1, in <module>
+            assert abs(assignment_mean(roster, 'ps01') - (9 + 10 + 10) / 3) < 1e-08
+                       ^^^^^^^^^^^^^^^
+        NameError: name 'assignment_mean' is not defined
+    Trying:
+        assert assignment_mean(roster, 'ps02') == 8.25
+    Expecting nothing
+    **********************************************************************
+    Line 3, in q3 0
+    Failed example:
+        assert assignment_mean(roster, 'ps02') == 8.25
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q3 0[2]>", line 1, in <module>
+            assert assignment_mean(roster, 'ps02') == 8.25
+                   ^^^^^^^^^^^^^^^
+        NameError: name 'assignment_mean' is not defined
+    Trying:
+        assert assignment_mean(roster, 'ps03') == 'M'
+    Expecting nothing
+    **********************************************************************
+    Line 4, in q3 0
+    Failed example:
+        assert assignment_mean(roster, 'ps03') == 'M'
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q3 0[3]>", line 1, in <module>
+            assert assignment_mean(roster, 'ps03') == 'M'
+                   ^^^^^^^^^^^^^^^
+        NameError: name 'assignment_mean' is not defined
+    Trying:
+        assert assignment_mean(roster, 'ps04') == 'M'
+    Expecting nothing
+    **********************************************************************
+    Line 5, in q3 0
+    Failed example:
+        assert assignment_mean(roster, 'ps04') == 'M'
+    Exception raised:
+        Traceback (most recent call last):
+          File "/Users/eatai/.pyenv/versions/3.13.1/lib/python3.13/doctest.py", line 1395, in __run
+            exec(compile(example.source, filename, "single",
+            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         compileflags, True), test.globs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "<doctest q3 0[4]>", line 1, in <module>
+            assert assignment_mean(roster, 'ps04') == 'M'
+                   ^^^^^^^^^^^^^^^
+        NameError: name 'assignment_mean' is not defined
+</pre></div></div>
+</div>
+<!-- BEGIN QUESTION -->
+<p><strong>4.</strong></p>
+<p>I provide data for the max temperature in Philadelphia from 01/01/2000 through 12/12/2024.</p>
+<p>First I’ll do some processing on the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># number of days between 01/01/2000 and 12/31/2024</span>
+<span class="n">numdays</span> <span class="o">=</span> <span class="mi">365</span><span class="o">*</span><span class="mi">25</span> <span class="o">+</span> <span class="mi">7</span>
+
+<span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/philly_weather.csv&#39;</span>
+<span class="n">maxtemps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span> <span class="n">skiprows</span> <span class="o">=</span> <span class="mi">21735</span><span class="p">,</span> <span class="n">max_rows</span> <span class="o">=</span> <span class="n">numdays</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">usecols</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span> <span class="n">skiprows</span> <span class="o">=</span> <span class="mi">21735</span><span class="p">,</span> <span class="n">max_rows</span> <span class="o">=</span> <span class="n">numdays</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">str</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">usecols</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">display</span><span class="p">(</span><span class="n">dates</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">numdays</span> <span class="o">=</span> <span class="mi">365</span><span class="o">*</span><span class="mi">25</span> <span class="o">+</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/GettysburgDataScience/datasets/refs/heads/main/philly_weather.csv&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">maxtemps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span> <span class="n">skiprows</span> <span class="o">=</span> <span class="mi">21735</span><span class="p">,</span> <span class="n">max_rows</span> <span class="o">=</span> <span class="n">numdays</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">usecols</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">dates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span> <span class="n">skiprows</span> <span class="o">=</span> <span class="mi">21735</span><span class="p">,</span> <span class="n">max_rows</span> <span class="o">=</span> <span class="n">numdays</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">str</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">usecols</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">display</span><span class="p">(</span><span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s look at February 2000</span>
+<span class="n">dates</span><span class="p">[</span><span class="mi">31</span><span class="p">:</span><span class="mi">61</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Let&#39;s look at February 2000</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">dates</span><span class="p">[</span><span class="mi">31</span><span class="p">:</span><span class="mi">61</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;dates&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Leap years have one more day than other years. For this problem, we’ll delete the leap day so that all years have the same length.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find leap days, then invert to find all days except leap days</span>
+<span class="n">leap_days</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="s1">&#39;02/29&#39;</span><span class="p">)</span>
+<span class="n">not_leap_days</span> <span class="o">=</span> <span class="o">~</span><span class="n">leap_days</span> <span class="c1"># ~ is not but applies to every element of an array</span>
+
+<span class="c1"># Keep only the days that are not leap days</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">dates</span><span class="p">[</span><span class="n">not_leap_days</span><span class="p">]</span>
+<span class="n">maxtemps</span> <span class="o">=</span> <span class="n">maxtemps</span><span class="p">[</span><span class="n">not_leap_days</span><span class="p">]</span>
+
+<span class="c1"># Let&#39;s look at February 2000 again to check</span>
+<span class="n">dates</span><span class="p">[</span><span class="mi">31</span><span class="p">:</span><span class="mi">61</span><span class="p">]</span>
+
+<span class="n">dates</span> <span class="o">=</span> <span class="n">dates</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">365</span><span class="p">)</span>
+<span class="n">maxtemps</span> <span class="o">=</span> <span class="n">maxtemps</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">365</span><span class="p">)</span>
+
+<span class="n">dates</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># find leap days, then invert to find all days except leap days</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">leap_days</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="s1">&#39;02/29&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">not_leap_days</span> <span class="o">=</span> <span class="o">~</span><span class="n">leap_days</span> <span class="c1"># ~ is not but applies to every element of an array</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Keep only the days that are not leap days</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Instructions for you</strong></p>
+<p>The data are now in a 24x365 numpy array where each row represents the daily max temperature for the year. The indices for the year match the year itself (e.g. 0 –&gt; 2000, 24 –&gt;2024)</p>
+<p>Using the maxtemp array, create the following two figures:</p>
+<ul class="simple">
+<li><p>A figure with two overlayed histograms for the years 2000 and 2024.</p></li>
+<li><p>A bar graph with the year on the x-axis and the number of days over 90 degrees as the bar height.</p></li>
+</ul>
+<!-- END QUESTION -->
+<section id="submission">
+<h2>Submission<a class="headerlink" href="#submission" title="Link to this heading">#</a></h2>
+<p>When you are ready to submit, uncomment (cmd+/ or ctrl+/) and run the cell below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !git add ps05.ipynb</span>
+<span class="c1"># !git commit -m &#39;ps04 submitted&#39;</span>
+<span class="c1"># !git push -f</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./00_Assignments"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Eatai Roth, Gettysburg College
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
