@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. Crack the Code! &#8212; DS256 Data Science Programming</title>
+    <title>3. Crack the Code! (Solutions) &#8212; DS256 Data Science Programming</title>
   
   
   
@@ -197,11 +197,10 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_pandas_intro.html">1. Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_crackthecode.html">2. Crack the Code!</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Crack the Code!</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Crack the Code! (Solutions)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_pandas_groupby.html">4. Pandas - Grouping and Aggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_pandas_merge.html">5. Pandas - Merging DataFrames</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_pandas_cheatsheet.html">6. Pandas Cheat Sheet</a></li>
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -214,6 +213,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/mp01.html">Mini-Project 1 (and examples!)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps05.html">PS05</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps06.html">PS06</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps06_helpfulhints.html">PS06 - Helpful Hints</a></li>
 </ul>
 
     </div>
@@ -396,7 +396,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Crack the Code!</h1>
+    <h1>Crack the Code! (Solutions)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -419,8 +419,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="crack-the-code">
-<h1><span class="section-number">3. </span>Crack the Code!<a class="headerlink" href="#crack-the-code" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="crack-the-code-solutions">
+<h1><span class="section-number">3. </span>Crack the Code! (Solutions)<a class="headerlink" href="#crack-the-code-solutions" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -820,12 +820,61 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s a for example</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">elec_df</span><span class="p">[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">189</span><span class="p">]</span>
-<span class="n">a</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(17084)
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">elec_df</span><span class="p">[</span><span class="s1">&#39;county_fips&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state_po == &quot;PA&quot;&#39;</span><span class="p">)[</span><span class="s1">&#39;county_fips&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">42133</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acpa</span> <span class="o">=</span> <span class="mi">42001</span>
+
+<span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state_po == &quot;PA&quot; and county_name == &quot;ADAMS&quot;&#39;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;county_fips == @acpa and year == 2024 and party == &quot;REPUBLICAN&quot; and mode == &quot;ELECTION DAY&quot;&#39;</span><span class="p">)[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">votes_2020</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state_po == &quot;PA&quot; and year == 2020&#39;</span><span class="p">)[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">votes_2016</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state_po == &quot;PA&quot; and year == 2016&#39;</span><span class="p">)[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="n">votes_2020</span><span class="o">-</span><span class="n">votes_2016</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">votes_R</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state_po == &quot;FL&quot; and year == 2000 and party == &quot;REPUBLICAN&quot;&#39;</span><span class="p">)[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">votes_D</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state_po == &quot;FL&quot; and year == 2000 and party == &quot;DEMOCRAT&quot;&#39;</span><span class="p">)[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">votes_D</span> <span class="o">-</span> <span class="n">votes_R</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;county_fips == @acpa and year == 2020 and party == &quot;REPUBLICAN&quot;&#39;</span><span class="p">)[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;county_fips == @acpa and year == 2020 and party == &quot;DEMOCRAT&quot;&#39;</span><span class="p">)[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">-</span><span class="n">D</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">+</span><span class="n">D</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -881,15 +930,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">17084</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">d</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">e</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">f</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">g</span> <span class="o">=</span> <span class="mi">7</span>
-
-<span class="n">secret_message_a</span> <span class="o">=</span> <span class="s1">&#39;390495152144 462308199314 269422551417375 290309197479 584684671319423198605158164111 644479264684439 580671323423619633&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">secret_message_a</span> <span class="o">=</span> <span class="s1">&#39;390495152144 462308199314 269422551417375 290309197479 584684671319423198605158164111 644479264684439 580671323423619633&#39;</span>
 <span class="n">secret_message_b</span> <span class="o">=</span> <span class="s1">&#39;591674305432605 689479189684419 607681675314421142 323305 250429550417376 488305199304 432489145198375196&#39;</span>
 
 <span class="n">ans</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">]</span>
@@ -903,8 +944,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quote 1: Huh. ____ _____ ____ __________ _____ ______
-Quote 2: _____ _____ ______ __ _____ ____ roads.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quote 1: Huh. Then who&#39;s Vice President? Jerry Lewis?
+Quote 2: Where we&#39;re going, we don&#39;t need roads.
 </pre></div>
 </div>
 </div>

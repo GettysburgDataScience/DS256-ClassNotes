@@ -197,11 +197,10 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_pandas_intro.html">1. Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_crackthecode.html">2. Crack the Code!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_crackthecode_solutions.html">3. Crack the Code!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_crackthecode_solutions.html">3. Crack the Code! (Solutions)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_pandas_groupby.html">4. Pandas - Grouping and Aggregation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_pandas_merge.html">5. Pandas - Merging DataFrames</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_pandas_cheatsheet.html">6. Pandas Cheat Sheet</a></li>
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -214,6 +213,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/mp01.html">Mini-Project 1 (and examples!)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps05.html">PS05</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps06.html">PS06</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps06_helpfulhints.html">PS06 - Helpful Hints</a></li>
 </ul>
 
     </div>
@@ -818,7 +818,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s a for example</span>
-
 <span class="n">a</span> <span class="o">=</span> <span class="n">elec_df</span><span class="p">[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">189</span><span class="p">]</span>
 <span class="n">a</span>
 </pre></div>
@@ -826,6 +825,79 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(17084)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">elec_df</span><span class="p">[</span><span class="s1">&#39;county_fips&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state_po == &quot;PA&quot; and county_name == &quot;YORK&quot;&#39;</span><span class="p">)[</span><span class="s1">&#39;county_fips&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(42133.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state_po == &quot;PA&quot; and county_name == &quot;ADAMS&quot;&#39;</span><span class="p">)</span>
+<span class="n">acpa</span> <span class="o">=</span> <span class="mi">42001</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;county_fips == @acpa and year == 2024 and party == &quot;REPUBLICAN&quot; and mode == &quot;ELECTION DAY&quot;&#39;</span><span class="p">)[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">votes_2020</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state_po == &quot;PA&quot; and year == 2020&#39;</span><span class="p">)[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">votes_2016</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state_po == &quot;PA&quot; and year == 2016&#39;</span><span class="p">)[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="n">votes_2020</span> <span class="o">-</span> <span class="n">votes_2016</span>
+<span class="n">e</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(799881)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state_po == &quot;FL&quot; and party == &quot;REPUBLICAN&quot; and year == 2000&#39;</span><span class="p">)[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;state_po == &quot;FL&quot; and party == &quot;DEMOCRAT&quot; and year == 2000&#39;</span><span class="p">)[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">D</span><span class="o">-</span><span class="n">R</span>
+<span class="n">f</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(202)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;county_fips == @acpa and year==2020 and party == &quot;REPUBLICAN&quot; and mode == &quot;TOTAL&quot; &#39;</span><span class="p">)[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">elec_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;county_fips == @acpa and year==2020 and party == &quot;DEMOCRAT&quot; and mode == &quot;TOTAL&quot; &#39;</span><span class="p">)[</span><span class="s1">&#39;candidatevotes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">-</span><span class="n">D</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">+</span><span class="n">D</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -881,15 +953,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">17084</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">d</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">e</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">f</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">g</span> <span class="o">=</span> <span class="mi">7</span>
-
-<span class="n">secret_message_a</span> <span class="o">=</span> <span class="s1">&#39;390495152144 462308199314 269422551417375 290309197479 584684671319423198605158164111 644479264684439 580671323423619633&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">secret_message_a</span> <span class="o">=</span> <span class="s1">&#39;390495152144 462308199314 269422551417375 290309197479 584684671319423198605158164111 644479264684439 580671323423619633&#39;</span>
 <span class="n">secret_message_b</span> <span class="o">=</span> <span class="s1">&#39;591674305432605 689479189684419 607681675314421142 323305 250429550417376 488305199304 432489145198375196&#39;</span>
 
 <span class="n">ans</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">]</span>
@@ -903,8 +967,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quote 1: Huh. ____ _____ ____ __________ _____ ______
-Quote 2: _____ _____ ______ __ _____ ____ roads.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quote 1: Huh. Then _____ Vice President? Jerry Lewis?
+Quote 2: Where we&#39;re going, we _____ need roads.
 </pre></div>
 </div>
 </div>
