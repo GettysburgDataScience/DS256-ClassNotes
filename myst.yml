@@ -2,8 +2,7 @@ version: 1
 project:
   title: DS256 Data Science Programming
   authors:
-    - name: Eatai Roth
-    - affiliations: Gettysburg College
+    - name: Eatai Roth, Gettysburg College
     - copyright: Eatai Roth 2025
   github: executablebooks/jupyter-book
   bibliography:
@@ -45,9 +44,9 @@ project:
         - file: 03_Pandas/05_pandas_cheatsheet.ipynb
     - title: Scikit-learn
       children:
-        - file: 03_Pandas/00_what_is_a_model.ipynb
-        - file: 03_Pandas/01_linear_regression.ipynb
-        - file: 03_Pandas/02_linear_regression.ipynb
+        - file: 04_Sklearn/00_what_is_a_model.ipynb
+        - file: 04_Sklearn/01_linear_regression.ipynb
+        - file: 04_Sklearn/02_linear_regression.ipynb
     - title: Assignments
       children:
         - file: 00_Assignments/submitting.md
