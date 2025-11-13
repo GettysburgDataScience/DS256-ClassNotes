@@ -1,0 +1,68 @@
+version: 1
+project:
+  title: DS256 Data Science Programming
+  authors:
+    - name: Eatai Roth
+    - affiliations: Gettysburg College
+    - copyright: Eatai Roth 2025
+  github: executablebooks/jupyter-book
+  bibliography:
+    - references.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: intro.md
+    - title: Setting Up and Resources
+      children:
+        - file: 00_Resources/setup.md
+        - file: 00_Resources/genai_policy.md
+        - file: 00_Resources/not_exam_solns.ipynb
+    - title: Introduction to Python
+      children:
+        - file: 01_Intro/01_jupyter_variables.ipynb
+        - file: 01_Intro/02_functions.ipynb
+        - file: 01_Intro/03_lists.ipynb
+        - file: 01_Intro/04_conditionals.ipynb
+        - file: 01_Intro/05_loops.ipynb
+        - file: 01_Intro/06_TheGame.ipynb
+        - file: 01_Intro/07_loops_oddsends.ipynb
+        - file: 01_Intro/08_dictionaries.ipynb
+    - title: Numpy and Matplotlib
+      children:
+        - file: 02_NumpyMatplotlib/01_import.ipynb
+        - file: 02_NumpyMatplotlib/02_numpy.ipynb
+        - file: 02_NumpyMatplotlib/03_matplotlib.ipynb
+        - file: 02_NumpyMatplotlib/04_dataplay.ipynb
+    - title: Pandas
+      children:
+        - file: 03_Pandas/01_pandas_intro.ipynb
+        - file: 03_Pandas/02_crackthecode.ipynb
+        - file: 03_Pandas/02_crackthecode_solutions.ipynb
+        - file: 03_Pandas/03_pandas_groupby.ipynb
+        - file: 03_Pandas/04_pandas_merge.ipynb
+        - file: 03_Pandas/05_pandas_cheatsheet.ipynb
+    - title: Scikit-learn
+      children:
+        - file: 03_Pandas/00_what_is_a_model.ipynb
+        - file: 03_Pandas/01_linear_regression.ipynb
+        - file: 03_Pandas/02_linear_regression.ipynb
+    - title: Assignments
+      children:
+        - file: 00_Assignments/submitting.md
+        - file: 00_Assignments/ps00.ipynb
+        - file: 00_Assignments/ps01.ipynb
+        - file: 00_Assignments/ps02.ipynb
+        - file: 00_Assignments/ps03.ipynb
+        - file: 00_Assignments/ps04.ipynb
+        - file: 00_Assignments/mp01.md
+        - file: 00_Assignments/ps05.ipynb
+        - file: 00_Assignments/ps06.ipynb
+        - file: 00_Assignments/ps06_helpfulhints.ipynb
+        - file: 00_Assignments/mp02_project_template.ipynb
+site:
+  options:
+    logo: ds256_sticker.png
+    folders: true
+  template: book-theme

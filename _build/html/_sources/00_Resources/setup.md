@@ -27,7 +27,7 @@ As we move towards data science projects, it will become increasingly important 
 
 Your computer is organized as a tree of *directories* (aka folders) which contain files and other *subdirectories* (which in turn contain files and subdirectories). At the top of this tree is the *root* directory.
 
-```{figure} ./images/filestructure.png
+```{figure} ../images/filestructure.png
 :alt: filestructure
 :width: 350px
 :align: left
@@ -128,7 +128,7 @@ If you have any of the following already, you should skip those steps. These ins
   - First, we'll change a setting so that VSCode opens in your Data Science folder by default. Open settings, (<kbd>Ctrl</kbd>+<kbd>,</kbd> on PC, <kbd>Cmd</kbd>+<kbd>,</kbd> on Mac) or through the top menu bar Code > Settings > Settings.
   - At the top of Settings is a search bar. Type "dialog default path". You should see this:
   
-  ```{figure} ./images/VSCodeDefaultFolder.png
+  ```{figure} ../images/VSCodeDefaultFolder.png
 :alt: vscodefolder
 :width: 700px
 :align: center
@@ -142,7 +142,7 @@ If you have any of the following already, you should skip those steps. These ins
 
 Next, we'll install a few useful extensions. On the left-hand side of VSCode, you should see a stack of icons. Select the extensions tab (looks like stacking blocks). You'll search for and install the following extensions:
 
-```{figure} ./images/VSCodeExtensions.png
+```{figure} ../images/VSCodeExtensions.png
 :alt: vscodeextensions
 :width: 400px
 :align: left
@@ -154,8 +154,6 @@ Next, we'll install a few useful extensions. On the left-hand side of VSCode, yo
  - Jupyter
  - Data Wrangler - a colorful viewer for .csvs and other data table formats.
  - GitHub Repositories - will allow you to clone, commit, and push repositories from VSCode
- - GitHub Copilot - an LLM for coding
-
 
 
 
