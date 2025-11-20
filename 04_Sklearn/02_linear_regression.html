@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
@@ -258,6 +258,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps06.html">PS06</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/ps06_helpfulhints.html">PS06 - Helpful Hints</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00_Assignments/mp02_project_template.html">MiniProject 2 Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_Assignments/final_project.html">Final Project</a></li>
 </ul>
 
     </div>
@@ -560,7 +561,10 @@ y_i = \underbrace{\theta_0}_{\text{y intercept}} + \underbrace{\theta_1}_{\text{
 <ul class="simple">
 <li><p>Split data into training and testing sets. Typically, we save 20% of the data for training.</p></li>
 <li><p>Choose a model type and a choice of hyper-parameters. We choose <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">LinearRegression</a> as the model type, using the default hyper-parameters.</p></li>
-<li><p>Fit the model and calculate MSE and <span class="math notranslate nohighlight">\(R^2\)</span> for our training and testing sets.</p></li>
+<li><p>Fit the model to the training data.</p></li>
+<li><p>Make predictions using the fit model.</p></li>
+<li><p>Calculate MSE and <span class="math notranslate nohighlight">\(R^2\)</span> for our training and testing sets.</p></li>
+<li><p>Inspect the model.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -663,7 +667,9 @@ R2_test = 0.68, R2_train = 0.69
 <h2><span class="section-number">3.2. </span>Multiple Linear Regression<a class="headerlink" href="#multiple-linear-regression" title="Link to this heading">#</a></h2>
 <p>In Multiple Linear Regression, we predict the target <span class="math notranslate nohighlight">\(y\)</span> using multiple features <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(y = \theta_0 + \theta_1 \cdot x_1 + \theta_2 \cdot x_2 + \cdots + \theta_n \cdot x_n + \epsilon\)</span></p>
-<p>The process is very similar to simple linear regression. Let’s make some synthetic data with 2 features and 1 target.</p>
+<p>The process is very similar to simple linear regression. There’s one important difference:</p>
+<p><strong>We have to re-scale our data before modeling.</strong> Why?</p>
+<p>Let’s make some synthetic data with 2 features and 1 target.</p>
 <p>For those with a background in linear algebra, the equation above can be represented in vector form as:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1696,12 +1702,6 @@ memory usage: 3.5+ MB
 <img alt="../_images/fadb78caba773d3159c39de21e568d0edfff8a64d4b6269e1f94f51610107eee.png" src="../_images/fadb78caba773d3159c39de21e568d0edfff8a64d4b6269e1f94f51610107eee.png" />
 </div>
 </div>
-<p>Maybe:</p>
-<ul class="simple">
-<li><p>sqft living</p></li>
-<li><p>view</p></li>
-<li><p>lat</p></li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">housing_df</span><span class="p">)</span>

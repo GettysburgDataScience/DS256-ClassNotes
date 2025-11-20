@@ -27,7 +27,7 @@
         - Cite the source of your data in your report.
         - Data should be the most recent data you can find for your topic.
 
- - Due Thursday December 11 or Friday December 12, 2025 at 1:30p (alternatively, an evening TBD)
+ - Due Tuesday December 9, 2025 at 6p or Friday December 12, 2025 at 1:30p 
     - Presentation during final exam period
         - 10-15 minute presentation (including questions)
         - The format of your presentation is up to you. You can prepare a traditional slideshow, lead an activity/discussion, perform a play, create a poster and take Q&A etc.
@@ -52,7 +52,7 @@ There is no required format for the report in terms of what sections must be pre
     - This should not be a line-by-line description of your code.
     - In describing how you processed and modeled your data, use standard English names not the Python function names
         - We grouped data by month and averaged values within group. 
-        - We apply .groupby('month') and .agg(mean) to the dataframe.
+        - **NOT THIS WAY:** We apply .groupby('month') and .agg(mean) to the dataframe.
     - You are not required to have a model, but you may use one.
 
 - **Results**
